@@ -6,7 +6,7 @@ import Tabs from "./Tabs";
 
 function UserList() {
   return (
-    <div className=" max-w-xs">
+    <div className=" max-w-xs max-h-[95vh] h-[95vh] overflow-auto scrollbar-hide">
       <div className="flex justify-between items-center">
         <h1 className=" text-3xl font-semibold">Messages</h1>
         <div className=" flex items-center">
@@ -28,6 +28,30 @@ function UserList() {
         <Tabs />
       </div>
       <div>
+        <MessageUser
+          username="Lorem Ipsum"
+          message=" Lorem ipsum dolor sit amet"
+          time="00:00"
+          pfp={"path to pfp"}
+        />
+        <MessageUser
+          username="Lorem Ipsum"
+          message=" Lorem ipsum dolor sit amet"
+          time="00:00"
+          pfp={"path to pfp"}
+        />
+        <MessageUser
+          username="Lorem Ipsum"
+          message=" Lorem ipsum dolor sit amet"
+          time="00:00"
+          pfp={"path to pfp"}
+        />
+        <MessageUser
+          username="Lorem Ipsum"
+          message=" Lorem ipsum dolor sit amet"
+          time="00:00"
+          pfp={"path to pfp"}
+        />
         <MessageUser
           username="Lorem Ipsum"
           message=" Lorem ipsum dolor sit amet"
