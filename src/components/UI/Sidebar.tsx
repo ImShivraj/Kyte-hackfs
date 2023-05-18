@@ -45,7 +45,7 @@ const paths: Paths[] = [
     isActive: false,
   },
   {
-    path: "/dashboard/messages",
+    path: "/messages",
     title: "Messages",
     icon: TbMessage,
     isActive: true,
@@ -80,7 +80,7 @@ export default function Sidebar({ children }: { children: ReactNode }) {
     <div className="drawer drawer-mobile ">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       {/* navigation */}
-      <div className="drawer-content flex flex-col items-start justify-start ">
+      <div className="drawer-content w-full flex items-start justify-between  ">
         <label
           htmlFor="my-drawer-2"
           className="btn btn-primary drawer-button lg:hidden ml-auto btn-sm text-xs md:text-base md:btn-md"
@@ -88,7 +88,12 @@ export default function Sidebar({ children }: { children: ReactNode }) {
           Open drawer
         </label>
         {/* children */}
-        <div className=" w-full p-6">{children}</div>
+        <div className=" w-9/12 m- p-6 max-h-[96vh] h-[96vh]">{children}</div>
+        <div className=" w-3/12 p-6  h-[96vh] my-3 flex flex-col justify-center items-stretch ">
+          <div className=" h-full bg-lightGray rounded-3xl "></div>
+          <div className=" bg-[#83B08C] w-32 h-6 rounded-full mx-auto mt-5 -mb-5"></div>
+          <div></div>
+        </div>
       </div>
 
       {/* sidebar */}

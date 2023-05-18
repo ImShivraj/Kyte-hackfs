@@ -27,6 +27,7 @@ module.exports = {
         bgSidebar: "var(--sidebar-bg)",
         textSidebar: "var(--sidebar-text)",
         textSidebarActive: "var(--sidebar-text-active)",
+        lightGray: "var(--light-gray)",
       },
     },
   },

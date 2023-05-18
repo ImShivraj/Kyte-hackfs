@@ -1,4 +1,4 @@
-import Sidebar from "@/src/components/UI/Sidebar";
+import Sidebar from "@/src/components/ui/Sidebar";
 import React from "react";
 
 export default function dashboard() {
