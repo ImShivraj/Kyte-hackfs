@@ -27,7 +27,7 @@ export default function ChatTabs() {
             activeTab === "lens"
               ? "text-black  border-b-4 border-black pb-1"
               : "",
-            "  text-sm"
+            "  text-sm text-center"
           )}
         >
           Lens
@@ -39,7 +39,7 @@ export default function ChatTabs() {
             activeTab === "wallet"
               ? "text-black  border-b-4 border-black pb-1"
               : "",
-            "  text-sm"
+            "  text-sm text-center"
           )}
         >
           Wallet
@@ -51,13 +51,13 @@ export default function ChatTabs() {
             activeTab === "requests"
               ? "text-black  border-b-4 border-black pb-1"
               : "",
-            " text-lightGreen text-sm"
+            " text-lightGreen text-sm text-center"
           )}
         >
           Requests&#40;2&#41;
         </Tab>
       </TabsHeader>
-      <TabsBody className="w-full">
+      <TabsBody className="w-full max-h-[74vh] h-[75vh] overflow-auto scrollbar-hide">
         <TabPanel className="w-full " key={"lens"} value={"lens"}>
           <div className=" -mx-2.5 ">
             <MessageUser

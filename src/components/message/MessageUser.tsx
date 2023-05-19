@@ -8,7 +8,7 @@ export default function MessageUser({
   time,
 }: MessageUser) {
   return (
-    <div className=" flex  items-center justify-start cursor-pointer my-3 py-2">
+    <div className=" flex  items-center justify-start cursor-pointer my-3 py-2.5">
       <Image src={user} alt="user" />
       <div className=" mx-2 relative w-full ">
         <div className=" text-lg font-semibold">{username}</div>

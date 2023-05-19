@@ -26,8 +26,8 @@ function ChatWindow() {
           </button>
         </div>
       </div>
-      <div className="   relative mt-4 chat-wallpaper  max-h-[88vh] h-[88vh] overflow-auto rounded-3xl ">
-        <div className=" flex flex-col justify-end mt-auto h-[100%] p-4 overflow-auto scrollbar-hide pb-24 ">
+      <div className=" relative mt-4 chat-wallpaper  max-h-[86vh] h-[88vh] overflow-auto rounded-3xl ">
+        <div className=" flex flex-col justify-end mt-auto h-[100%] overflow-auto crollbar-hide  p-4  pb-24 ">
           <div className=" flex justify-start items-start gap-4 max-w-md ">
             <Image src={user} alt="user" />
             <p className=" relative mt-4 bg-white px-5 py-3 text-sm tracking-wide rounded-xl rounded-tl-none shadow-md pb-8 pt-4">
@@ -37,8 +37,8 @@ function ChatWindow() {
               </span>
             </p>
           </div>
-          <div className=" flex justify-start items-start gap-4 max-w-md ">
-            <Image src={user} alt="user" />
+          <div className=" flex justify-start items-start gap-4 max-w-md  ">
+            <Image  src={user} alt="user" />
             <p className=" relative mt-4 bg-white px-5 py-3 text-sm tracking-wide rounded-xl rounded-tl-none shadow-md pb-8 pt-4">
               Sed ut perspiciatis unde omnis iste na, error sit voluptatem
               accusanti dolorog laudantium, totam rem, eaque ipsa qn ab illo na,

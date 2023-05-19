@@ -6,8 +6,9 @@ import ChatTabs from "./ChatTabs";
 
 function UserList() {
   return (
-    <div className=" max-w-xs max-h-[95vh] h-[95vh] overflow-auto scrollbar-hide">
-      <div className=" sticky">
+    // max-h-[94vh] h-[95vh] overflow-auto scrollbar-hide
+    <div className=" max-w-xs max-h-[94vh] h-[95vh] overflow-auto scrollbar-hide  ">
+      <div className=" ">
         <div className="flex justify-between items-center">
           <h1 className=" text-3xl font-semibold">Messages</h1>
           <div className=" flex items-center">
