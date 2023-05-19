@@ -28,6 +28,7 @@ module.exports = {
         textSidebar: "var(--sidebar-text)",
         textSidebarActive: "var(--sidebar-text-active)",
         lightGray: "var(--light-gray)",
+        lightGreen: "var(--light-green)",
       },
     },
   },

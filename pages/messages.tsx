@@ -12,7 +12,7 @@ export default function Messages() {
           <div className=" w-4/12 lg:w-3/12">
             <UserList />
           </div>
-          <div className="  w-8/12 lg:w-9/12 lg:ml-8">
+          <div className="  w-8/12 lg:w-9/12 ml-6">
             <ChatWindow />
           </div>
         </div>

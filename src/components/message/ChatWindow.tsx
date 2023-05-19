@@ -37,7 +37,7 @@ function ChatWindow() {
             className=" bg-white pl-24 py-3.5 p-4 w-11/12 rounded-full outline-none"
           />
           <GrAttachment
-            className=" cursor-pointer absolute top-3.5 right-24 text-gray-400"
+            className=" cursor-pointer absolute top-3.5 right-28 text-gray-400"
             size={"1.5em"}
             color="black"
           />
