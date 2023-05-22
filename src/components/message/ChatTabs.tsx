@@ -9,15 +9,18 @@ import {
 import MessageUser from "./MessageUser";
 import clsx from "clsx";
 
-export default function ChatTabs() {
-  const [activeTab, setActiveTab] = useState("lens");
+interface Props {
+  activeTab: string; // Replace 'StateType' with the actual type of the state
+  setActiveTab: React.Dispatch<React.SetStateAction<string>>; // Replace 'StateType' with the actual type of the state
+}
+
+const ChatTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
   return (
     <Tabs value={activeTab}>
       <TabsHeader
         className="rounded-none border-b border-blue-gray-50 bg-transparent p-0 pb- mt-6"
         indicatorProps={{
-          className:
-            "bg-transparent border-b-2 border-blue-500 shadow-none rounded-none",
+          className: "bg-transparent shadow-none rounded-none",
         }}
       >
         <Tab
@@ -49,7 +52,7 @@ export default function ChatTabs() {
           onClick={() => setActiveTab("requests")}
           className={clsx(
             activeTab === "requests"
-              ? "text-black  border-b-4 border-black pb-1"
+              ? "text-black  border-b-4 border-black pb-1 "
               : "",
             " text-lightGreen text-sm text-center"
           )}
@@ -167,4 +170,6 @@ export default function ChatTabs() {
       </TabsBody>
     </Tabs>
   );
-}
+};
+
+export default ChatTabs;
