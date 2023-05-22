@@ -11,6 +11,8 @@
   --sidebar-text-active: #FFFFFF;
   --light-gray: #F8F8F8;
   --light-green: #83B08C;
+  --light-gray-text1: #898989;
+  --light-gray-text2: #B0B0B0;
 }
 
 
@@ -40,3 +42,4 @@ body {
   background-position: center;
   background-size: cover;
 }
+

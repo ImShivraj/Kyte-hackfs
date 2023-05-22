@@ -16,7 +16,7 @@ export default function UserMessages() {
           </div>
         </div>
         <div className=" w-3/12 p-12 max-h-[96vh] h-[96vh] overflow-auto my-3 flex flex-col justify-center items-stretch ">
-          <div className=" py-8 h-full rounded-3xl flex flex-col items-center justify-start ">
+          <div className=" py-10 h-full rounded-3xl flex flex-col items-center justify-start ">
             <ProfileOverview />
           </div>
         </div>

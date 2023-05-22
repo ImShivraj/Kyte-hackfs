@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import { ReactNode, useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
+import ProfileOverview from "../message/ProfileOverview";
 
 interface Paths {
   path: string;
@@ -88,11 +89,7 @@ export default function Sidebar({ children }: { children: ReactNode }) {
           Open drawer
         </label>
         {/* children */}
-        <div className=" w-9/12 m- p-6 pr-0">{children}</div>
-        <div className=" w-3/12 p-6 max-h-[96vh] h-[96vh] overflow-auto my-3 flex flex-col justify-center items-stretch ">
-          <div className=" h-full bg-lightGray rounded-3xl "></div>
-          <div className=" bg-[#83B08C] w-32 h-6 rounded-full mx-auto mt-5 -mb-5"></div>
-        </div>
+        <div className=" flex justify-end bg-green-30 w-full">{children}</div>
       </div>
 
       {/* sidebar */}

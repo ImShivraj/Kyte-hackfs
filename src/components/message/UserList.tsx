@@ -5,6 +5,8 @@ import { CgSearch } from "react-icons/cg";
 import ChatTabs from "./ChatTabs";
 import { useState } from "react";
 import { Modal } from "../ui/Modal";
+import GradientIcon from "../utlis/Gradientcon";
+import { MailOutlineRounded } from "@mui/icons-material";
 
 function UserList() {
   const [activeTab, setActiveTab] = useState("lens");
@@ -47,14 +49,14 @@ function UserList() {
 
       <Modal
         title={`New message`}
-        // icon={
-        //   <GradientIcon
-        //     Icon={MailOutlineRounded}
-        //     width="24px"
-        //     height="24px"
-        //     margin="none"
-        //   />
-        // }
+        icon={
+          <GradientIcon
+            Icon={MailOutlineRounded}
+            width="24px"
+            height="24px"
+            margin="none"
+          />
+        }
         size="sm"
         show={showSearchModal}
         onClose={() => setShowSearchModal(false)}
@@ -62,22 +64,7 @@ function UserList() {
         <div className="w-full py-4 px-4">
           {activeTab === "lens" && <span>Lens Modal Search</span>}
           {activeTab === "wallet" && <span>Wallet Modal Search</span>}
-          {/* <Search
-            modalWidthClassName="max-w-lg"
-            placeholder={`Search for someone to message...`}
-            onProfileSelected={onProfileSelected}
-            bodyWidth="94%"
-            variant="brand"
-            inputHeight="45px"
-          /> */}
         </div>
-        {/*  */}
-        {/* {currentProfile && (
-          <Following
-            profile={currentProfile}
-            onProfileSelected={onProfileSelected}
-          />
-        )} */}
       </Modal>
     </div>
   );

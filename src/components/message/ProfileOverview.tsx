@@ -11,7 +11,7 @@ function ProfileOverview() {
         <p className=" text-lightGratText2 font-[500]">@lorem.ipsum</p>
       </div>
 
-      <div className=" mt-6 text-slate-400 w-full ">
+      <div className=" mt-8 text-slate-400 w-full my-2 ">
         <h3 className=" text-lightGratText1 font-semibold leading-9">About</h3>
         <p className=" text-lightGratText2">
           Lorem ipsum dolor sit amet, sed do eiusil tempor incididunt ut.
