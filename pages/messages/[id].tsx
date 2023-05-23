@@ -1,7 +1,7 @@
-import ChatWindow from "@/src/components/message/ChatWindow";
-import ProfileOverview from "@/src/components/message/ProfileOverview";
-import UserList from "@/src/components/message/UserList";
-import Sidebar from "@/src/components/ui/Sidebar";
+import ChatWindow from "@components/message/ChatWindow";
+import ProfileOverview from "@components/message/ProfileOverview";
+import UserList from "@components/message/UserList";
+import Sidebar from "@components/ui/Sidebar";
 
 export default function UserMessages() {
   return (

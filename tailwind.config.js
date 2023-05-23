@@ -29,6 +29,7 @@ module.exports = {
         textSidebarActive: "var(--sidebar-text-active)",
         lightGray: "var(--light-gray)",
         lightGreen: "var(--light-green)",
+        lightGreen2: "var(--light-green2)",
         lightGratText1: "var(--light-gray-text1)",
         lightGratText2: "var(--light-gray-text2)",
       },

@@ -1,4 +1,4 @@
-import Sidebar from "@/src/components/ui/Sidebar";
+import Sidebar from "@components/ui/Sidebar";
 import React from "react";
 
 export default function Saved() {

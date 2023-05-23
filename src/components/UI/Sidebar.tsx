@@ -7,7 +7,7 @@ import { IconType } from "react-icons";
 import logo from "../../assets/logo.png";
 import user from "../../assets/user.png";
 import { useRouter } from "next/router";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import ProfileOverview from "../message/ProfileOverview";
@@ -54,8 +54,17 @@ const paths: Paths[] = [
 ];
 
 export default function Sidebar({ children }: { children: ReactNode }) {
-  const [toggleSidebar, setToggleSidebar] = useState<boolean>(true);
+  const [toggleSidebar, setToggleSidebar] = useState<boolean>(false);
   const router = useRouter();
+
+  useEffect(() => {
+    if (
+      router.asPath === "/messages" ||
+      router.asPath.startsWith("/messages/")
+    ) {
+      setToggleSidebar(true);
+    }
+  }, []);
 
   const links = paths.map(({ path, title, icon: Icon }) => (
     <Link
