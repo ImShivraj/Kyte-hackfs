@@ -37,9 +37,10 @@ body {
 
 .chat-wallpaper {
   /* background-image: url('../public/chat-wallpaper.png'); */
-  background-image: url('../public/chat_wallpaper.png');
+  background-image: url('../public/chat_wallpaper_.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  
 }
 

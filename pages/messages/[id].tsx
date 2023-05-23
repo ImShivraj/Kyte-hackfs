@@ -15,8 +15,8 @@ export default function UserMessages() {
             <ChatWindow />
           </div>
         </div>
-        <div className=" w-3/12 p-12 max-h-[96vh] h-[96vh] overflow-auto my-3 flex flex-col justify-center items-stretch ">
-          <div className=" py-10 h-full rounded-3xl flex flex-col items-center justify-start ">
+        <div className=" w-3/12 px-12 pt-8 max-h-[92vh] h-[92vh] scrollbar-hide overflow-visible my-3 flex flex-col justify-center items-stretch ">
+          <div className=" pt-10 h-full rounded-3xl flex flex-col items-center justify-start ">
             <ProfileOverview />
           </div>
         </div>

@@ -2,11 +2,14 @@ import Image from "next/image";
 import { GrAttachment } from "react-icons/gr";
 import { FaRegPaperPlane } from "react-icons/fa";
 import { HiOutlineEmojiHappy, HiVideoCamera } from "react-icons/hi";
+import { BsFillMicFill } from "react-icons/bs";
 import { RxDoubleArrowRight } from "react-icons/rx";
 import { MdWifiCalling3 } from "react-icons/md";
 import user from "../../assets/user.png";
+import { useState } from "react";
 
 function ChatWindow() {
+  const [message, setMessage] = useState<string>("");
   return (
     <div className="  relative">
       <div className=" flex w-full justify-between items-center ">
@@ -38,7 +41,7 @@ function ChatWindow() {
             </p>
           </div>
           <div className=" flex justify-start items-start gap-4 max-w-md  ">
-            <Image  src={user} alt="user" />
+            <Image src={user} alt="user" />
             <p className=" relative mt-4 bg-white px-5 py-3 text-sm tracking-wide rounded-xl rounded-tl-none shadow-md pb-8 pt-4">
               Sed ut perspiciatis unde omnis iste na, error sit voluptatem
               accusanti dolorog laudantium, totam rem, eaque ipsa qn ab illo na,
@@ -74,20 +77,31 @@ function ChatWindow() {
         />
         <input
           placeholder="Messages"
-          className=" bg-white pl-24 py-3.5 p-4 w-11/12 rounded-full outline-none"
+          className=" bg-white pl-24 py-3.5 p-4 w-11/12 rounded-full outline-none shadow-lg"
         />
         <GrAttachment
           className=" cursor-pointer absolute top-3.5 right-28 text-gray-400"
           size={"1.5em"}
           color="black"
         />
-        <button className=" cursor-pointer  btn rounded-2xl">
-          <FaRegPaperPlane
-            className=" cursor-pointer  text-gray-400"
-            size={"1.5em"}
-            color="white"
-          />
-        </button>
+        {message && (
+          <button className=" cursor-pointer  btn rounded-2xl">
+            <FaRegPaperPlane
+              className=" cursor-pointer  text-gray-400"
+              size={"1.5em"}
+              color="white"
+            />
+          </button>
+        )}
+        {!message && (
+          <button className=" cursor-pointer  btn rounded-2xl">
+            <BsFillMicFill
+              className=" cursor-pointer  text-gray-400"
+              size={"1.5em"}
+              color="white"
+            />
+          </button>
+        )}
       </div>
     </div>
   );
