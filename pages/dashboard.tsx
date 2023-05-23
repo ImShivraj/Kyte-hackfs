@@ -5,9 +5,9 @@ import React from "react";
 
 export default function dashboard() {
   return (
-    <div className="  w-full ">
+    <div className="  w-full">
       <Sidebar>
-        <div className=" flex items-start justify-start relative ">
+        <div className=" flex items-start justify-start relative  mx-auto  ">
           <div className=" mx-2.5  z-50 w-8/12 p-6 pr-0 flex justify-start items-start">
             <div className="">
               <div className="">

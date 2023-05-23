@@ -104,13 +104,15 @@ export default function Sidebar({ children }: { children: ReactNode }) {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <div
           className={clsx(
-            toggleSidebar ? " w-20 md:w-24" : " md:w-72 lg:w-80",
-            " bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content items-center "
+            toggleSidebar
+              ? " w-20 md:w-24 items-center "
+              : " md:w-72 lg:w-80 items-start pl-10",
+            " bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content items-start  "
           )}
         >
           <div
             className={clsx(toggleSidebar && " px-2 ", "py-2")}
-            onClick={() => setToggleSidebar((prev) => !prev)}
+            // onClick={() => setToggleSidebar((prev) => !prev)}
           >
             <div
               // href={"/dashboard"}

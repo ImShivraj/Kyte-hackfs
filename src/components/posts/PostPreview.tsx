@@ -3,6 +3,8 @@ import user from "@assets/user.png";
 import pfp from "@assets/pfp2.png";
 import post from "@assets/post.png";
 import { BiDotsVerticalRounded } from "react-icons/bi";
+import { MdOutlineTranslate } from "react-icons/md";
+import { RxExclamationTriangle } from "react-icons/rx";
 import PostActions from "./PostActions";
 
 function PostPreview() {
@@ -12,7 +14,24 @@ function PostPreview() {
         <div className="flex items-start gap-5">
           <div className=" h-[94.7%] z-10 absolute border-r px-3 top-14 -mt-1"></div>
           <div className=" absolute top-1.5 right-0 -mt-1.5">
-            <BiDotsVerticalRounded size={"1.5em"} color="black" />
+            <div className=" dropdown dropdown-bottom dropdown-end">
+              <label tabIndex={0} className=" cursor-pointer">
+                <BiDotsVerticalRounded size={"1.5em"} color="black" />
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu p-2 shadow-md bg-white rounded-box w-52 -mt-6 py-2 font-semibold text-sm  "
+              >
+                <div className=" py-2 px-4 flex items-center gap-3 cursor-pointer hover:bg-gray-50 rounded-md transition ease-in-out active:scale-95">
+                  <MdOutlineTranslate size={"1.5em"} />
+                  <span>Translate Post</span>
+                </div>
+                <div className="py-2 px-4 flex items-center gap-3 cursor-pointer hover:bg-gray-50 rounded-md transition ease-in-out active:scale-95">
+                  <RxExclamationTriangle size={"1.5em"} />
+                  <span>Report Post</span>
+                </div>
+              </ul>
+            </div>
           </div>
           <Image width={52} src={pfp} alt="user" />
           <div>
@@ -40,6 +59,7 @@ function PostPreview() {
           </div>
         </div>
       </div>
+
       <div className="flex items-start gap-5 mt-5 relative ">
         <div className=" absolute top-1.5 right-0 -mt-1.5">
           <BiDotsVerticalRounded size={"1.5em"} color="black" />
