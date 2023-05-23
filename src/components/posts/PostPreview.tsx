@@ -3,6 +3,7 @@ import user from "@assets/user.png";
 import pfp from "@assets/pfp2.png";
 import post from "@assets/post.png";
 import { BiDotsVerticalRounded } from "react-icons/bi";
+import PostActions from "./PostActions";
 
 function PostPreview() {
   return (
@@ -23,16 +24,19 @@ function PostPreview() {
                 &nbsp;&#x2022;&nbsp;12 Jan
               </span>{" "}
             </div>
-            <p className="  py-3 text-md">
+            <p className="  pt-4 text-md">
               Sed ut perspiciatis unde omnis iste na, error sit voluptatem
               accusanti dolorog laudantium, tota rem, eaque ipsa qn ab illo
               invee veritatis et quasi architect beatae vae dicta so.
             </p>
             <Image
-              className="py-1 w-full md:w-7/12 md:h-auto"
+              className="pt-3 pb-1.5 w-full md:w-7/12 md:h-auto"
               src={post}
               alt="post"
             />
+            <div>
+              <PostActions />
+            </div>
           </div>
         </div>
       </div>
@@ -50,11 +54,14 @@ function PostPreview() {
               &nbsp;&#x2022;&nbsp;12 Jan
             </span>{" "}
           </div>
-          <p className="  py-3 text-md">
+          <p className="  pt-4 text-md">
             Sed ut perspiciatis unde omnis iste na, error sit voluptatem
             accusanti dolorog laudantium, tota rem, eaque ipsa qn ab illo invee
             veritatis et quasi architect beatae vae dicta so.
           </p>
+          <div>
+            <PostActions />
+          </div>
         </div>
       </div>
     </div>

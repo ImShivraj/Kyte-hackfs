@@ -5,7 +5,7 @@ import { HiOutlineEmojiHappy, HiVideoCamera } from "react-icons/hi";
 import { BsFillMicFill } from "react-icons/bs";
 import { RxDoubleArrowRight } from "react-icons/rx";
 import { MdWifiCalling3 } from "react-icons/md";
-import user from "../../assets/user.png";
+import user from "@assets/user.png";
 import { useState } from "react";
 
 function ChatWindow() {

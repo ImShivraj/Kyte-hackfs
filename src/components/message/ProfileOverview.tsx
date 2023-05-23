@@ -1,6 +1,6 @@
 import Image from "next/image";
-import pfp from "../../assets/pfp.png";
-import highlight from "../../assets/highlight.png";
+import pfp from "@assets/pfp.png";
+import highlight from "@assets/highlight.png";
 
 function ProfileOverview() {
   return (

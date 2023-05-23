@@ -1,16 +1,14 @@
 import Link from "next/link";
 import { HiHome, HiBell, HiBookmark } from "react-icons/hi";
 import { BsFire, BsFillPersonFill } from "react-icons/bs";
-import { RiSettings2Fill } from "react-icons/ri";
 import { TbMessage } from "react-icons/tb";
 import { IconType } from "react-icons";
-import logo from "../../assets/logo.png";
-import user from "../../assets/user.png";
+import logo from "@assets/logo.png";
+import user from "@assets/user.png";
 import { useRouter } from "next/router";
 import { ReactNode, useEffect, useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
-import ProfileOverview from "../message/ProfileOverview";
 
 interface Paths {
   path: string;

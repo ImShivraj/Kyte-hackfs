@@ -1,5 +1,5 @@
 import Image from "next/image";
-import user from "../../assets/user.png";
+import user from "@assets/user.png";
 
 export default function MessageUser({
   username,
