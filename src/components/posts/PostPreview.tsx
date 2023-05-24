@@ -9,7 +9,8 @@ import PostActions from "./PostActions";
 
 function PostPreview() {
   return (
-    <div className=" px-8 py-6 border rounded-3xl mx-3 md:mx-8 my-2.5 ">
+    <div className=" px-8 py-6 border rounded-xl mx-3 md:mx-8 my-2.5 ">
+      {/* hover:bg-lightGray  */}
       <div className=" relative   ">
         <div className="flex items-start gap-5">
           <div className=" h-[94.7%] z-10 absolute border-r px-3 top-14 -mt-1"></div>
@@ -62,7 +63,24 @@ function PostPreview() {
 
       <div className="flex items-start gap-5 mt-5 relative ">
         <div className=" absolute top-1.5 right-0 -mt-1.5">
-          <BiDotsVerticalRounded size={"1.5em"} color="black" />
+          <div className=" dropdown dropdown-bottom dropdown-end">
+            <label tabIndex={0} className=" cursor-pointer">
+              <BiDotsVerticalRounded size={"1.5em"} color="black" />
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu p-2 shadow-md bg-white rounded-box w-52 -mt-6 py-2 font-semibold text-sm  "
+            >
+              <div className=" py-2 px-4 flex items-center gap-3 cursor-pointer hover:bg-gray-50 rounded-md transition ease-in-out active:scale-95">
+                <MdOutlineTranslate size={"1.5em"} />
+                <span>Translate Post</span>
+              </div>
+              <div className="py-2 px-4 flex items-center gap-3 cursor-pointer hover:bg-gray-50 rounded-md transition ease-in-out active:scale-95">
+                <RxExclamationTriangle size={"1.5em"} />
+                <span>Report Post</span>
+              </div>
+            </ul>
+          </div>
         </div>
         <Image width={52} src={user} alt="user" />
         <div>

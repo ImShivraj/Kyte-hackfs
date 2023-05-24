@@ -6,7 +6,7 @@ import { IconType } from "react-icons";
 import logo from "@assets/logo.png";
 import user from "@assets/user.png";
 import { useRouter } from "next/router";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, memo, useEffect, useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 
@@ -18,7 +18,7 @@ interface Paths {
 }
 
 const paths: Paths[] = [
-  { path: "/dashboard", title: "Home", icon: HiHome, isActive: false },
+  { path: "/home", title: "Home", icon: HiHome, isActive: false },
   {
     path: "/dashboard/trending",
     title: "Trending",
@@ -51,7 +51,7 @@ const paths: Paths[] = [
   },
 ];
 
-export default function Sidebar({ children }: { children: ReactNode }) {
+const Sidebar = ({ children }: { children: ReactNode }) => {
   const [toggleSidebar, setToggleSidebar] = useState<boolean>(false);
   const router = useRouter();
 
@@ -148,4 +148,6 @@ export default function Sidebar({ children }: { children: ReactNode }) {
       </div>
     </div>
   );
-}
+};
+
+export default memo(Sidebar);

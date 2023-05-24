@@ -20,7 +20,7 @@ function CreateNewPost() {
   };
 
   return (
-    <div className=" flex items-start justify-start gap-3  px-8 py-6 border rounded-3xl mx-3 md:mx-8 my-2.5">
+    <div className=" flex items-start justify-start gap-3  px-8 py-6 border rounded-xl mx-3 md:mx-8 my-2.5">
       <Image width={52} src={pfp} alt="pfp" />{" "}
       <div className=" w-full">
         <div className="flex justify-between items-start w-full">
