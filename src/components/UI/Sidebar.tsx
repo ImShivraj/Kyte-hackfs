@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { ReactNode, memo, useEffect, useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
+import { RiSettings5Fill } from "react-icons/ri";
 
 interface Paths {
   path: string;
@@ -18,10 +19,10 @@ interface Paths {
 }
 
 const paths: Paths[] = [
-  { path: "/home", title: "Home", icon: HiHome, isActive: false },
+  { path: "/", title: "Home", icon: HiHome, isActive: false },
   {
-    path: "/dashboard/trending",
-    title: "Trending",
+    path: "/explore",
+    title: "Explore",
     icon: BsFire,
     isActive: false,
   },
@@ -141,8 +142,23 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
             {!toggleSidebar && <span className=" mx-2 ">Minimize </span>}
           </div> */}
 
-          <div className=" mt-auto">
-            <Image src={user} alt="user" />
+          <div className=" mt-auto w-full">
+            <div className="flex items-center gap-3 w-full">
+              <Image src={user} alt="user" />
+              <div className=" flex items-center justify-between w-full">
+                <div className="ml-2 w-full">
+                  <h3 className=" font-semibold text-lg text-white">
+                    Lorem Ipsum
+                  </h3>
+                  <p className=" text-sm text-gray-400 font-semibold ">
+                    @lorem.ipsum
+                  </p>
+                </div>
+                <div className=" ml-3">
+                  <RiSettings5Fill size={"1.5em"} color="#B0B0B0" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

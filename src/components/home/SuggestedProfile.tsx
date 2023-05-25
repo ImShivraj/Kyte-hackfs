@@ -13,7 +13,7 @@ function SuggestedProfile() {
             <h3 className=" font-semibold text-xl">Lorem Ipsum</h3>
             <p className=" text-sm text-gray-400 font-semibold ">@lorem.ipsum</p>
           </div>
-          <button className=" btn rounded-full h-12 w-12 p-1">
+          <button className=" btn rounded-full h-5 w-12 p-1">
             <BsPersonPlus size={"1.5em"} color="white" />
           </button>
         </div>

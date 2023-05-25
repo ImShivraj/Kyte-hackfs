@@ -1,44 +1,34 @@
 import Sidebar from "@components/ui/Sidebar";
-import CreateNewPost from "@components/posts/CreateNewPost";
 import PostPreview from "@components/posts/PostPreview";
-import React from "react";
+import React, { useState } from "react";
 import SuggestedProfile from "@/src/components/home/SuggestedProfile";
-import { CgSearch } from "react-icons/cg";
 import { HiOutlineGlobeEuropeAfrica } from "react-icons/hi2";
+import { CgSearch } from "react-icons/cg";
 
-export default function dashboard() {
+import ExploreTabs from "@/src/components/explore/ExploreTabs";
+
+export default function Explore() {
+  const [activeTab, setActiveTab] = useState("for-you");
   return (
     <div className="  w-full">
       <Sidebar>
-        <div className=" flex items-start justify-start relative  mx-auto  ">
-          <div className=" mx-2.5  z-50 w-8/12 p-6 pr-0 flex justify-start items-start">
-            <div className="">
-              <div className="">
-                <h1 className=" text-4xl font-semibold md:pl-10 mb-5 mt-2 ">
-                  Home
-                </h1>
-              </div>
-              <div className="">
-                <CreateNewPost />
-              </div>
-              <div className="">
-                <PostPreview />
-                <PostPreview />
-                <PostPreview />
+        <div className="  flex items-start justify-start  mx-auto  ">
+          <div className=" mx-4 mt-4  relative w-8/12 p-2 bg-purple-20  ">
+            <div className=" w-full ">
+              <div className=" w-full relative mb-2  ">
+                <input
+                  placeholder="Search"
+                  className=" bg-lightGray py-3.5 p-4 w-full rounded-2xl outline-none"
+                />
+                <CgSearch
+                  className=" cursor-pointer absolute top-3.5 right-4 text-gray-400"
+                  size={"1.5em"}
+                />
               </div>
             </div>
+            <ExploreTabs activeTab={activeTab} setActiveTab={setActiveTab} />
           </div>
           <div className=" fixed right-10 z-0 w-3/12 p-6 max-h-[96vh] h-[96vh] overflow-auto my-3 flex flex-col justify-start items-stretch ">
-            <div className=" relative mt-5 mb-2">
-              <input
-                placeholder="Search"
-                className=" bg-lightGray py-3.5 p-4 w-full rounded-2xl outline-none"
-              />
-              <CgSearch
-                className=" cursor-pointer absolute top-3.5 right-4 text-gray-400"
-                size={"1.5em"}
-              />
-            </div>
             <div className="mt-2 bg-lightGray  rounded-3xl">
               <h2 className="  text-2xl font-semibold p-5">
                 Suggested for you
@@ -116,10 +106,6 @@ export default function dashboard() {
                 <span>Storage Powered by Polybase</span>
               </div>
             </div>
-            {/* <div className=" p-6 h-full bg-lightGray rounded-3xl flex flex-col items-center justify-start ">
-              demo
-            </div>
-            <div className=" bg-[#83B08C] w-32 h-6 rounded-full mx-auto mt-5 -mb-5"></div> */}
           </div>
         </div>
       </Sidebar>

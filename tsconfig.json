@@ -18,7 +18,14 @@
     "paths": {
       "@/*": ["./*"],
       "@components*": ["src/components*"],
-      "@assets*": ["src/assets*"]
+      "@assets*": ["src/assets*"],
+      "@store*": ["src/store*"],
+      "@gql*": ["src/graphql*"],
+      "@constants*": ["src/constants*"],
+      "@utils*": ["src/utils*"],
+      "@lib*": ["src/lib*"],
+      "@generated*": ["src/graphql/generated*"],
+      "@styles*": ["src/styles*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
