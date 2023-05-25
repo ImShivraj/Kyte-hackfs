@@ -5,8 +5,9 @@ import { TbPhotoPlus } from "react-icons/tb";
 import { ImAttachment } from "react-icons/im";
 import { HiOutlineEmojiHappy } from "react-icons/hi";
 import { useState } from "react";
+import clsx from "clsx";
 
-function CreateNewPost() {
+function CreateNewPost(props: any) {
   const [post, setPost] = useState<string>("");
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -20,7 +21,7 @@ function CreateNewPost() {
   };
 
   return (
-    <div className=" flex items-start justify-start gap-3  px-8 py-6 border rounded-xl mx-3 md:mx-8 my-2.5">
+    <div className=" flex items-start justify-start gap-3 ">
       <Image width={52} src={pfp} alt="pfp" />{" "}
       <div className=" w-full">
         <div className="flex justify-between items-start w-full">
@@ -36,7 +37,12 @@ function CreateNewPost() {
           />
         </div>
         <div className=" flex justify-between items-center mt-2 mx-2">
-          <div className=" flex justify-around w-1/6 ">
+          <div
+            className={clsx(
+              " flex justify-around 6 ",
+              props.width ? props.width : "w-1/6"
+            )}
+          >
             <div className=" transition ease-in-out active:scale-95 cursor-pointer">
               <BsFiletypeGif color="#83B08C" size={"1.2em"} />
             </div>

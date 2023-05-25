@@ -18,7 +18,7 @@ export default function Home() {
                   Home
                 </h1>
               </div>
-              <div className="">
+              <div className=" px-8 py-6 border rounded-xl mx-3 md:mx-8 my-2.5">
                 <CreateNewPost />
               </div>
               <div className="">

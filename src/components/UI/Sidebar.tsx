@@ -10,6 +10,7 @@ import { ReactNode, memo, useEffect, useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import { RiSettings5Fill } from "react-icons/ri";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 
 interface Paths {
   path: string;
@@ -129,7 +130,19 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
               )}
             </div>
           </div>
-          <div className=" mt-10 ">{links}</div>
+          <div className=" mt-10 ">
+            <div>{links}</div>
+            <label
+              htmlFor="my-modal"
+              className={clsx(
+                " text-textSidebar  cursor-pointer",
+                " gap-3 items-center justify-start",
+                " flex items-center justify-start text-lg font-semibold my-7"
+              )}
+            >
+              <AiOutlinePlusCircle size={"1.5em"} /> Create Post
+            </label>
+          </div>
           {/* <div
             className={clsx(
               toggleSidebar ? "text-white bg-clip-text " : " text-textSidebar ",

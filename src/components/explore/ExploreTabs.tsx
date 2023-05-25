@@ -21,9 +21,9 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
   return (
     <>
       <Tabs value={activeTab} className="   w-full  rounded-xl ">
-        <div className=" border-b border-blue-gray-50 p-0  mt-6 border rounded-xl pt-5 ">
+        <div className=" ">
           <TabsHeader
-            className=""
+            className=" border-b border-blue-gray-50 p-0  mt-6 border rounded-xl rounded-b-none pt-5"
             indicatorProps={{
               className: "bg-transparent shadow-none rounded-none",
             }}
@@ -35,7 +35,7 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                 activeTab === "for-you"
                   ? "text-black  border-b-4 border-black pb-1"
                   : "",
-                "  text-sm text-center pb-4  "
+                "  text-base font-semibold text-center pb-4  "
               )}
             >
               For you
@@ -47,7 +47,7 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                 activeTab === "popular"
                   ? "text-black  border-b-4 border-black pb-1"
                   : "",
-                "  text-sm text-center pb-4"
+                "  text-base font-semibold text-center pb-4"
               )}
             >
               Popular
@@ -59,7 +59,7 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                 activeTab === "trending"
                   ? "text-black  border-b-4 border-black pb-1 "
                   : "",
-                " text-sm text-center pb-4"
+                " text-base font-semibold text-center pb-4"
               )}
             >
               Trending
@@ -71,14 +71,14 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                 activeTab === "interesting"
                   ? "text-black  border-b-4 border-black pb-1 "
                   : "",
-                " text-sm text-center pb-4"
+                " text-center pb-4 font-semibold text-base"
               )}
             >
               Interesting
             </Tab>
           </TabsHeader>
-          <div>
-            {/* <SortTabs /> */}
+          <div className=" border border-t-0  rounded-xl rounded-t-none  ">
+            <SortTabs />
           </div>
         </div>
         <TabsBody className="w-full mt-3  border rounded-xl">

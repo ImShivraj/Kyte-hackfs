@@ -1,71 +1,45 @@
-import {
-  Tabs,
-  TabsHeader,
-  TabsBody,
-  Tab,
-  TabPanel,
-} from "@material-tailwind/react";
-import PostPreview from "../posts/PostPreview";
+import { useState } from "react";
+import { Tab } from "@headlessui/react";
+import clsx from "clsx";
 
 export default function SortTabs() {
-  const data = [
-    {
-      label: "HTML",
-      value: "html",
-      desc: `It really matters and then like it really doesn't matter.
-        What matters is the people who are sparked by it. And the people 
-        who are like offended by it, it doesn't matter.`,
-    },
-    {
-      label: "React",
-      value: "react",
-      desc: `Because it's about motivating the doers. Because I'm here
-        to follow my dreams and inspire other people to follow their dreams, too.`,
-    },
-    {
-      label: "Vue",
-      value: "vue",
-      desc: `We're not always in the position that we want to be at.
-        We're constantly growing. We're constantly making mistakes. We're
-        constantly trying to express ourselves and actualize our dreams.`,
-    },
-    {
-      label: "Angular",
-      value: "angular",
-      desc: `Because it's about motivating the doers. Because I'm here
-        to follow my dreams and inspire other people to follow their dreams, too.`,
-    },
-    {
-      label: "Svelte",
-      value: "svelte",
-      desc: `We're not always in the position that we want to be at.
-        We're constantly growing. We're constantly making mistakes. We're
-        constantly trying to express ourselves and actualize our dreams.`,
-    },
-  ];
+  let [categories] = useState(["All Posts", "Text", "Image", "Audio", "Video"]);
 
   return (
-    <Tabs value="html" className="max-w-[40rem]">
-      <TabsHeader
-        className="bg-transparent "
-        indicatorProps={{
-          className: "bg-blue-500/10  shadow-none text-blue-500",
-        }}
-      >
-        {data.map(({ label, value }) => (
-          <Tab key={value} value={value}>
-            {label}
-          </Tab>
-        ))}
-      </TabsHeader>
-      <TabsBody>
-        {data.map(({ value, desc }) => (
-          <TabPanel key={value} value={value}>
-            {/* {desc} */}
-            <PostPreview />
-          </TabPanel>
-        ))}
-      </TabsBody>
-    </Tabs>
+    <div className="w-full max-w-md px-2 sm:px-0  mx-auto py-4">
+      <Tab.Group>
+        <Tab.List className="flex justify-between w-full space-x-1 rounded-xl mx-auto w  px-auto">
+          {categories.map((category) => (
+            <Tab
+              key={category}
+              className={({ selected }) =>
+                clsx(
+                  "w-full rounded-full py-2.5 text-sm font-medium leading-5 ",
+                  "ring-white ring-opacity-60 ring-offset-0 focus:outline-none focus:ring-0 ",
+                  selected
+                    ? "bg-black text-white shadow"
+                    : "text-black  border border-black hover:bg-white/[0.12]  "
+                )
+              }
+            >
+              {category}
+            </Tab>
+          ))}
+        </Tab.List>
+        {/* <Tab.Panels className="mt-2">
+          {categories.map((idx) => (
+            <Tab.Panel
+              key={idx}
+              className={clsx(
+                "rounded-xl bg-white p-3",
+                "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
+              )}
+            >
+              <ul></ul>
+            </Tab.Panel>
+          ))}
+        </Tab.Panels> */}
+      </Tab.Group>
+    </div>
   );
 }
