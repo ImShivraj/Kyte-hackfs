@@ -1,14 +1,25 @@
-import Sidebar from "@components/ui/Sidebar";
+import Sidebar from "@components/UI/Sidebar";
 import CreateNewPost from "@components/posts/CreateNewPost";
 import PostPreview from "@components/posts/PostPreview";
 import React from "react";
 import SuggestedProfile from "@/src/components/home/SuggestedProfile";
 import { CgSearch } from "react-icons/cg";
 import { HiOutlineGlobeEuropeAfrica } from "react-icons/hi2";
+import { useAppStore } from "@store/app"
+import WalletSelector from "@/src/components/Shared/Login/WalletSelector";
+import useIsMounted from "@/src/utils/hooks/useIsMounted";
 
 export default function Home() {
+  const { currentProfile } = useAppStore()
+  const { mounted } = useIsMounted()
+
+  if (!mounted) {
+    return <div>Loading...</div>
+  }
+
+
   return (
-    <div className="  w-full">
+    <div className="w-full">
       <Sidebar>
         <div className=" flex items-start justify-start relative  mx-auto  ">
           <div className=" mx-2.5  z-50 w-8/12 p-6 pr-0 flex justify-start items-start">
@@ -35,16 +46,19 @@ export default function Home() {
             </div>
           </div>
           <div className=" fixed right-10 z-0 w-3/12 p-6 max-h-[96vh] h-[96vh] overflow-auto my-3 flex flex-col justify-start items-stretch ">
-            <div className=" relative mt-5 mb-2">
-              <input
-                placeholder="Search"
-                className=" bg-lightGray py-3.5 p-4 w-full rounded-2xl outline-none"
-              />
-              <CgSearch
-                className=" cursor-pointer absolute top-3.5 right-4 text-gray-400"
-                size={"1.5em"}
-              />
-            </div>
+            {
+              currentProfile ? <div className="relative mt-5 mb-2">
+                <input
+                  placeholder="Search"
+                  className=" bg-lightGray py-3.5 p-4 w-full rounded-2xl outline-none"
+                />
+                <CgSearch
+                  className=" cursor-pointer absolute top-3.5 right-4 text-gray-400"
+                  size={"1.5em"}
+                />
+              </div> : <WalletSelector withLabel />
+            }
+
             <div className="mt-2 bg-lightGray  rounded-3xl">
               <h2 className="  text-2xl font-semibold p-5">
                 Suggested for you

@@ -25,7 +25,9 @@
       "@utils*": ["src/utils*"],
       "@lib*": ["src/lib*"],
       "@generated*": ["src/graphql/generated*"],
-      "@styles*": ["src/styles*"]
+      "@styles*": ["src/styles*"],
+      "@lens*": ["src/lens*"],
+
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
