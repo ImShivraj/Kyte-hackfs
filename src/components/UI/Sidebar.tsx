@@ -140,7 +140,8 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
                 " flex items-center justify-start text-lg font-semibold my-7"
               )}
             >
-              <AiOutlinePlusCircle size={"1.5em"} /> Create Post
+              <AiOutlinePlusCircle size={"1.5em"} />{" "}
+              {!toggleSidebar && <span> Create Post</span>}
             </label>
           </div>
           {/* <div
