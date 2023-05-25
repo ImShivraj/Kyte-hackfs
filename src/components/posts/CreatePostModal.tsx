@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsFiletypeGif } from "react-icons/bs";
 import { TbPhotoPlus } from "react-icons/tb";
 import { ImAttachment } from "react-icons/im";
@@ -9,6 +9,18 @@ import pfp from "@assets/user.png";
 import clsx from "clsx";
 
 export default function CreatePostModal() {
+  const [post, setPost] = useState<string>("");
+
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setPost(event.target.value);
+    adjustTextareaHeight(event.target);
+  };
+
+  const adjustTextareaHeight = (textarea: HTMLTextAreaElement) => {
+    textarea.style.height = "auto";
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  };
+
   return (
     <div className="modal-box max-w-3xl absolute top-20 bg-white p-0 m-0 ">
       <label
@@ -18,7 +30,7 @@ export default function CreatePostModal() {
         <RxCross1 />
       </label>
       <div className=" flex flex-col  items-start justify-start gap-3 p-5 px-10 mt-6 ">
-        <div className=" w-full flex justify-between">
+        <div className=" w-full flex items-start justify-between">
           <Image width={52} src={pfp} alt="pfp" />{" "}
           <div className=" w-full">
             <div className="flex justify-between items-start w-full">
@@ -28,9 +40,9 @@ export default function CreatePostModal() {
                 // type="text"
                 name=""
                 id=""
-                // value={post}
-                // onChange={handleChange}
-                rows={1}
+                value={post}
+                onChange={handleChange}
+                rows={2}
               />
             </div>
           </div>
