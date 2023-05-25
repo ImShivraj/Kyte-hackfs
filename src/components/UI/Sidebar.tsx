@@ -28,19 +28,19 @@ const paths: Paths[] = [
     isActive: false,
   },
   {
-    path: "/dashboard/notifications",
+    path: "/notifications",
     title: "Notifications",
     icon: HiBell,
     isActive: false,
   },
   {
-    path: "/dashboard/saved",
+    path: "/saved",
     title: "Saved",
     icon: HiBookmark,
     isActive: false,
   },
   {
-    path: "/dashboard/myprofile",
+    path: "/myprofile",
     title: "My Profile",
     icon: BsFillPersonFill,
     isActive: false,
