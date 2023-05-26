@@ -11,6 +11,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import { RiSettings5Fill } from "react-icons/ri";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { TbBellFilled } from "react-icons/tb";
 
 interface Paths {
   path: string;
@@ -156,8 +157,8 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
             {!toggleSidebar && <span className=" mx-2 ">Minimize </span>}
           </div> */}
 
-          <div className=" mt-auto w-full">
-            <div className="flex items-center gap-3 w-full">
+          <div className=" mt-auto w-full  ">
+            <div className="flex items-center gap-2 w-full">
               <Image src={user} alt="user" />
               <div className=" flex items-center justify-between w-full">
                 <div className="ml-2 w-full">
@@ -168,7 +169,8 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
                     @lorem.ipsum
                   </p>
                 </div>
-                <div className=" ml-3">
+                <div className=" ml-3 flex items-center gap-2">
+                  <TbBellFilled size={"1.5em"} color="#B0B0B0" />
                   <RiSettings5Fill size={"1.5em"} color="#B0B0B0" />
                 </div>
               </div>

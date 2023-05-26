@@ -14,10 +14,10 @@ export default function UserProfile() {
   const router = useRouter();
 
   return (
-    <div className=" w-full flex flex-col mx-auto rounded-3xl px-3  ">
-      <div className=" flex items-center justify-start gap-5 mb-4">
+    <div className=" w-full  flex flex-col mx-auto rounded-3xl px-3  ">
+      <div className=" w-full py-2 flex items-center justify-start gap-5 mb-2">
         <div
-          className=" -rotate-90 cursor-pointer "
+          className=" -rotate-90 cursor-pointer transition ease-in-out active:scale-95 "
           onClick={() => router.push("/")}
         >
           <BsTriangleFill size={"2em"} color="black" />
@@ -57,7 +57,7 @@ export default function UserProfile() {
               </button>
             </div>
           </div>
-          <div className=" mx-12 pt-4 ">
+          <div className=" mx-12 pt-2 ">
             <h1 className=" text-black text-2xl font-semibold">Lorem Ipsum</h1>
             <span className=" font-semibold text-lightGratText2">
               @lorem.ipsum
