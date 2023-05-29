@@ -11,6 +11,7 @@ import MessageUser from "../message/MessageUser";
 import { CgSearch } from "react-icons/cg";
 import PostPreview from "../posts/PostPreview";
 import SortTabs from "./SortTabs";
+import Feed from "@components/Feed/Feed";
 
 interface Props {
   activeTab: string; // Replace 'StateType' with the actual type of the state
@@ -82,23 +83,24 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
           </div>
         </div>
         <TabsBody className="w-full mt-3  border rounded-xl">
-          <TabPanel className="w-full " key={"for-you"} value={"for-you"}>
-            <div className="  p-3  rounded-xl ">
-              <PostPreview />
+          <TabPanel className="w-full p-0" key={"for-you"} value={"for-you"}>
+            <div className="rounded-xl ">
+              {/* <PostPreview /> */}
+              <Feed />
             </div>
           </TabPanel>
           <TabPanel key={"popular"} value={"popular"}>
-            <div className="  p-3  rounded-xl ">
+            <div className=" rounded-xl ">
               <PostPreview />
             </div>
           </TabPanel>
           <TabPanel key={"trending"} value={"trending"}>
-            <div className="  p-3  rounded-xl ">
+            <div className="rounded-xl ">
               <PostPreview />
             </div>
           </TabPanel>
           <TabPanel key={"interesting"} value={"interesting"}>
-            <div className="  p-3  rounded-xl ">
+            <div className="rounded-xl ">
               <PostPreview />
             </div>
           </TabPanel>

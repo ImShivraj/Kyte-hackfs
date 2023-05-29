@@ -40,7 +40,7 @@ export const SIGN_WALLET = "Please sign in your wallet."
 
 export const RARIBLE_URL = "https://rarible.com"
 
-export const STATIC_ASSETS_URL = "https://assets.lenster.xyz"
+export const STATIC_ASSETS_URL = "https://static-assets.lenster.xyz"
 export const STATIC_IMAGES_URL = `${STATIC_ASSETS_URL}/images`
 
 export const ALLOWED_IMAGE_TYPES = [

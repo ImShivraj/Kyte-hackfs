@@ -1,4 +1,4 @@
-import { CustomFiltersTypes, PublicationSortCriteria } from "@gql/generated";
+import { CustomFiltersTypes, PublicationSortCriteria } from "@lens/generated";
 import { useAppStore } from "@store/app";
 import { useRouter } from "next/router";
 import SinglePublication from "@/src/components/publication/SinglePublication";
@@ -8,7 +8,7 @@ import { useState } from "react";
 import type { FeedItem } from "lens";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Card } from "@components/UI/Card";
-import { KonnektrPublication } from "src/types";
+import { KytePublication } from "src/types";
 import InfiniteLoader from "../UI/InfiniteLoader";
 
 const feedItems = [
@@ -10915,7 +10915,7 @@ const Feed = () => {
           <SinglePublication
             key={`${publication?.root.id}_${index}`}
             feedItem={publication as FeedItem}
-            publication={publication.root as KonnektrPublication}
+            publication={publication.root as KytePublication}
           />
         ))}
       </Card>
