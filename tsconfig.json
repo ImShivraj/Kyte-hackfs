@@ -27,6 +27,7 @@
       "@generated*": ["src/graphql/generated*"],
       "@styles*": ["src/styles*"],
       "@lens*": ["src/lens*"],
+      "@types*": ["src/types*"],
 
     }
   },

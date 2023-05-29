@@ -1,14 +1,14 @@
-import { KonnektrPublication } from "src/types"
+import { KytePublication } from "src/types"
 import { create } from "zustand"
 interface ModalState {
     showAuthModal: boolean
     setShowAuthModal: (showAuthModal: boolean) => void
     showReportModal: boolean
-    reportPublication: KonnektrPublication | null
+    reportPublication: KytePublication | null
     reportConfig: any
     setShowReportModal: (
         showReportModal: boolean,
-        reportPublication: KonnektrPublication | null,
+        reportPublication: KytePublication | null,
         reportConfig?: any
     ) => void
     showStatusModal: boolean

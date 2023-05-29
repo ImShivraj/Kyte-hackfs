@@ -6580,7 +6580,7 @@ internal-slot@^1.0.3, internal-slot@^1.0.4, internal-slot@^1.0.5:
     has "^1.0.3"
     side-channel "^1.0.4"
 
-interweave@^13.1.0:
+interweave@^13.0.0:
   version "13.1.0"
   resolved "https://registry.yarnpkg.com/interweave/-/interweave-13.1.0.tgz#4b7a0a87a7eb32001bef64525f68d95296dee03c"
   integrity sha512-JIDq0+2NYg0cgL7AB26fBcV0yZdiJvPDBp+aF6k8gq6Cr1kH5Gd2/Xqn7j8z+TGb8jCWZn739jzalCz+nPYwcA==
@@ -7104,7 +7104,7 @@ language-tags@=1.0.5:
   dependencies:
     language-subtag-registry "~0.3.2"
 
-lens@*:
+lens@^0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/lens/-/lens-0.0.2.tgz#886a4e02d08712c0ba7d043239cfda2bb4d5668c"
   integrity sha512-3Lug+3Dj5I++vsbYod+yAqHjyHQHweJcXYvpFjRhytyFQ331gyEa9kje55GPMgGvVRs9A2I9q48u4lp41e/t6A==

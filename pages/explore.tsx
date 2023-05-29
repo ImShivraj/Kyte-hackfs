@@ -1,4 +1,4 @@
-import Sidebar from "@components/ui/Sidebar";
+import Sidebar from "@components/UI/Sidebar";
 import PostPreview from "@components/posts/PostPreview";
 import React, { useState } from "react";
 import SuggestedProfile from "@/src/components/home/SuggestedProfile";
