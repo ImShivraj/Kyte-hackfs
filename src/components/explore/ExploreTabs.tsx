@@ -20,10 +20,10 @@ interface Props {
 const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
     return (
         <>
-            <Tabs value={activeTab} className="   w-full  rounded-xl ">
+            <Tabs value={activeTab} className="   w-full  rounded-xl  ">
                 <div className=" ">
                     <TabsHeader
-                        className=" border-b border-blue-gray-50 p-0 flex  items-center justify-between md:gap-x-20  mt-6 border rounded-xl rounded-b-none pt-5"
+                        className=" border-b md:border-b border-blue-gray-50 p-0 flex  items-center justify-between md:gap-x-20  mt-0 md:mt-6 md:border rounded-xl rounded-b-none pt-5"
                         indicatorProps={{
                             className:
                                 "bg-transparent shadow-none rounded-none",
@@ -34,9 +34,9 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                             onClick={() => setActiveTab("for-you")}
                             className={clsx(
                                 activeTab === "for-you"
-                                    ? "text-black  border-b-4 border-black pb-1  "
+                                    ? "text-black  border-b-4 border-black pb-1 md:bg-transparent bg-gray-50 "
                                     : "",
-                                "  text-base font-semibold text-center pb-4  "
+                                " text-center  font-semibold text-base pt-3 pb-2 md:pt-0 md:pb-4"
                             )}
                         >
                             For you
@@ -46,9 +46,9 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                             onClick={() => setActiveTab("popular")}
                             className={clsx(
                                 activeTab === "popular"
-                                    ? "text-black  border-b-4 border-black pb-1"
+                                    ? "text-black  border-b-4 border-black pb-1 md:bg-transparent bg-gray-50 "
                                     : "",
-                                "  text-base font-semibold text-center pb-4"
+                                " text-center  font-semibold text-base pt-3 pb-2 md:pt-0 md:pb-4"
                             )}
                         >
                             Popular
@@ -58,9 +58,9 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                             onClick={() => setActiveTab("trending")}
                             className={clsx(
                                 activeTab === "trending"
-                                    ? "text-black  border-b-4 border-black pb-1 "
+                                    ? "text-black  border-b-4 border-black pb-1 md:bg-transparent bg-gray-50 "
                                     : "",
-                                " text-base font-semibold text-center pb-4"
+                                " text-center  font-semibold text-base pt-3 pb-2 md:pt-0 md:pb-4"
                             )}
                         >
                             Trending
@@ -70,40 +70,40 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                             onClick={() => setActiveTab("interesting")}
                             className={clsx(
                                 activeTab === "interesting"
-                                    ? "text-black  border-b-4 border-black pb-1 "
+                                    ? "text-black  border-b-4 border-black pb-1 md:bg-transparent bg-gray-50 "
                                     : "",
-                                " text-center pb-4 font-semibold text-base"
+                                " text-center  font-semibold text-base pt-3 pb-2 md:pt-0 md:pb-4"
                             )}
                         >
                             Interesting
                         </Tab>
                     </TabsHeader>
-                    <div className=" border border-t-0  rounded-xl rounded-t-none  ">
+                    <div className=" md:block hidden border border-t-0  rounded-xl rounded-t-none  ">
                         <SortTabs />
                     </div>
                 </div>
-                <TabsBody className="w-full mt-3  border rounded-xl">
+                <TabsBody className="w-full md:mt-3 md:border   md:rounded-xl md:rounded-t-one border-t-0 ">
                     <TabPanel
                         className="w-full "
                         key={"for-you"}
                         value={"for-you"}
                     >
-                        <div className="  p-3  rounded-xl ">
+                        <div className="  md:p-3 md:rounded-xl ">
                             <PostPreview />
                         </div>
                     </TabPanel>
                     <TabPanel key={"popular"} value={"popular"}>
-                        <div className="  p-3  rounded-xl ">
+                        <div className="  md:p-3 md:rounded-xl ">
                             <PostPreview />
                         </div>
                     </TabPanel>
                     <TabPanel key={"trending"} value={"trending"}>
-                        <div className="  p-3  rounded-xl ">
+                        <div className="  md:p-3 md:rounded-xl ">
                             <PostPreview />
                         </div>
                     </TabPanel>
                     <TabPanel key={"interesting"} value={"interesting"}>
-                        <div className="  p-3  rounded-xl ">
+                        <div className="  md:p-3 md:rounded-xl ">
                             <PostPreview />
                         </div>
                     </TabPanel>

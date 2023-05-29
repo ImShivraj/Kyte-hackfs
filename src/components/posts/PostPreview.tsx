@@ -9,7 +9,7 @@ import PostActions from "./PostActions"
 
 function PostPreview() {
     return (
-        <div className="  border-b mb-1 py-3 md:py-5">
+        <div className="  border-b md:border-b-0 mb-1 py-3 md:pb-0 md:py-5">
             {/* hover:bg-lightGray  */}
             <div className=" relative  ">
                 <div className="flex flex-col items-start gap-5">
