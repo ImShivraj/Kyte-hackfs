@@ -36,7 +36,7 @@ function PostActions() {
                 <span className=" font-semibold">&nbsp;999</span>
             </div>
 
-            <div className="dropdown dropdown-right">
+            <div className="dropdown dropdown-left md:dropdown-right">
                 <label tabIndex={0} className="">
                     <div className=" cursor-pointer flex  text-[#F97878]">
                         <div className="transition ease-in-out active:scale-95">
@@ -47,7 +47,7 @@ function PostActions() {
                 </label>
                 <ul
                     tabIndex={0}
-                    className="dropdown-content menu p-2 shadow-md bg-white rounded-box w-72 mt-4 ml-2 py-2 font-semibold text-sm "
+                    className="dropdown-content menu  p-2 shadow-md bg-white rounded-box w-72 mt-4 md:ml-2 py-2 font-semibold text-sm "
                 >
                     <div className=" py-2 px-4 flex items-center gap-3 cursor-pointer hover:bg-gray-50 rounded-md transition ease-in-out active:scale-95">
                         <FiLink size={"1.5em"} />

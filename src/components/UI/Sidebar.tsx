@@ -91,7 +91,7 @@ const Sidebar = () => {
 
     return (
         <>
-            <div className="drawer drawer-mobile fixed left-0 z-10">
+            <div className="drawer drawer-mobile hidden md:block fixed left-0 z-10">
                 <div className="drawer-side">
                     <label
                         htmlFor="my-drawer-2"
