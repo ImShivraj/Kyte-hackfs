@@ -9,7 +9,7 @@ import PostActions from "./PostActions"
 
 function PostPreview() {
     return (
-        <div className="  border-b -mb-4 md:-mb-0 py-3 md:py-5">
+        <div className="  border-b mb-1 py-3 md:py-5">
             {/* hover:bg-lightGray  */}
             <div className=" relative  ">
                 <div className="flex flex-col items-start gap-5">
@@ -55,7 +55,7 @@ function PostPreview() {
                         </div>
                     </div>
                     <div className=" ml-10 px-3">
-                        <p className=" py-0  md:pt-2 text-md">
+                        <p className=" -mt-2 py-0 md:pb-1 text-base">
                             Sed ut perspiciatis unde omnis iste na, error sit
                             voluptatem accusanti dolorog laudantium, tota rem,
                             eaque ipsa qn ab illo invee veritatis et quasi
@@ -110,7 +110,7 @@ function PostPreview() {
                     </div>
                 </div>
                 <div className=" ml-10 px-3">
-                    <p className=" py-0  md:pt-2 text-md">
+                    <p className=" -mt-2 py-0 md:pb-1 text-base">
                         Sed ut perspiciatis unde omnis iste na, error sit
                         voluptatem accusanti dolorog laudantium, tota rem, eaque
                         ipsa qn ab illo invee veritatis et quasi architect

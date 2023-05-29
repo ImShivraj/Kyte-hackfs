@@ -8,6 +8,10 @@ import { HiOutlineGlobeEuropeAfrica } from "react-icons/hi2"
 import { useAppStore } from "@store/app"
 import WalletSelector from "@/src/components/Shared/Login/WalletSelector"
 import useIsMounted from "@/src/utils/hooks/useIsMounted"
+import Image from "next/image"
+import user from "@/src/assets/user.png"
+import brand1 from "@/src/assets/brand1.png"
+import brand2 from "@/src/assets/brand2.png"
 
 export default function Home() {
     const { currentProfile } = useAppStore()
@@ -21,30 +25,43 @@ export default function Home() {
         <div className="w-full mb-0">
             {/* <DashboardLayout> */}
             <div className=" flex items-start justify-start relative  mx-auto  ">
-                <div className=" mx-2.5  z-50 w-10/12 p-6 pr-0 flex justify-start items-start">
-                    <div className="">
-                        <div className="">
-                            <h1 className=" text-4xl font-semibold md:pl-10 mb-5 mt-2 ">
+                <div className=" md:mx-2.5 z-50 w-full md:w-10/12  md:p-6 pr-0 flex justify-start items-start">
+                    <div className=" relative">
+                        {/* md:ml-8 md:w-[49.7%] shadow-md md:shadow-none*/}
+                        <div className=" flex justify-between py-2 items-center md:relative fixed bg-lightGray md:bg-inherit w-full z-40">
+                            <h1 className=" hidden md:flex text-3xl md:text-4xl font-semibold px-3 md:pl-10 mb-5 mt-2 ">
                                 Home
                             </h1>
+
+                            <div className=" md:hidden px-3 flex items-center justify-start gap-5">
+                                <Image src={brand1} alt="user" />
+                                <span className=" text-3xl font-bold">
+                                    Kyte
+                                </span>
+                            </div>
+
+                            <div className=" md:hidden px-3">
+                                <Image width={45} src={user} alt="user" />
+                            </div>
                         </div>
-                        <div className=" px-8 py-6 border rounded-xl mx-3 md:mx-8 my-2.5">
-                            <CreateNewPost />
+                        {/* md:mt-20  */}
+                        <div className=" mt-20 md:mt-0  px-2 md:px-8 py-3 md:py-6 border rounded-xl mx-3 md:mx-8 my-2.5">
+                            <CreateNewPost width={"w-32 mr-auto "} />
                         </div>
                         <div className="">
-                            <div className=" px-8 py-6 border rounded-xl mx-3 md:mx-8 my-2.5 ">
+                            <div className=" px-3.5 md:px-8 md:py-6 md:border rounded-xl mx-0 md:mx-8 my-2.5 ">
                                 <PostPreview />
                             </div>
-                            <div className=" px-8 py-6 border rounded-xl mx-3 md:mx-8 my-2.5 ">
+                            <div className=" px-3.5 md:px-8 md:py-6 md:border rounded-xl mx-0 md:mx-8 my-2.5 ">
                                 <PostPreview />
                             </div>
-                            <div className=" px-8 py-6 border rounded-xl mx-3 md:mx-8 my-2.5 ">
+                            <div className=" px-3.5 md:px-8 md:py-6 md:border rounded-xl mx-0 md:mx-8 my-2.5 ">
                                 <PostPreview />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className=" fixed right-10 z-0 w-3/12 p-6 max-h-[96vh] h-[96vh] overflow-auto my-3 flex flex-col justify-start items-stretch ">
+                <div className="  fixed right-10 z-0 w-3/12 p-6 max-h-[96vh] h-[96vh] overflow-auto my-3 hidden md:flex flex-col justify-start items-stretch ">
                     {currentProfile ? (
                         <div className="relative mt-5 mb-2">
                             <input
