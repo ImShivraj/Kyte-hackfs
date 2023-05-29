@@ -22,10 +22,10 @@ export default function Home() {
     }
 
     return (
-        <div className="w-full mb-0">
+        <div className="w-full mb-0 bg-white ">
             {/* <DashboardLayout> */}
             <div className=" flex items-start justify-start relative  mx-auto  ">
-                <div className=" md:mx-2.5 z-50 w-full md:w-10/12  md:p-6 pr-0 flex justify-start items-start">
+                <div className=" md:mx-2.5 z-50 w-full md:w-10/12  md:p-3 pr-0 flex justify-start items-start">
                     <div className=" relative">
                         {/* md:ml-8 md:w-[49.7%] shadow-md md:shadow-none*/}
                         <div className=" flex justify-between py-2 items-center md:relative fixed bg-lightGray md:bg-inherit w-full z-40">

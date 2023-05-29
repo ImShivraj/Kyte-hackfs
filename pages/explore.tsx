@@ -13,7 +13,7 @@ import CreateNewPost from "@/src/components/posts/CreateNewPost"
 export default function Explore() {
     const [activeTab, setActiveTab] = useState("for-you")
     return (
-        <div className="w-full mb-0 ">
+        <div className="w-full mb-0 bg-white">
             <div className=" flex items-start justify-start relative  mx-auto  ">
                 <div className=" md:mx-2.5 z-50 w-full md:w-10/12  md:p-6 pr-0 flex justify-start items-start">
                     <div className=" relative ">
