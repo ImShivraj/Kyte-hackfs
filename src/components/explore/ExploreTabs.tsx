@@ -1,113 +1,140 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import {
-  Tabs,
-  TabsHeader,
-  TabsBody,
-  Tab,
-  TabPanel,
-} from "@material-tailwind/react";
-import clsx from "clsx";
-import MessageUser from "../message/MessageUser";
-import { CgSearch } from "react-icons/cg";
-import PostPreview from "../posts/PostPreview";
-import SortTabs from "./SortTabs";
-import Feed from "@components/Feed/Feed";
+    Tabs,
+    TabsHeader,
+    TabsBody,
+    Tab,
+    TabPanel,
+} from "@material-tailwind/react"
+import clsx from "clsx"
+import MessageUser from "../message/MessageUser"
+import { CgSearch } from "react-icons/cg"
+import PostPreview from "../posts/PostPreview"
+import SortTabs from "./SortTabs"
+import Feed from "@components/Feed/Feed"
 
 interface Props {
-  activeTab: string; // Replace 'StateType' with the actual type of the state
-  setActiveTab: React.Dispatch<React.SetStateAction<string>>; // Replace 'StateType' with the actual type of the state
+    activeTab: string // Replace 'StateType' with the actual type of the state
+    setActiveTab: React.Dispatch<React.SetStateAction<string>> // Replace 'StateType' with the actual type of the state
 }
 
 const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
-  return (
-    <>
-      <Tabs value={activeTab} className="   w-full  rounded-xl ">
-        <div className=" ">
-          <TabsHeader
-            className=" border-b border-blue-gray-50 p-0  mt-6 border rounded-xl rounded-b-none pt-5"
-            indicatorProps={{
-              className: "bg-transparent shadow-none rounded-none",
-            }}
-          >
-            <Tab
-              value={"for-you"}
-              onClick={() => setActiveTab("for-you")}
-              className={clsx(
-                activeTab === "for-you"
-                  ? "text-black  border-b-4 border-black pb-1"
-                  : "",
-                "  text-base font-semibold text-center pb-4  "
-              )}
-            >
-              For you
-            </Tab>
-            <Tab
-              value={"popular"}
-              onClick={() => setActiveTab("popular")}
-              className={clsx(
-                activeTab === "popular"
-                  ? "text-black  border-b-4 border-black pb-1"
-                  : "",
-                "  text-base font-semibold text-center pb-4"
-              )}
-            >
-              Popular
-            </Tab>
-            <Tab
-              value={"trending"}
-              onClick={() => setActiveTab("trending")}
-              className={clsx(
-                activeTab === "trending"
-                  ? "text-black  border-b-4 border-black pb-1 "
-                  : "",
-                " text-base font-semibold text-center pb-4"
-              )}
-            >
-              Trending
-            </Tab>
-            <Tab
-              value={"interesting"}
-              onClick={() => setActiveTab("interesting")}
-              className={clsx(
-                activeTab === "interesting"
-                  ? "text-black  border-b-4 border-black pb-1 "
-                  : "",
-                " text-center pb-4 font-semibold text-base"
-              )}
-            >
-              Interesting
-            </Tab>
-          </TabsHeader>
-          <div className=" border border-t-0  rounded-xl rounded-t-none  ">
-            <SortTabs />
-          </div>
-        </div>
-        <TabsBody className="w-full mt-3  border rounded-xl">
-          <TabPanel className="w-full p-0" key={"for-you"} value={"for-you"}>
-            <div className="rounded-xl ">
-              {/* <PostPreview /> */}
-              <Feed />
-            </div>
-          </TabPanel>
-          <TabPanel key={"popular"} value={"popular"}>
-            <div className=" rounded-xl ">
-              <PostPreview />
-            </div>
-          </TabPanel>
-          <TabPanel key={"trending"} value={"trending"}>
-            <div className="rounded-xl ">
-              <PostPreview />
-            </div>
-          </TabPanel>
-          <TabPanel key={"interesting"} value={"interesting"}>
-            <div className="rounded-xl ">
-              <PostPreview />
-            </div>
-          </TabPanel>
-        </TabsBody>
-      </Tabs>
-    </>
-  );
-};
+    return (
+        <>
+            <Tabs value={activeTab} className="  w-full  rounded-xl mt-5 ">
+                <div className=" w-full relative mb-0 xs320:fixed xs320:top-0 md:relative z-[50] bg-white  ">
+                    <input
+                        placeholder="Search"
+                        className=" bg-lightGray py-3.5 p-4 w-full rounded-2xl outline-none"
+                    />
+                    <CgSearch
+                        className=" cursor-pointer absolute top-3.5 right-4 text-gray-400"
+                        size={"1.5em"}
+                    />
+                </div>
+                <div className=" xs320:fixed xs320:top-10 -screen w-full  bg-white z-[49] md900:relative -mt-2 ">
+                    <TabsHeader
+                        className="border border-b border-blue-gray-50 p-0 xs320:mt-2 md900:-mt-6 xs320:border-t-0 md900:border-t rounded-xl rounded-b-none pt-5"
+                        indicatorProps={{
+                            className:
+                                "bg-transparent shadow-none rounded-none",
+                        }}
+                    >
+                        <Tab
+                            value={"for-you"}
+                            onClick={() => setActiveTab("for-you")}
+                            className={clsx(
+                                activeTab === "for-you"
+                                    ? "text-black  border-b-4 border-black pb-1 xs320:bg-lightGray md900:bg-white xs320:pt-4 md900:pt-1"
+                                    : " xs320:pt-4 md900:pt-1",
+                                "  text-base font-semibold text-center pb-4  "
+                            )}
+                        >
+                            For you
+                        </Tab>
+                        <Tab
+                            value={"popular"}
+                            onClick={() => setActiveTab("popular")}
+                            className={clsx(
+                                activeTab === "popular"
+                                    ? "text-black  border-b-4 border-black pb-1 xs320:bg-lightGray md900:bg-white xs320:pt-4 md900:pt-1"
+                                    : " xs320:pt-4 md900:pt-1",
+                                "  text-base font-semibold text-center pb-4  "
+                            )}
+                        >
+                            Popular
+                        </Tab>
+                        <Tab
+                            value={"trending"}
+                            onClick={() => setActiveTab("trending")}
+                            className={clsx(
+                                activeTab === "trending"
+                                    ? "text-black  border-b-4 border-black pb-1 xs320:bg-lightGray md900:bg-white xs320:pt-4 md900:pt-1"
+                                    : " xs320:pt-4 md900:pt-1",
+                                "  text-base font-semibold text-center pb-4  "
+                            )}
+                        >
+                            Trending
+                        </Tab>
+                        <Tab
+                            value={"interesting"}
+                            onClick={() => setActiveTab("interesting")}
+                            className={clsx(
+                                activeTab === "interesting"
+                                    ? "text-black  border-b-4 border-black pb-1 xs320:bg-lightGray md900:bg-white xs320:pt-4 md900:pt-1"
+                                    : " xs320:pt-4 md900:pt-1",
+                                "  text-base font-semibold text-center pb-4  "
+                            )}
+                        >
+                            Interesting
+                        </Tab>
+                    </TabsHeader>
+                    <div className=" hidden md900:flex border border-t-0  rounded-xl rounded-t-none  ">
+                        <SortTabs />
+                    </div>
+                </div>
+                <TabsBody className=" xs320:mt-24 md900:mt-12 w-full  border xs320:rounded-none md900:rounded-xl">
+                    <TabPanel
+                        className="w-full p-0 md900:h-[67vh] xl1450:h-[75.5vh] overflow-scroll scrollbar-hide  "
+                        key={"for-you"}
+                        value={"for-you"}
+                    >
+                        {/* max-w-screen-xs */}
+                        <div className="md900:rounded-xl xs320:rounded-none xs320:w-screen md900:max-w-full ">
+                            <Feed />
+                        </div>
+                    </TabPanel>
+                    <TabPanel
+                        className="w-full p-0 h-[80vh] overflow-scroll scrollbar-hide "
+                        key={"popular"}
+                        value={"popular"}
+                    >
+                        <div className=" rounded-xl ">
+                            <PostPreview />
+                        </div>
+                    </TabPanel>
+                    <TabPanel
+                        className="w-full p-0 h-[80vh] overflow-scroll scrollbar-hide "
+                        key={"trending"}
+                        value={"trending"}
+                    >
+                        <div className="rounded-xl ">
+                            <PostPreview />
+                        </div>
+                    </TabPanel>
+                    <TabPanel
+                        className="w-full p-0 md850:h-[70vh] xl1450:h-[80vh] overflow-scroll scrollbar-hide "
+                        key={"interesting"}
+                        value={"interesting"}
+                    >
+                        <div className="rounded-xl ">
+                            <PostPreview />
+                        </div>
+                    </TabPanel>
+                </TabsBody>
+            </Tabs>
+        </>
+    )
+}
 
-export default ExploreTabs;
+export default ExploreTabs
