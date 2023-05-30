@@ -20,7 +20,9 @@
 
 body {
   background-color: #fff;
+  background: #fff;
   color: #181A1E;
+  /* margin-bottom: -200px; */
   font-family: 'Montserrat', sans-serif;
   /* height: 100vh; */
 }

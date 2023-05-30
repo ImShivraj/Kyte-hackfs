@@ -91,86 +91,82 @@ const Sidebar = () => {
 
     return (
         <>
-            <div className="drawer drawer-mobile hidden md:block fixed left-0 z-10">
+            {/* <div className="drawer drawer-mobile fixed left-0 z-10">
                 <div className="drawer-side">
                     <label
                         htmlFor="my-drawer-2"
                         className="drawer-overlay"
-                    ></label>
-                    <div
+                    ></label> */}
+            <div
+                className={clsx(
+                    toggleSidebar
+                        ? " w-20 md:w-24 items-center "
+                        : " items-start pl-10",
+                    " bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content items-start drawer fixed left-0 w-auto z-50 "
+                )}
+            >
+                <div className={clsx(toggleSidebar && " px-2 ", "py-2")}>
+                    <div className=" flex items-center justify-center font-semibold cursor-pointer">
+                        <Image
+                            src={logo}
+                            alt="logo"
+                            className={clsx(!toggleSidebar && "mr-3")}
+                        />
+                        {!toggleSidebar && (
+                            <span className=" text-5xl text-white ">Kyte</span>
+                        )}
+                    </div>
+                </div>
+                <div className=" mt-10 ">
+                    <div>{links}</div>
+                    <label
+                        htmlFor="my-modal"
                         className={clsx(
-                            toggleSidebar
-                                ? " w-20 md:w-24 items-center "
-                                : " md:w-72 lg:w-80 items-start pl-10",
-                            " bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content items-start  drawer drawer-mobile  "
+                            " text-textSidebar  cursor-pointer",
+                            " gap-3 items-center justify-start",
+                            " flex items-center justify-start text-lg font-semibold my-7"
                         )}
                     >
-                        <div
-                            className={clsx(toggleSidebar && " px-2 ", "py-2")}
-                        >
-                            <div className=" flex items-center justify-center font-semibold cursor-pointer">
-                                <Image
-                                    src={logo}
-                                    alt="logo"
-                                    className={clsx(!toggleSidebar && "mr-3")}
-                                />
-                                {!toggleSidebar && (
-                                    <span className=" text-5xl text-white ">
-                                        Kyte
-                                    </span>
-                                )}
-                            </div>
-                        </div>
-                        <div className=" mt-10 ">
-                            <div>{links}</div>
-                            <label
-                                htmlFor="my-modal"
-                                className={clsx(
-                                    " text-textSidebar  cursor-pointer",
-                                    " gap-3 items-center justify-start",
-                                    " flex items-center justify-start text-lg font-semibold my-7"
-                                )}
-                            >
-                                <AiOutlinePlusCircle size={"1.5em"} />{" "}
-                                {!toggleSidebar && <span> Create Post</span>}
-                            </label>
-                        </div>
+                        <AiOutlinePlusCircle size={"1.5em"} />{" "}
+                        {!toggleSidebar && <span> Create Post</span>}
+                    </label>
+                </div>
 
-                        <div className=" mt-auto w-full  ">
-                            <div
-                                className={clsx(
-                                    toggleSidebar && "justify-center",
-                                    "flex items-center gap-2 w-full"
-                                )}
-                            >
-                                <Image src={user} alt="user" />
-                                {!toggleSidebar && (
-                                    <div className=" flex items-center justify-between w-full">
-                                        <div className="ml-2 w-full">
-                                            <h3 className=" font-semibold text-lg text-white">
-                                                Lorem Ipsum
-                                            </h3>
-                                            <p className=" text-sm text-gray-400 font-semibold ">
-                                                @lorem.ipsum
-                                            </p>
-                                        </div>
-                                        <div className=" ml-3 flex items-center gap-2">
-                                            <TbBellFilled
-                                                size={"1.5em"}
-                                                color="#B0B0B0"
-                                            />
-                                            <RiSettings5Fill
-                                                size={"1.5em"}
-                                                color="#B0B0B0"
-                                            />
-                                        </div>
-                                    </div>
-                                )}
+                <div className=" mt-auto w-full  ">
+                    <div
+                        className={clsx(
+                            toggleSidebar && "justify-center",
+                            "flex items-center gap-2 w-full"
+                        )}
+                    >
+                        <Image src={user} alt="user" />
+                        {!toggleSidebar && (
+                            <div className=" flex items-center justify-between w-full">
+                                <div className="ml-2 w-full">
+                                    <h3 className=" font-semibold text-lg text-white">
+                                        Lorem Ipsum
+                                    </h3>
+                                    <p className=" text-sm text-gray-400 font-semibold ">
+                                        @lorem.ipsum
+                                    </p>
+                                </div>
+                                <div className=" ml-3 flex items-center gap-2">
+                                    <TbBellFilled
+                                        size={"1.5em"}
+                                        color="#B0B0B0"
+                                    />
+                                    <RiSettings5Fill
+                                        size={"1.5em"}
+                                        color="#B0B0B0"
+                                    />
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </div>
             </div>
+            {/* </div>
+            </div> */}
         </>
     )
 }
