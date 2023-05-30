@@ -90,15 +90,21 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                     >
                         <div className="  md:p-3 md:rounded-xl ">
                             <PostPreview />
+                            <PostPreview />
+                            <PostPreview />
                         </div>
                     </TabPanel>
                     <TabPanel key={"popular"} value={"popular"}>
                         <div className="  md:p-3 md:rounded-xl ">
                             <PostPreview />
+                            <PostPreview />
+                            <PostPreview />
                         </div>
                     </TabPanel>
                     <TabPanel key={"trending"} value={"trending"}>
                         <div className="  md:p-3 md:rounded-xl ">
+                            <PostPreview />
+                            <PostPreview />
                             <PostPreview />
                         </div>
                     </TabPanel>
