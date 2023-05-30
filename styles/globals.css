@@ -1,22 +1,20 @@
-@import '@rainbow-me/rainbowkit/styles.css';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import "@rainbow-me/rainbowkit/styles.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --sidebar-bg: #181A1E;
-  --sidebar-text: #696b6d;
-  --sidebar-text-active: #FFFFFF;
-  --light-gray: #F8F8F8;
-  --light-green: #83B08C;
-  --light-green2: #B8D9BE;
-  --light-gray-text1: #898989;
-  --light-gray-text2: #B0B0B0;
+    --sidebar-bg: #181a1e;
+    --sidebar-text: #696b6d;
+    --sidebar-text-active: #ffffff;
+    --light-gray: #f8f8f8;
+    --light-green: #83b08c;
+    --light-green2: #b8d9be;
+    --light-gray-text1: #898989;
+    --light-gray-text2: #b0b0b0;
 }
-
 
 body {
   background-color: #fff;
@@ -28,39 +26,46 @@ body {
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 /* For IE, Edge and Firefox */
 .scrollbar-hide {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .chat-wallpaper {
-  /* background-image: url('../public/chat-wallpaper.png'); */
-  background-image: url('../public/chat_wallpaper_.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
+    /* background-image: url('../public/chat-wallpaper.png'); */
+    background-image: url("../public/chat_wallpaper_.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .hide {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 .banner {
-  background-image: url('../public/banner.jpg');
-  /* background-image: url('../src/assets/banner.png'); */
-  background-size: cover;
-  background-position: bottom;
-  /* background-size: 100% 280px; */
-  /* background-repeat: no-repeat; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 280px;
+    background-image: url("../public/banner.jpg");
+    /* background-image: url('../src/assets/banner.png'); */
+    background-size: cover;
+    background-position: bottom;
+    /* background-size: 100% 280px; */
+    /* background-repeat: no-repeat; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 280px;
+}
+
+.linkify a {
+    color: blue;
+}
+
+.linkify a:hover {
+    color: blue;
 }

@@ -1,15 +1,15 @@
 // @ts-ignore
 import type { Comment, Mirror, Post } from "lens"
 
-export type KonnektrPublication = Post & Mirror & Comment
+export type KytePublication = Post & Mirror & Comment
 
-export interface KonnektrAttachment {
+export interface KyteAttachment {
     item: string
     type: string
     altTag: string
 }
-export interface NewKonnektrAttachment
-    extends Omit<KonnektrAttachment, "item"> {
+export interface NewKyteAttachment
+    extends Omit<KyteAttachment, "item"> {
     id: string
     item?: string
     previewItem?: string
