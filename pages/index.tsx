@@ -22,13 +22,9 @@ export default function Home() {
     }
 
     return (
-        // <div className="w-full mb-0 bg-white relative">
         <div className=" relative flex items-start justify-between w-full bg-green-20 min-h-screen mb-16 ">
-            {/* <div className=" flex items-start justify-start relative  mx-auto  "> */}
-            {/* <div className=" md:mx-2.5 z-50 w-full md:w-10/12  md:p-3 pr-0 flex justify-start items-start"> */}
             <div className=" md800:w-full bg-blue-20 md900:w-8/12 xl1450:w-9/12 bg-blue-30 xl1450:mx-0 md800:mx-0 w-ful xl1450:p-12 xl1450:z-40 md900:p-0 md800:ml-0 md900:-ml-5 xl1450:-ml-8  r-0 flex justify-start items-start">
                 <div className=" relative">
-                    {/* md:ml-8 md:w-[49.7%] shadow-md md:shadow-none*/}
                     <div className=" flex justify-between py-2 items-center md900:relative fixed   xs320:bg-lightGray md900:bg-white w-full z-40">
                         <h1 className=" hidden md900:flex text-3xl md:text-4xl font-semibold px-3 md:pl-10 mb-5 mt-2 ">
                             Home
@@ -43,18 +39,17 @@ export default function Home() {
                             <Image width={45} src={user} alt="user" />
                         </div>
                     </div>
-                    {/* md:mt-20  */}
-                    <div className=" xs320:mt-20 md900:md:mt-0  px-2 md:px-8 py-3 md:py-6 border rounded-xl mx-3 md:mx-8 my-2.5">
+                    <div className=" xs320:mt-20 md900:mt-0  px-2 md:px-8 py-3 md:py-6 border rounded-xl mx-3 md:mx-0 xl1450:mx-3 md900:mx-2 my-2.5">
                         <CreateNewPost width={"w-32 mr-auto "} />
                     </div>
                     <div className="">
-                        <div className=" px-3.5 md:px-8 md:py-6 md:border rounded-xl mx-0 md:mx-8 my-2.5 ">
+                        <div className=" px-3.5 md:px-8 md:py-6 md:border rounded-xl mx-0 md:mx-auto xl1450:mx-3 md900:mx-2 my-2.5 ">
                             <PostPreview />
                         </div>
-                        <div className=" px-3.5 md:px-8 md:py-6 md:border rounded-xl mx-0 md:mx-8 my-2.5 ">
+                        <div className=" px-3.5 md:px-8 md:py-6 md:border rounded-xl mx-0 md:mx-auto xl1450:mx-3 md900:mx-2 my-2.5 ">
                             <PostPreview />
                         </div>
-                        <div className=" px-3.5 md:px-8 md:py-6 md:border rounded-xl mx-0 md:mx-8 my-2.5 ">
+                        <div className=" px-3.5 md:px-8 md:py-6 md:border rounded-xl mx-0 md:mx-auto xl1450:mx-3 md900:mx-2 my-2.5 ">
                             <PostPreview />
                         </div>
                     </div>
@@ -74,7 +69,9 @@ export default function Home() {
                         />
                     </div>
                 ) : (
-                    <WalletSelector withLabel />
+                    <div className=" mb-3 active:scale-95 transition ease-in-out">
+                        <WalletSelector withLabel />
+                    </div>
                 )}
 
                 <div className="mt-2 bg-lightGray  rounded-3xl">
