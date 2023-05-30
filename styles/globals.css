@@ -17,10 +17,12 @@
 }
 
 body {
-    background-color: #fff;
-    color: #181a1e;
-    font-family: "Montserrat", sans-serif;
-    /* height: 100vh; */
+  background-color: #fff;
+  background: #fff;
+  color: #181A1E;
+  /* margin-bottom: -200px; */
+  font-family: 'Montserrat', sans-serif;
+  /* height: 100vh; */
 }
 
 .scrollbar-hide::-webkit-scrollbar {

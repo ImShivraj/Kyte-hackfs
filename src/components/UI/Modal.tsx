@@ -26,7 +26,7 @@ export const Modal: FC<Props> = ({
     <Transition.Root show={show} as={Fragment}>
       <Dialog
         as="div"
-        className="overflow-y-hidden fixed inset-0 z-10 backdrop-blur-[2px]"
+        className="overflow-y-hidden fixed inset-0 z-50 backdrop-blur-[2px]"
         onClose={() => onClose?.()}
       >
         <div className="flex justify-center items-center p-4 min-h-screen text-center sm:block sm:p-0">
