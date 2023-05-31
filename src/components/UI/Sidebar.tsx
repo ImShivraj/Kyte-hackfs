@@ -101,8 +101,9 @@ const Sidebar = () => {
                 className={clsx(
                     toggleSidebar
                         ? " w-20 md:w-24 items-center "
-                        : " items-start pl-10 w-20",
-                    " bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content items-start drawer fixed left-0 w-auto z-50 "
+                        // md800:pl-0
+                        : " items-start  pl-10 w-20",
+                    "md900:w-auto md800:w-20 bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content items-start drawer fixed left-0  z-50 "
                 )}
             >
                 <div  className={clsx(toggleSidebar && " px-2 ", "py-2")}>

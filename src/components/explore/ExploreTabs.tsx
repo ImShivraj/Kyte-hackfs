@@ -74,7 +74,7 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                 </div>
                 {/* </div> */}
 
-                <div className=" xs320:fixed xs320:top-12 md900:pb-12 -screen w-full  bg-white z-[49] md900:relative -mt-2 ">
+                <div className=" xs320:fixed xs320:top-12 md900:pb-12 -screen w-full  bg-white z-[49] md900:relative xs320:-mt-2 ">
                     <TabsHeader
                         className="border border-b border-blue-gray-50 p-0 xs320:mt-2 md900:-mt-6 xs320:border-t-0 md900:border-t rounded-xl rounded-b-none pt-5"
                         indicatorProps={{
@@ -136,9 +136,9 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                     </div>
                 </div>
                 {/* xs320:mt-24 md900:mt-12 w-full */}
-                <TabsBody className=" xs320:z-[45] md900:z-50 xs320:mt-24 md900:mt-0 border xs320:rounded-none md900:rounded-xl">
+                <TabsBody className=" xs320:z-[45] md900:z-50 xs320:mt-24 md900:mt-2 border xs320:rounded-none md900:rounded-xl ">
                     <TabPanel
-                        className="w-full p-0 md900:h-[67vh] xl1450:h-[73vh] overflow-scroll scrollbar-hide "
+                        className="w-full p-0 md900:h-[66vh] xl1450:h-[72vh] overflow-scroll scrollbar-hide "
                         key={"for-you"}
                         value={"for-you"}
                     >
