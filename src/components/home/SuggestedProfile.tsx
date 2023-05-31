@@ -5,12 +5,12 @@ import { BsPersonPlus } from "react-icons/bs";
 
 function SuggestedProfile() {
   return (
-    <div className=" py-3 mb-0 mx-4 px-3 rounded-xl bg-lightGray cursor-pointer hover:bg-gray-100  ">
+    <div className=" py-3 mb-0 mx-4 px-3 rounded-xl bg-lightGray cursor-pointer hover:bg-gray-100 bg-green-20  ">
       <div className="flex items-center gap-3 w-full">
         <Image src={user} alt="user" />
         <div className=" flex items-center justify-between w-full">
           <div className="ml-2">
-            <h3 className=" font-semibold text-xl">Lorem Ipsum</h3>
+            <h3 className=" font-semibold md900:text-lg xl1450:text-xl ">Lorem Ipsum</h3>
             <p className=" text-sm text-gray-400 font-semibold ">@lorem.ipsum</p>
           </div>
           <button className=" btn rounded-full h-5 w-12 p-1">
@@ -21,5 +21,4 @@ function SuggestedProfile() {
     </div>
   );
 }
-
 export default SuggestedProfile;

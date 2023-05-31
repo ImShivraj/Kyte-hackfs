@@ -4,8 +4,8 @@ import { BiDotsVerticalRounded } from "react-icons/bi"
 import { CgSearch } from "react-icons/cg"
 import ChatTabs from "./ChatTabs"
 import { useState } from "react"
-import { Modal } from "../ui/Modal"
-import GradientIcon from "../utlis/Gradientcon"
+import { Modal } from "../UI/Modal"
+import GradientIcon from "../utils/GradientIcon"
 import { MailOutlineRounded } from "@mui/icons-material"
 
 function UserList() {
