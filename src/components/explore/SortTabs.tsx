@@ -6,7 +6,7 @@ export default function SortTabs() {
   let [categories] = useState(["All Posts", "Text", "Image", "Audio", "Video"]);
 
   return (
-    <div className="py-4 w-full flex justify-evenly items-center flex-wrap">
+    <div className="py-4 w-full flex md900:justify-evenly md1050:justify-normal items-center gap-3 px-3  overflow-scroll scrollbar-hide ">
       <button className=" hover:text-white focus:text-white focus:bg-black normal-case btn rounded-full w-32 bg-white border-black text-black">
         All Posts
       </button>

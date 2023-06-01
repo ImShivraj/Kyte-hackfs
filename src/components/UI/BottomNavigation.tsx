@@ -7,7 +7,7 @@ import useSidebarStore from "@/src/store/sidebarStore"
 import clsx from "clsx"
 import { useRouter } from "next/router"
 
-function SidebarMobile() {
+function BottomNavigation() {
     const { toggleSidebar, setToggleSidebar } = useSidebarStore()
     const router = useRouter()
     const links = paths.map(({ path, title, icon: Icon }) => (
@@ -37,4 +37,4 @@ function SidebarMobile() {
     )
 }
 
-export default SidebarMobile
+export default BottomNavigation

@@ -85,12 +85,15 @@ const Sidebar = () => {
                 size={"1.5em"}
                 color={`${router.asPath === path && "text-white"}`}
             />
-            {!toggleSidebar && <span className=" ml-3">{title}</span>}
+            {!toggleSidebar && (
+                <span className="md850:hidden md1000:inline ml-3">{title}</span>
+            )}
         </Link>
     ))
 
     return (
         <>
+            {/* 1050 to 1450 */}
             {/* <div className="drawer drawer-mobile fixed left-0 z-10">
                 <div className="drawer-side">
                     <label
@@ -100,58 +103,72 @@ const Sidebar = () => {
             <div
                 className={clsx(
                     toggleSidebar
-                        ? " w-20 md:w-24 items-center "
-                        // md800:pl-0
-                        : " items-start  pl-10 w-20",
-                    "md900:w-auto md800:w-20 bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content items-start drawer fixed left-0  z-50 "
+                        ? " w-20 md900:w-24 xl1450:w-24 items-center "
+                        : // md800:pl-0
+                          // md1000:pl-10  md1050:pl-6 xl1450:pl-10
+                          " items-start ",
+                    "md900:w-24 md1000:w-[260px] md1050:w-[95%]  md11200:w-[270px] md1300:w-[280px] md1400:w-[250px] xl1450:w-[95%]  md850:w-20 bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content items-start drawe h-full z-50 md850:items-center md1000:items-start xs320:hidden md900:flex "
+                    // md800:fixed md900:relative
+                    // fixed left-0
                 )}
             >
-                <div  className={clsx(toggleSidebar && " px-2 ", "py-2")}>
-                    <div className=" flex items-center justify-center font-semibold cursor-pointer">
-                        <Image
-                            src={logo}
-                            alt="logo"
-                            className={clsx(!toggleSidebar && "mr-3")}
-                        />
-                        {!toggleSidebar && (
-                            <span className=" text-5xl text-white ">Kyte</span>
-                        )}
+                <div className="">
+                    <div className={clsx(toggleSidebar && " px-2 ", "py-2")}>
+                        <div className="md850:pl-3 md900:pl-0 md1000:pl-6  md1050:pl-6 xl1450:pl-10 flex items-center justify-center font-semibold cursor-pointer">
+                            <Image
+                                src={logo}
+                                alt="logo"
+                                className={clsx(!toggleSidebar && "mr-3")}
+                            />
+                            {!toggleSidebar && (
+                                <span className="md850:hidden md1000:inline text-5xl text-white ">
+                                    Kyte
+                                </span>
+                            )}
+                        </div>
+                    </div>
+                    <div className=" mt-14 ">
+                        <div className="md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-6 xl1450:pl-10">{links}</div>
+                        <label
+                            htmlFor="my-modal"
+                            className={clsx(
+                                " text-textSidebar  cursor-pointer",
+                                " gap-3 items-center justify-start",
+                                " flex items-center justify-start text-lg font-semibold my-7 md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-6 xl1450:pl-10"
+                            )}
+                        >
+                            <AiOutlinePlusCircle size={"1.5em"} />{" "}
+                            {!toggleSidebar && (
+                                <span className=" md850:hidden md1000:inline">
+                                    Create Post
+                                </span>
+                            )}
+                        </label>
                     </div>
                 </div>
-                <div className=" mt-10 ">
-                    <div>{links}</div>
-                    <label
-                        htmlFor="my-modal"
-                        className={clsx(
-                            " text-textSidebar  cursor-pointer",
-                            " gap-3 items-center justify-start",
-                            " flex items-center justify-start text-lg font-semibold my-7"
-                        )}
-                    >
-                        <AiOutlinePlusCircle size={"1.5em"} />{" "}
-                        {!toggleSidebar && <span> Create Post</span>}
-                    </label>
-                </div>
-
-                <div className=" mt-auto w-full  ">
+                <div className=" mt-auto w-full md1050:w-11/12 md1050:mx-auto xl1400:w-full bg-green-30  ">
                     <div
                         className={clsx(
                             toggleSidebar && "justify-center",
-                            "flex items-center gap-2 w-full"
+                            "flex items-center justify-center w-full bg-green-00"
                         )}
                     >
-                        <Image src={user} alt="user" />
+                        <Image
+                            className=" w-10 md900:mr-4 md1000:mr-2"
+                            src={user}
+                            alt="user"
+                        />
                         {!toggleSidebar && (
-                            <div className=" flex items-center justify-between w-full">
+                            <div className=" md850:hidden md1000:flex flex items-center justify-between w-full ">
                                 <div className="ml-2 w-full">
-                                    <h3 className=" font-semibold text-lg text-white">
+                                    <h3 className=" font-semibold md900:text-base md1000:text-sm md1050:text-base   text-white">
                                         Lorem Ipsum
                                     </h3>
                                     <p className=" text-sm text-gray-400 font-semibold ">
                                         @lorem.ipsum
                                     </p>
                                 </div>
-                                <div className=" ml-3 flex items-center gap-2">
+                                <div className=" ml-0 flex flex-wra items-center gap-2">
                                     <TbBellFilled
                                         size={"1.5em"}
                                         color="#B0B0B0"

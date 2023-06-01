@@ -45,15 +45,19 @@ const links = [
 export default function Explore() {
     const [activeTab, setActiveTab] = useState("for-you")
     return (
-        <div className=" bg-white h-screen md900:-ml-6 xl1450:ml-1 xl1450:pl-6">
-            <div className=" grid grid-cols-12 bg-green-30 ">
-                <div className="md900:col-span-8 xs320:col-span-12 mx-2.5 ml-auto">
+        // md900:-ml-16 xl1450:ml-1 xl1450:pl-6
+        <div className=" bg-white h-screen ">
+            {/* md900:mx-5 md1050:mx-0 md950:mr-3.5  xl1450:ml-3.5 */}
+            <div className=" grid grid-cols-12 md900:gap-[20px] xl1450:gap-0  bg-green-30 ">
+                {/* ml-4 ml-aut */}
+                <div className="xl1450:pr-8 md900:px-6 md1050:px-0 xs320:col-span-12 md900:col-span-12 md950:col-span-12 md1000:col-span-12 md1050:col-span-8  xl1450:col-span-9">
                     <ExploreTabs
                         activeTab={activeTab}
                         setActiveTab={setActiveTab}
                     />
                 </div>
-                <div className="  col-span-3 md900:col-span-4 right-10 w3/12 px-6 md900:px-3 xl1450:px-6 max-h-[96vh] h-[96vh] overflow-auto my-3 hidden md800:flex flex-col justify-start items-stretch ">
+                {/* md900:ml-3.5 xl1450:ml-0  */}
+                <div className="md1050:pl-3  xl1450:pl-auto col-span-3 md900:col-span-4 xl1450:col-span-3 right-10 px-6 md900:px-0 md1050:pr-4  xl1450:px-4 max-h-[96vh] h-[96vh] overflow-auto mt-2 hidden md1050:flex flex-col justify-start items-stretch ">
                     <div className="mt-2 bg-lightGray  rounded-3xl">
                         <h2 className="  text-2xl font-semibold p-5">
                             Suggested for you{" "}
@@ -87,7 +91,7 @@ export default function Explore() {
                             ))}
                         </div>
                     </div>
-                    <div className=" mx-1 mt-2 flex justify-between items-center text-start text-lightGratText2 my-auto   text-[15px] font-[600] hover:bg-transparent">
+                    <div className=" mx-1 mt-2 flex justify-between items-center text-start text-lightGratText2 my-auto text-[15px] font-[600] hover:bg-transparent">
                         <div className=" text-lightGratText2 flex items-center gap-3">
                             <HiOutlineGlobeEuropeAfrica
                                 size={"1.5em"}

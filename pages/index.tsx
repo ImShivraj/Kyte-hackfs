@@ -26,9 +26,9 @@ export default function Home() {
             <div className=" md800:w-full bg-blue-20 md900:w-8/12 xl1450:w-9/12 bg-blue-30 xl1450:mx-0 md800:mx-0 w-ful xl1450:p-12 xl1450:z-40 md900:p-0 md800:ml-0 md900:-ml-5 xl1450:-ml-8  r-0 flex justify-start items-start">
                 <div className=" relative">
                     <div className=" flex justify-between py-2 items-center md900:relative fixed   xs320:bg-lightGray md900:bg-white w-full z-40">
-                        <h1 className=" hidden md900:flex text-3xl md:text-4xl font-semibold px-3 md:pl-10 mb-5 mt-2 ">
+                        {/* <h1 className=" hidden md900:flex text-3xl md:text-4xl font-semibold px-3 md:pl-10 mb-5 mt-2 ">
                             Home
-                        </h1>
+                        </h1> */}
 
                         <div className=" md900:hidden px-3 flex items-center justify-start gap-5">
                             <Image src={brand1} alt="user" />
@@ -56,7 +56,7 @@ export default function Home() {
                 </div>
             </div>
             {/* <div className=" fixed right-10 z-0 w-3/12 p-6 max-h-[96vh] h-[96vh] overflow-auto my-3 hidden md:flex flex-col justify-start items-stretch "> */}
-            <div className=" md900:bg-pink-30 xl1450:bg-cyan-40 xl1450:w-3/12 p-6 max-h-[96vh] h-[96vh] overflow-auto my-3 flex-col justify-start items-stretch fixed right-0 w-auto xl1450:z-20 hidden md900:block ">
+            <div className=" md900:bg-pink-30 xl1450:bg-cyan-40 xl1450:w-3/12 p-6 max-h-[96vh] h-[96vh] overflow-auto -mt-4 flex-col justify-start items-stretch fixed right-0 w-auto xl1450:z-20 hidden md900:block ">
                 {currentProfile ? (
                     <div className="relative mt-5 mb-2">
                         <input
