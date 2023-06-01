@@ -1,6 +1,5 @@
 import ProfileTabs from "@/src/components/profile/ProfileTabs"
 import UserProfile from "@/src/components/profile/UserProfile"
-import Sidebar from "@components/ui/Sidebar"
 import React, { useState } from "react"
 
 export default function MyProfile() {

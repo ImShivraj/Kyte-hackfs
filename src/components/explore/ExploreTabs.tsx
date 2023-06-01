@@ -24,9 +24,7 @@ interface Props {
 const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
     return (
         <>
-            {/* md900:px-6 */}
             <Tabs value={activeTab} className="  w-full  rounded-xl mt-2 5  ">
-                {/* <div className=""> */}
                 <div className="flex items-center justify-between gap-3  w-full  mb-0 xs320:fixed xs320:top-0 md900:relative z-[50] bg-white  ">
                     <div className="relative  xs320:w-11/12 md900:w-full ml-2 pt-2">
                         <input
@@ -73,7 +71,6 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                         </div>
                     </div>
                 </div>
-                {/* </div> */}
 
                 <div className=" xs320:fixed xs320:top-12 md900:pb-12 -screen w-full  bg-white z-[49] md900:relative xs320:-mt-2 ">
                     <TabsHeader
@@ -136,14 +133,12 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                         <SortTabs />
                     </div>
                 </div>
-                {/* xs320:mt-24 md900:mt-12 w-full */}
                 <TabsBody className=" xs320:z-[45] md900:z-50 xs320:mt-24 md900:mt-2 border xs320:rounded-none md900:rounded-xl ">
                     <TabPanel
                         className="w-full p-0 md900:h-[66vh] xl1450:h-[72vh] overflow-scroll scrollbar-hide  "
                         key={"for-you"}
                         value={"for-you"}
                     >
-                        {/* max-w-screen-xs */}
                         <div className="md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full  ">
                             <Feed />
                         </div>

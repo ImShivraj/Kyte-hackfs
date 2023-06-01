@@ -3,9 +3,9 @@ import { SCROLL_THRESHOLD } from "@constants/index"
 // @ts-ignore
 import type { FeedItem } from "lens"
 import InfiniteScroll from "react-infinite-scroll-component"
-import InfiniteLoader from "@components/UI/InfiniteLoader"
 import { Card } from "@components/UI/Card"
 import { KytePublication } from "src/types"
+import InfiniteLoader from "../ui/InfiniteLoader"
 
 const feedItems = [
     {
@@ -10970,8 +10970,7 @@ const feedItems = [
 ]
 
 const Feed = () => {
-    const loadMore = async () => {
-    }
+    const loadMore = async () => {}
 
     return (
         <InfiniteScroll

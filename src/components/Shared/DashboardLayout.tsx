@@ -1,12 +1,16 @@
 import { ReactNode, memo, useEffect, useState } from "react"
-import Sidebar from "./Sidebar"
 import { useRouter } from "next/router"
 import clsx from "clsx"
 import BottomNavigation from "./BottomNavigation"
 import { BiPlus } from "react-icons/bi"
+import Sidebar from "./Sidebar"
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
     const router = useRouter()
+
+    const isMessagesPage =
+        router.asPath.startsWith("/messages/") ||
+        router.pathname === "/messages"
     return (
         // xl1450:w-[350px]
         <div className=" grid grid-cols-12  relative bg-red-30 bg-blue-30">
@@ -18,16 +22,20 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
             <div className="z-50 fixed bottom-0 w-full md900:hidden block ">
                 <BottomNavigation />
             </div>
-            <div className=" bg-green-40  md850:col-span-2 md900:col-span-1 md1000:col-span-3 md1050:col-span-3  xl1450:col-span-2 md900:w-full col-span-3 bg-pink-30 hidden md850:block ">
+            <div
+                className={clsx(
+                    isMessagesPage &&
+                        "  xl1450:col-span-1 md1000:col-span-1 md1050:col-span-1 bg-red-30 ",
+                    " bg-green-40  md850:col-span-2 md900:col-span-1 md1000:col-span-3 md1050:col-span-3  xl1450:col-span-2 md900:w-full col-span-3 bg-pink-30 hidden md850:block "
+                )}
+            >
                 <Sidebar />
             </div>
             <div
                 className={clsx(
-                    router.asPath.startsWith("/messages/") ||
-                        router.pathname === "/messages"
-                        ? "xl1450:w-full md900:w-full  "
+                    isMessagesPage
+                        ? "xl1450:w-full md900:w-full md1000:col-span-11 md1050:col-span-11 md1050:pl-0 xl1450:pl-0  "
                         : "xl1450:w-full w-full",
-                    // md900:w-full md900:bg-red-300
                     " m-auto z-20 mb-0  xs320:col-span-12  md800:col-span-12 md850:col-span-12 md900:col-span-11  md950:col-span-11 md1000:col-span-9 md1050:col-span-9  xl1450:col-span-10 bg-purple-30  max-h-screen md1050:pl-3 xl1450:pl-8"
                 )}
             >

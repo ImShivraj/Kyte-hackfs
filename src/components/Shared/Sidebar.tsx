@@ -6,7 +6,7 @@ import { IconType } from "react-icons"
 import logo from "@assets/logo.png"
 import user from "@assets/user.png"
 import { useRouter } from "next/router"
-import { ReactNode, memo, useEffect, useState } from "react"
+import { useEffect } from "react"
 import Image from "next/image"
 import clsx from "clsx"
 import { RiSettings5Fill } from "react-icons/ri"
@@ -60,6 +60,10 @@ const Sidebar = () => {
     const router = useRouter()
     const { toggleSidebar, setToggleSidebar } = useSidebarStore()
 
+    const isMessagesPage =
+        router.asPath.startsWith("/messages/") ||
+        router.pathname === "/messages"
+
     useEffect(() => {
         setToggleSidebar(
             router.pathname === "/messages" ||
@@ -73,7 +77,7 @@ const Sidebar = () => {
         <Link
             key={path}
             className={clsx(
-                router.asPath === path
+                isMessagesPage
                     ? "text-white bg-clip-text "
                     : " text-textSidebar ",
                 toggleSidebar && "justify-center -3",
@@ -86,35 +90,30 @@ const Sidebar = () => {
                 color={`${router.asPath === path && "text-white"}`}
             />
             {!toggleSidebar && (
-                <span className="md850:hidden md1000:inline ml-3">{title}</span>
+                <span className={clsx( router.asPath === path &&  "text-white", "md850:hidden md1000:inline ml-3")}>{title}</span>
             )}
         </Link>
     ))
 
     return (
         <>
-            {/* 1050 to 1450 */}
-            {/* <div className="drawer drawer-mobile fixed left-0 z-10">
-                <div className="drawer-side">
-                    <label
-                        htmlFor="my-drawer-2"
-                        className="drawer-overlay"
-                    ></label> */}
             <div
                 className={clsx(
+                    isMessagesPage && "  flex justify-self-center items-center",
                     toggleSidebar
-                        ? " w-20 md900:w-24 xl1450:w-24 items-center "
-                        : // md800:pl-0
-                          // md1000:pl-10  md1050:pl-6 xl1450:pl-10
-                          " items-start ",
+                        ? "items-center md1000:w-24 w-20 md900:w-24 md1050:w-24 xl1450:w-20 "
+                        : " items-start ",
                     "md900:w-24 md1000:w-[260px] md1050:w-[95%]  md11200:w-[270px] md1300:w-[280px] md1400:w-[250px] xl1450:w-[95%]  md850:w-20 bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content items-start drawe h-full z-50 md850:items-center md1000:items-start xs320:hidden md900:flex "
-                    // md800:fixed md900:relative
-                    // fixed left-0
                 )}
             >
                 <div className="">
                     <div className={clsx(toggleSidebar && " px-2 ", "py-2")}>
-                        <div className="md850:pl-3 md900:pl-0 md1000:pl-6  md1050:pl-6 xl1450:pl-10 flex items-center justify-center font-semibold cursor-pointer">
+                        <div
+                            className={clsx(
+                                isMessagesPage && "md1050:pl-0",
+                                "md850:pl-3 md900:pl-0 md1000:pl-6  md1050:pl-6 xl1450:pl-10 flex items-center justify-center font-semibold cursor-pointer"
+                            )}
+                        >
                             <Image
                                 src={logo}
                                 alt="logo"
@@ -128,10 +127,19 @@ const Sidebar = () => {
                         </div>
                     </div>
                     <div className=" mt-14 ">
-                        <div className="md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-6 xl1450:pl-10">{links}</div>
+                        <div
+                            className={clsx(
+                                isMessagesPage && "md1000:pl-0 xl1450:pl-0",
+                                "md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-6 xl1450:pl-10"
+                            )}
+                        >
+                            {links}
+                        </div>
                         <label
                             htmlFor="my-modal"
                             className={clsx(
+                                isMessagesPage &&
+                                    "md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-7 xl1450:pl-3.5",
                                 " text-textSidebar  cursor-pointer",
                                 " gap-3 items-center justify-start",
                                 " flex items-center justify-start text-lg font-semibold my-7 md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-6 xl1450:pl-10"
@@ -183,10 +191,8 @@ const Sidebar = () => {
                     </div>
                 </div>
             </div>
-            {/* </div>
-            </div> */}
         </>
     )
 }
 
-export default memo(Sidebar)
+export default Sidebar
