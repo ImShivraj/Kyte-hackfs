@@ -47,11 +47,12 @@ export default function Home() {
                         <Image width={45} src={user} alt="user" />
                     </div>
                 </div>
-                <div className="xs320:mt-20 md900:mt-0  px-2 md:px-8 py-3 md:py-6 border rounded-2xl md900:mx-0 xs320:mx-0 xl1450:mx-0  my-2.5">
+                <div className="xs320:mt-20  md900:mt-0  px-2 md:px-8 py-3 md:py-6 border rounded-2xl md900:mx-0 xs320:mx-3 xl1450:mx-0  my-2.5">
                     <CreateNewPost width={"w-32 mr-auto "} />
                 </div>
-                <div className="p-0 md900:h-[66vh] xl1450:h-[80vh]  overflow-scroll scrollbar-hide  xs320:z-[45] mx-3 xs320:mx-0 md900:z-50 xs320:mt-2 md900:mt-2 border rounded-2xl ">
-                    <div className=" xs320:w-screen md900:w-auto md900:max-w-full  ">
+                {/* md900:h-[66vh] xl1450:h-[80vh] */}
+                <div className="mb-5 overflow-scroll  scrollbar-hide  xs320:z-[45] mx-3 xs320:mx-3 md900:mx-0 md900:z-50 xs320:mt-2 md900:mt-2 border rounded-2xl ">
+                    <div className=" xs320:w-screen md900:w-auto md900:max-w-full   ">
                         <Feed />
                     </div>
                 </div>
@@ -61,7 +62,8 @@ export default function Home() {
 
     const Children2: React.FC = () => {
         return (
-            <div className="">
+            // fixed right-3
+            <div className="fixed right-14">
                 {currentProfile ? (
                     <div className="relative mt-5 mb-2">
                         <input

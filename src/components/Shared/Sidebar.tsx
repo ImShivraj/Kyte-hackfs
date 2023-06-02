@@ -103,7 +103,7 @@ const Sidebar = () => {
                     toggleSidebar
                         ? "items-center md1000:w-24 w-20 md900:w-24 md1050:w-24 xl1450:w-20 "
                         : " items-start ",
-                    "md900:w-24 md1000:w-[260px] md1050:w-[95%]  md11200:w-[270px] md1300:w-[280px] md1400:w-[250px] xl1450:w-[95%]  md850:w-20 bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content items-start drawe h-full z-50 md850:items-center md1000:items-start xs320:hidden md900:flex "
+                    "md900:w-24 md1000:w-[260px] md1050:w-[95%]  md11200:w-[270px] md1300:w-[280px] md1400:w-[250px] xl1450:w-[95%]  md850:w-20 bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content items-start drawe  md850:items-center md1000:items-start xs320:hidden md900:flex h-screen z-[500]"
                 )}
             >
                 <div className="">

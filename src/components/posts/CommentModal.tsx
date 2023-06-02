@@ -15,7 +15,7 @@ import type { DialogProps } from "@material-tailwind/react"
 interface Props {
     open: boolean
     handleOpen: () => void
-    commentCount: number
+    commentCount?: number | string | boolean
 }
 
 const CommentModal: React.FC<Props> = ({ open, handleOpen, commentCount }) => {

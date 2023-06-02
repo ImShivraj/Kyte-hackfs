@@ -10978,9 +10978,15 @@ const Feed = () => {
             scrollThreshold={SCROLL_THRESHOLD}
             hasMore={true}
             next={loadMore}
+            style={{
+                height: "100%",
+                // overflow: "auto",
+                overflow: "visible",
+                // "-webkit-overflow-scrolling": "none",
+            }}
             loader={<InfiniteLoader />}
         >
-            <Card className="">
+            <Card className=" ">
                 {feedItems?.map((publication, index) => (
                     <SinglePublication
                         key={`${publication?.root.id}_${index}`}

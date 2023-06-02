@@ -38,7 +38,7 @@ const SinglePublication: FC<Props> = ({
 
     return (
         <article
-            className="hover:bg-[#F7F7F7] border-b border-borderLight cursor-pointer last:rounded-b-xl p-5 transition-all"
+            className=" bg-green-20 hover:bg[#F7F7F7] border-b border-borderLight cursor-pointer last:rounded-b-xl xs320:p-4 md:p-5  w-full transition-all h-auto"
             onClick={() => {
                 const selection = window.getSelection()
                 if (!selection || selection.toString().length === 0) {

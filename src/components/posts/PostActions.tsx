@@ -29,6 +29,7 @@ function PostActions() {
                 </div>
                 <span className=" font-semibold">&nbsp;999</span>
             </div>
+            
             <div className=" cursor-pointer flex  text-[#FF54B1]">
                 <div className="transition ease-in-out active:scale-95">
                     <AiOutlineHeart size={"1.4em"} />

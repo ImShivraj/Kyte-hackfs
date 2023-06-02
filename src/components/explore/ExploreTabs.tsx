@@ -135,11 +135,11 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                 </div>
                 <TabsBody className=" xs320:z-[45] md900:z-50 xs320:mt-24 md900:mt-2 border xs320:rounded-none md900:rounded-xl ">
                     <TabPanel
-                        className="w-full p-0 md900:h-[66vh] xl1450:h-[72vh] overflow-scroll scrollbar-hide  "
+                        className="w-full p-0 md900:h-[66vh] xl1450:h-[70vh] overflow-scroll scrollbar-hide  "
                         key={"for-you"}
                         value={"for-you"}
                     >
-                        <div className="md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full  ">
+                        <div className="md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
                             <Feed />
                         </div>
                     </TabPanel>

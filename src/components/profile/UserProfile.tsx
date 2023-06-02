@@ -14,7 +14,7 @@ export default function UserProfile() {
     const router = useRouter()
 
     return (
-        <div className=" w-full  flex flex-col mx-auto rounded-3xl md:px-3  ">
+        <div className=" w-full relative flex flex-col mx-auto rounded-3xl md:px-3  ">
             <div className=" w-full px-3 md:px-0 py-1 md:py-2 flex items-center justify-start gap-5 md:mb-2">
                 <div
                     className=" -rotate-90 cursor-pointer transition ease-in-out active:scale-95 "
@@ -24,7 +24,7 @@ export default function UserProfile() {
                         <BsTriangleFill size={"1.5em"} color="black" />
                     </div>
                 </div>
-                <div>
+                <div className="">
                     <h2 className=" text-xl md:text-2xl font-semibold text-black">
                         Lorem Ipsum
                     </h2>
@@ -45,7 +45,7 @@ export default function UserProfile() {
                     alt="pfp"
                 />
             </div>
-            <div className="md:border rounded-3xl mt-2 w-full relative ">
+            <div className="md:border rounded-3xl mt-2 w-full  relative bg-white py-4  ">
                 <div className="  pt-4 pb-2">
                     <div className=" flex justify-between items-center mx-auto w-11/12 -mt-[70px] md:-mt-24 md:ml-12 mr-auto">
                         <Image

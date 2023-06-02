@@ -6,7 +6,7 @@ import humanize from "@lib/humanize"
 import { publicationKeyFields } from "@lib/keyFields"
 import nFormatter from "@lib/nFormatter"
 import clsx from "clsx"
-import {CreateMirrorRequest} from "@lens/generated"
+import { CreateMirrorRequest } from "@lens/generated"
 import {
     useBroadcastMutation,
     useCreateMirrorTypedDataMutation,
@@ -19,6 +19,7 @@ import { useAppStore } from "src/store/app"
 import { useContractWrite, useSignTypedData } from "wagmi"
 import { KytePublication } from "src/types"
 import { showNotification } from "@mantine/notifications"
+import { HiArrowsUpDown } from "react-icons/hi2"
 
 interface Props {
     publication: KytePublication
@@ -169,13 +170,13 @@ const Mirror: FC<Props> = ({ publication, isFullPublication }) => {
             <button
                 // onClick={createMirror}
                 // disabled={isLoading}
-                className="focus:scale-90 transition-all"
+                className=" transition-all"
                 aria-label="Mirror"
             >
                 <div
                     className={clsx(
                         mirrored ? "hover:bg-green-300" : "hover:bg-brand-300",
-                        "p-1.5 rounded-full hover:bg-opacity-20"
+                        "p-1.5  hover:bg-opacity-20"
                     )}
                 >
                     {false ? (
@@ -184,25 +185,30 @@ const Mirror: FC<Props> = ({ publication, isFullPublication }) => {
                             size="xs"
                         />
                     ) : (
-                        <Tooltip
-                            placement="top"
-                            content={
-                                count > 0
-                                    ? `${humanize(count)} Mirrors`
-                                    : `Mirror`
-                            }
-                            withDelay
-                        >
-                            <SyncAltIcon className={iconClassName} />
-                        </Tooltip>
+                        <div className="transition-all ease-in-out active:scale-95 cursor-pointer flex  text-[#B581C8]">
+                            <div className="">
+                                <HiArrowsUpDown size={"1.4em"} />
+                            </div>
+                            {count > 0 && !isFullPublication && (
+                                <span className=" font-semibold">
+                                    &nbsp;{nFormatter(count)}
+                                </span>
+                            )}
+                        </div>
+                        // <Tooltip
+                        //     placement="top"
+                        //     content={
+                        //         count > 0
+                        //             ? `${humanize(count)} Mirrors`
+                        //             : `Mirror`
+                        //     }
+                        //     withDelay
+                        // >
+                        //     <SyncAltIcon className={iconClassName} />
+                        // </Tooltip>
                     )}
                 </div>
             </button>
-            {count > 0 && !isFullPublication && (
-                <span className="text-[11px] sm:text-xs text-">
-                    {nFormatter(count)}
-                </span>
-            )}
         </div>
     )
 }

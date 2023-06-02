@@ -72,8 +72,8 @@ const UserProfile: FC<Props> = ({
             <div className="flex items-center max-w-sm truncate">
                 <div
                     className={clsx(
-                        isBig ? "font-bold" : "text-md",
-                        "text-black font-bold text-[15px] leading-5"
+                        isBig ? "font-bold" : "text-base",
+                        "text-black  text-[15px] leading-5 font-semibold"
                     )}
                 >
                     {profile?.name ?? formatHandle(profile?.handle)}
@@ -110,7 +110,7 @@ const UserProfile: FC<Props> = ({
                 />
                 {timestamp ? (
                     <span className="lt-text-gray-500">
-                          <FiberManualRecord
+                        <FiberManualRecord
                             className="text-sideBarLink mx-1.5"
                             style={{ fontSize: "6px" }}
                         />

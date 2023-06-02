@@ -26,10 +26,10 @@ const PublicationActions: FC<Props> = ({
     const canMirror = currentProfile ? publication?.canMirror?.result : true
 
     return (
-        <span
+        <div
             className={clsx(
                 { "justify-between": isFullPublication },
-                "flex gap-6 items-center pt-3 -ml-2 lt-text-gray-500 sm:gap-8"
+                "flex w-full gap-6 items-center pt-3 -ml-2 lt-text-gray-500 sm:gap-8"
             )}
             onClick={(event) => {
                 event.stopPropagation()
@@ -60,7 +60,7 @@ const PublicationActions: FC<Props> = ({
                 publication={publication}
                 isFullPublication={isFullPublication}
             />
-        </span>
+        </div>
     )
 }
 

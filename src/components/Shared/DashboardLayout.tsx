@@ -34,9 +34,9 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
             <div
                 className={clsx(
                     isMessagesPage
-                        ? "xl1450:w-full md900:w-full md1000:col-span-11 md1050:col-span-11 md1050:pl-0 xl1450:pl-0  "
-                        : "xl1450:w-full w-full",
-                    " m-auto z-20 mb-0  xs320:col-span-12  md800:col-span-12 md850:col-span-12 md900:col-span-11  md950:col-span-11 md1000:col-span-9 md1050:col-span-9  xl1450:col-span-10 bg-purple-30  max-h-screen md1050:pl-3 xl1450:pl-8"
+                        ? "xl1450:w-full md900:w-full  md1000:col-span-11 md1050:col-span-11 md1050:pl-0 xl1450:pl-0  "
+                        : "xl1450:w-full w-full  md900:pl-8 md900:pr-3 md1000:pl-0 md1000:pr-0",
+                    " m-auto z-50 mb-0  xs320:col-span-12  md800:col-span-12 md850:col-span-12 md900:col-span-11  md950:col-span-11 md1000:col-span-9 md1050:col-span-9  xl1450:col-span-10 bg-purple-30  max-h-screen md1050:pl-3 xl1450:pl-8"
                 )}
             >
                 {children}

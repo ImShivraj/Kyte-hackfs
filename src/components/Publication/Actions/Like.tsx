@@ -7,13 +7,14 @@ import { publicationKeyFields } from "@lib/keyFields"
 import nFormatter from "@lib/nFormatter"
 import clsx from "clsx"
 import { SIGN_WALLET } from "@constants/index"
-import {ReactionTypes} from "@lens/generated"
+import { ReactionTypes } from "@lens/generated"
 import { useRouter } from "next/router"
 import type { FC } from "react"
 import { useState } from "react"
 import { useAppStore } from "src/store/app"
 import { KytePublication } from "src/types"
 import { showNotification } from "@mantine/notifications"
+import { AiOutlineHeart } from "react-icons/ai"
 
 interface Props {
     publication: KytePublication
@@ -134,11 +135,11 @@ const Like: FC<Props> = ({ publication, isFullPublication }) => {
             >
                 <div
                     className={clsx(
-                        isGM ? "hover:bg-yellow-400" : "hover:bg-pink-300",
-                        "p-1.5 rounded-full hover:bg-opacity-20"
+                        isGM ? "over:bg-yellow-400" : "over:bg-pink-300",
+                        "p-1.5  hover:bg-opacity-20"
                     )}
                 >
-                    <Tooltip
+                    {/* <Tooltip
                         placement="top"
                         content={liked ? `Dislike` : `Like`}
                         withDelay
@@ -156,14 +157,19 @@ const Like: FC<Props> = ({ publication, isFullPublication }) => {
                         ) : (
                             <FavoriteBorderOutlined className={iconClassName} />
                         )}
-                    </Tooltip>
+                    </Tooltip> */}
+                    <div className=" cursor-pointer flex  text-[#FF54B1]">
+                        <div className="transition ease-in-out active:scale-95">
+                            <AiOutlineHeart size={"1.4em"} />
+                        </div>
+                        {count > 0 && !isFullPublication && (
+                            <span className=" font-semibold">
+                                &nbsp;{nFormatter(count)}
+                            </span>
+                        )}
+                    </div>
                 </div>
             </button>
-            {count > 0 && !isFullPublication && (
-                <span className="text-[11px] sm:text-xs text-pink-500">
-                    {nFormatter(count)}
-                </span>
-            )}
         </div>
     )
 }
