@@ -1,5 +1,5 @@
 import type { ApolloCache } from "@apollo/client"
-import { Tooltip } from "@components/UI/Tooltip"
+import { Tooltip } from "@/src/components/UI/Tooltip"
 import { FavoriteBorderOutlined } from "@mui/icons-material"
 import WbSunnyIcon from "@mui/icons-material/WbSunny"
 import hasGm from "@lib/hasGm"

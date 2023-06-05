@@ -1,4 +1,4 @@
-import { Card } from '@components/UI/Card';
+import { Card } from '@/src/components/UI/Card';
 import { BadgeCheckIcon } from '@heroicons/react/solid';
 import { Analytics } from '@lib/analytics';
 import isVerified from '@lib/isVerified';

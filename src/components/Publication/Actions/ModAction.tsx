@@ -1,4 +1,4 @@
-import { Button } from "@components/UI/Button"
+import { Button } from "@/src/components/UI/Button"
 import {
     InsertLinkOutlined,
     ErrorOutlineOutlined,

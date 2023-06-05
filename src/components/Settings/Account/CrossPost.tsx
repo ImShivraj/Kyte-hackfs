@@ -1,5 +1,5 @@
 import Beta from '@components/Shared/Badges/Beta';
-import { Card } from '@components/UI/Card';
+import { Card } from '@/src/components/UI/Card';
 import { CheckCircleIcon, ExternalLinkIcon } from '@heroicons/react/outline';
 import { Analytics } from '@lib/analytics';
 import axios from 'axios';

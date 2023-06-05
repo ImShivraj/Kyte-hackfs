@@ -1,6 +1,6 @@
 import type { ApolloCache } from "@apollo/client"
-import { Spinner } from "@components/UI/Spinner"
-import { Tooltip } from "@components/UI/Tooltip"
+import { Spinner } from "@/src/components/UI/Spinner"
+import { Tooltip } from "@/src/components/UI/Tooltip"
 import SyncAltIcon from "@mui/icons-material/SyncAlt"
 import humanize from "@lib/humanize"
 import { publicationKeyFields } from "@lib/keyFields"

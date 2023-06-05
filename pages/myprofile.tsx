@@ -1,8 +1,12 @@
+import WalletSelector from "@/src/components/Shared/Login/WalletSelector"
 import ResponsiveLayout from "@/src/components/Shared/ResponsiveLayout"
 import SuggestedProfile from "@/src/components/home/SuggestedProfile"
 import ProfileTabs from "@/src/components/profile/ProfileTabs"
 import UserProfile from "@/src/components/profile/UserProfile"
+import { useAppStore } from "@/src/store/app"
 import React, { useState } from "react"
+import { CgSearch } from "react-icons/cg"
+import { HiOutlineGlobeEuropeAfrica } from "react-icons/hi2"
 
 const Children1: React.FC = () => {
     const [activeTab, setActiveTab] = useState("posts")
@@ -22,12 +26,38 @@ const Children1: React.FC = () => {
     )
 }
 
+// const Children2: React.FC = () => {
+//     return (
+//         <div className="  h-screen wf">
+//             <div className=" mt-2 bg-lightGray rounded-3xl">
+//                 <SuggestedProfile />
+//                 <div className=" bg-[#83B08C] w-32 h-6 rounded-full mx-auto mt-5 -mb-5"></div>
+//             </div>
+//         </div>
+//     )
+// }
+
 const Children2: React.FC = () => {
+    const [expandedImage, setExpandedImage] = useState<string | null>(null)
+    const { currentProfile } = useAppStore()
     return (
-        <div className="  h-screen wf">
-            <div className=" mt-2 bg-lightGray rounded-3xl">
+        // fixed right-3
+        <div className="fixed right-10  bg-green300 w-auto">
+            <div className="mt-2 w-full bg-lightGray  rounded-3xl">
+                <h2 className="  text-2xl font-semibold p-5">
+                    Suggested for you{" "}
+                </h2>
                 <SuggestedProfile />
-                <div className=" bg-[#83B08C] w-32 h-6 rounded-full mx-auto mt-5 -mb-5"></div>
+                <SuggestedProfile />
+                <SuggestedProfile />
+                <SuggestedProfile />
+                <SuggestedProfile />
+                <SuggestedProfile />{" "}
+                <div className=" px-4 my-4">
+                    <button className=" btn btn-ghost btn-sm normal-case text-lg text-lightGreen font-normal hover:bg-transparent">
+                        Show More
+                    </button>
+                </div>
             </div>
         </div>
     )

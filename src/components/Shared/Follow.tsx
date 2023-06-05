@@ -1,6 +1,6 @@
 import type { ApolloCache } from "@apollo/client"
-import { Button } from "@components/UI/Button"
-import { Spinner } from "@components/UI/Spinner"
+import { Button } from "@/src/components/UI/Button"
+import { Spinner } from "@/src/components/UI/Spinner"
 import { PersonAddAltOutlined } from "@mui/icons-material"
 // @ts-ignore
 import { LENSHUB_PROXY } from "@constants/index"

@@ -1,4 +1,4 @@
-import { Spinner } from '@components/UI/Spinner';
+import { Spinner } from '@/src/components/UI/Spinner';
 import type { FC } from 'react';
 
 interface Props {

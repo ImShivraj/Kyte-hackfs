@@ -1,6 +1,6 @@
 import Loader from '@components/Shared/Loader';
-import { ErrorMessage } from '@components/UI/ErrorMessage';
-import HelpTooltip from '@components/UI/HelpTooltip';
+import { ErrorMessage } from '@/src/components/UI/ErrorMessage';
+import HelpTooltip from '@/src/components/UI/HelpTooltip';
 import humanize from '@lib/humanize';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';

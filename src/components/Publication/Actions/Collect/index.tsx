@@ -1,5 +1,5 @@
 import Loader from "@components/Shared/Loader"
-import { Tooltip } from "@components/UI/Tooltip"
+import { Tooltip } from "@/src/components/UI/Tooltip"
 import humanize from "@lib/humanize"
 import nFormatter from "@lib/nFormatter"
 import dynamic from "next/dynamic"

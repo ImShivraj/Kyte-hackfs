@@ -1,4 +1,4 @@
-import { Card } from '@components/UI/Card';
+import { Card } from '@/src/components/UI/Card';
 import type { FC } from 'react';
 
 interface Props {

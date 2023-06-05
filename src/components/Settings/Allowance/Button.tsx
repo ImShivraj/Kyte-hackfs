@@ -1,7 +1,7 @@
-import { Button } from "@components/UI/Button"
-import { Modal } from "@components/UI/Modal"
-import { Spinner } from "@components/UI/Spinner"
-import { WarningMessage } from "@components/UI/WarningMessage"
+import { Button } from "@/src/components/UI/Button"
+import { Modal } from "@/src/components/UI/Modal"
+import { Spinner } from "@/src/components/UI/Spinner"
+import { WarningMessage } from "@/src/components/UI/WarningMessage"
 import { PriorityHigh, Remove, Add } from "@mui/icons-material"
 // import { getModule } from "@lib/getModule"
 // @ts-ignore

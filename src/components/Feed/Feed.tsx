@@ -3,11 +3,11 @@ import { SCROLL_THRESHOLD } from "@constants/index"
 // @ts-ignore
 import type { FeedItem } from "lens"
 import InfiniteScroll from "react-infinite-scroll-component"
-import { Card } from "@components/UI/Card"
+import { Card } from "@/src/components/UI/Card"
 import { KytePublication } from "src/types"
-import InfiniteLoader from "../ui/InfiniteLoader"
+import InfiniteLoader from "../UI/InfiniteLoader"
 
-const feedItems = [
+export const feedItems = [
     {
         root: {
             __typename: "Post",

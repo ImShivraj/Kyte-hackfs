@@ -1,4 +1,4 @@
-import { Spinner } from "@components/UI/Spinner"
+import { Spinner } from "@/src/components/UI/Spinner"
 import { Wallpaper } from "@mui/icons-material"
 import getIPFSLink from "@lib/getIPFSLink"
 import uploadToIPFS from "@lib/uploadToIPFS"

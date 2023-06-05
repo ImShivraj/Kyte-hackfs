@@ -1,8 +1,8 @@
-import { Button } from '@components/UI/Button';
-import { Card } from '@components/UI/Card';
+import { Button } from '@/src/components/UI/Button';
+import { Card } from '@/src/components/UI/Card';
 import { Form, useZodForm } from '@components/UI/Form';
 import { Input } from '@components/UI/Input';
-import { Spinner } from '@components/UI/Spinner';
+import { Spinner } from '@/src/components/UI/Spinner';
 import { StarIcon, XIcon } from '@heroicons/react/outline';
 import { Analytics } from '@lib/analytics';
 import getSignature from '@lib/getSignature';

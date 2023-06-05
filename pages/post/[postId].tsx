@@ -5,16 +5,14 @@ import post from "@assets/post.png"
 import { BiDotsVerticalRounded } from "react-icons/bi"
 import { MdOutlineTranslate } from "react-icons/md"
 import { RxExclamationTriangle } from "react-icons/rx"
-import PostActions from "./PostActions"
+import PostActions from "@/src/components/posts/PostActions"
 
-function PostPreview({ authorName }: any) {
+function DetailedPost() {
     return (
-        // <div className="  border-b md:border-b-0 mb-1 py-3 md:pb-0 md:py-5">
-        <div className="  border-b rounded-b-xl mb-1 py-3 px-3 md:px-6 md:py-5">
-            {/* hover:bg-lightGray  */}
+        <div className="max-h-[100vh] overflow-scroll p-12 pl-4 g-green-200">
             <div className=" relative  ">
                 <div className="flex flex-col items-start gap-5">
-                    <div className=" h-[94.7%] z-10 absolute border-r px-3 top-14 -mt-1"></div>
+                    <div className=" h-[96.7%] z-10 absolute border-r px-3 top-14 -mt-1"></div>
                     <div className=" absolute top-1.5 right-0 -mt-1.5">
                         <div className=" dropdown dropdown-bottom dropdown-end">
                             <label tabIndex={0} className=" cursor-pointer">
@@ -46,7 +44,7 @@ function PostPreview({ authorName }: any) {
                             alt="user"
                         />
                         <div>
-                            <h3 className=" font-semibold">{authorName}</h3>
+                            <h3 className=" font-semibold">Lorem Ipsum</h3>
                             <span className=" text-sm text-gray-400">
                                 @lorem.ipsum
                             </span>
@@ -126,4 +124,4 @@ function PostPreview({ authorName }: any) {
     )
 }
 
-export default PostPreview
+export default DetailedPost

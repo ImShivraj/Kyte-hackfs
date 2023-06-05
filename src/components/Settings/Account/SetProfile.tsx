@@ -1,8 +1,8 @@
 import UserProfile from '@components/Shared/UserProfile';
-import { Button } from '@components/UI/Button';
-import { Card } from '@components/UI/Card';
-import { ErrorMessage } from '@components/UI/ErrorMessage';
-import { Spinner } from '@components/UI/Spinner';
+import { Button } from '@/src/components/UI/Button';
+import { Card } from '@/src/components/UI/Card';
+import { ErrorMessage } from '@/src/components/UI/ErrorMessage';
+import { Spinner } from '@/src/components/UI/Spinner';
 import { ExclamationIcon, PencilIcon } from '@heroicons/react/outline';
 import { Analytics } from '@lib/analytics';
 import formatHandle from '@lib/formatHandle';

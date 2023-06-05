@@ -1,5 +1,5 @@
-import { Button } from "@components/UI/Button"
-import { Modal } from "@components/UI/Modal"
+import { Button } from "@/src/components/UI/Button"
+import { Modal } from "@/src/components/UI/Modal"
 import { StarBorderOutlined } from "@mui/icons-material"
 import formatHandle from "@lib/formatHandle"
 import dynamic from "next/dynamic"

@@ -1,5 +1,5 @@
 import { KytePublication } from "@/src/types"
-import { Tooltip } from "@components/UI/Tooltip"
+import { Tooltip } from "@/src/components/UI/Tooltip"
 import { apps } from "@constants/apps"
 import { STATIC_IMAGES_URL } from "@constants/index"
 import type { FC } from "react"

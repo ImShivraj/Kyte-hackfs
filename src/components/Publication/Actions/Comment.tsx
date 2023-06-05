@@ -1,4 +1,4 @@
-import { Tooltip } from "@components/UI/Tooltip"
+import { Tooltip } from "@/src/components/UI/Tooltip"
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble"
 import humanize from "@lib/humanize"
 import nFormatter from "@lib/nFormatter"

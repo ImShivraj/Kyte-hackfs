@@ -1,5 +1,5 @@
-import { Card } from '@components/UI/Card';
-import HelpTooltip from '@components/UI/HelpTooltip';
+import { Card } from '@/src/components/UI/Card';
+import HelpTooltip from '@/src/components/UI/HelpTooltip';
 import GetModuleIcon from '@components/UI/GetModuleIcon';
 import { getModule } from '@lib/getModule';
 import { POLYGONSCAN_URL } from '@constants/index';

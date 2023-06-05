@@ -1,8 +1,8 @@
 import MetaTags from '@components/Common/MetaTags';
-import { Card } from '@components/UI/Card';
+import { Card } from '@/src/components/UI/Card';
 import { GridItemEight, GridItemFour, GridLayout } from '@components/UI/GridLayout';
 import { PageLoading } from '@components/UI/PageLoading';
-import { Spinner } from '@components/UI/Spinner';
+import { Spinner } from '@/src/components/UI/Spinner';
 import { APP_NAME, DEFAULT_COLLECT_TOKEN } from '@constants/index';
 import type { Erc20 } from 'lens';
 import { CollectModules, FollowModules, ReferenceModules, useApprovedModuleAllowanceAmountQuery } from 'lens';

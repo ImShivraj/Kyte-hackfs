@@ -73,10 +73,10 @@ const Attachments: FC<Props> = ({
     const slicedAttachments = isNew
         ? attachments?.slice(0, 4)
         : attachments?.some((e: any) =>
-            ALLOWED_VIDEO_TYPES.includes(e?.original?.mimeType)
-        )
-            ? attachments?.slice(0, 1)
-            : attachments?.slice(0, 4)
+              ALLOWED_VIDEO_TYPES.includes(e?.original?.mimeType)
+          )
+        ? attachments?.slice(0, 1)
+        : attachments?.slice(0, 4)
 
     return slicedAttachments?.length !== 0 ? (
         <>
@@ -96,9 +96,9 @@ const Attachments: FC<Props> = ({
                             : attachment.original?.mimeType
                         const url = isNew
                             ? attachment.previewItem ||
-                            getIPFSLink(attachment.item!)
+                              getIPFSLink(attachment.item!)
                             : getIPFSLink(attachment.original?.url) ||
-                            getIPFSLink(attachment.item!)
+                              getIPFSLink(attachment.item!)
 
                         return (
                             <div
@@ -106,15 +106,17 @@ const Attachments: FC<Props> = ({
                                     ALLOWED_VIDEO_TYPES.includes(type) ||
                                         ALLOWED_AUDIO_TYPES.includes(type)
                                         ? ""
-                                        : `${getClass(
-                                            slicedAttachments?.length,
-                                            isNew
-                                        )?.aspect
-                                        } ${slicedAttachments?.length === 3 &&
-                                            index === 0
-                                            ? "row-span-2"
-                                            : ""
-                                        }`,
+                                        : `${
+                                              getClass(
+                                                  slicedAttachments?.length,
+                                                  isNew
+                                              )?.aspect
+                                          } ${
+                                              slicedAttachments?.length === 3 &&
+                                              index === 0
+                                                  ? "row-span-2"
+                                                  : ""
+                                          }`,
                                     {
                                         "w-full":
                                             ALLOWED_AUDIO_TYPES.includes(type),
@@ -166,13 +168,8 @@ const Attachments: FC<Props> = ({
                                         onClick={() => {
                                             setExpandedImage(url)
                                         }}
-                                        src={
-                                            url
-                                        }
-                                        alt={
-                                            url
-
-                                        }
+                                        src={url}
+                                        alt={url}
                                     />
                                 )}
                                 {isNew && !hideDelete && (

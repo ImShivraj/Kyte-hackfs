@@ -1,6 +1,6 @@
 import Loader from "@components/Shared/Loader"
-import { Modal } from "@components/UI/Modal"
-import { Tooltip } from "@components/UI/Tooltip"
+import { Modal } from "@/src/components/UI/Modal"
+import { Tooltip } from "@/src/components/UI/Tooltip"
 import LeaderboardOutlinedIcon from "@mui/icons-material/LeaderboardOutlined"
 import dynamic from "next/dynamic"
 import type { FC } from "react"
