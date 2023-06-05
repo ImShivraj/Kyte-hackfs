@@ -87,10 +87,19 @@ const Sidebar = () => {
         >
             <Icon
                 size={"1.5em"}
-                color={`${router.asPath === path && "text-white"}`}
+                color={`${
+                    router.asPath === path ? "white" : "#696b6d"
+                }`}
             />
             {!toggleSidebar && (
-                <span className={clsx( router.asPath === path &&  "text-white", "md850:hidden md1000:inline ml-3")}>{title}</span>
+                <span
+                    className={clsx(
+                        router.asPath === path && "text-white",
+                        "md850:hidden md1000:inline ml-3"
+                    )}
+                >
+                    {title}
+                </span>
             )}
         </Link>
     ))
@@ -99,18 +108,19 @@ const Sidebar = () => {
         <>
             <div
                 className={clsx(
-                    isMessagesPage && "  flex justify-self-center items-center",
+                    isMessagesPage &&
+                        " fixed  left-0 xl1400: flex justify-self-center items-center",
                     toggleSidebar
-                        ? "items-center md1000:w-24 w-20 md900:w-24 md1050:w-24 xl1450:w-20 "
+                        ? "items-center  xl1450:pl-0 md1000:w-24 lg1100:w-24 md1050:w-24 lg1150:w-24 lg1200:w-24 lg1250:w-24 lg1300:w-24 xl1450:w-24  w-24 "
                         : " items-start ",
-                    "md900:w-24 md1000:w-[260px] md1050:w-[95%]  md11200:w-[270px] md1300:w-[280px] md1400:w-[250px] xl1450:w-[95%]  md850:w-20 bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content items-start drawe  md850:items-center md1000:items-start xs320:hidden md900:flex h-screen z-[500]"
+                    "md900:pl-[30px] md100:pl-0 md900:w-[100px] md1000:w-[260px] md1050:w-[95%]  md11200:w-[270px] md1300:w-[280px] md1400:w-[250px] xl1450:w-[95%]  md850:w-20 bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content items-start drawe  md850:items-center md1000:items-start xs320:hidden md900:flex h-screen z-[500]"
                 )}
             >
                 <div className="">
                     <div className={clsx(toggleSidebar && " px-2 ", "py-2")}>
                         <div
                             className={clsx(
-                                isMessagesPage && "md1050:pl-0",
+                                isMessagesPage && "md1050:pl-0 xl1450:pl-5",
                                 "md850:pl-3 md900:pl-0 md1000:pl-6  md1050:pl-6 xl1450:pl-10 flex items-center justify-center font-semibold cursor-pointer"
                             )}
                         >
@@ -129,7 +139,7 @@ const Sidebar = () => {
                     <div className=" mt-14 ">
                         <div
                             className={clsx(
-                                isMessagesPage && "md1000:pl-0 xl1450:pl-0",
+                                isMessagesPage && "md1000:pl-0 xl1450:pl-5",
                                 "md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-6 xl1450:pl-10"
                             )}
                         >
@@ -139,7 +149,7 @@ const Sidebar = () => {
                             htmlFor="my-modal"
                             className={clsx(
                                 isMessagesPage &&
-                                    "md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-7 xl1450:pl-3.5",
+                                    "md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-7 xl1450:pl-8",
                                 " text-textSidebar  cursor-pointer",
                                 " gap-3 items-center justify-start",
                                 " flex items-center justify-start text-lg font-semibold my-7 md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-6 xl1450:pl-10"
@@ -157,7 +167,7 @@ const Sidebar = () => {
                 <div className=" mt-auto w-full md1050:w-11/12 md1050:mx-auto xl1400:w-full bg-green-30  ">
                     <div
                         className={clsx(
-                            toggleSidebar && "justify-center",
+                            toggleSidebar && "justify-center xl1450:pl-5",
                             "flex items-center justify-center w-full bg-green-00"
                         )}
                     >

@@ -9,7 +9,7 @@ import WalletSelector from "@/src/components/Shared/Login/WalletSelector"
 import useIsMounted from "@/src/utils/hooks/useIsMounted"
 import Image from "next/image"
 import user from "@/src/assets/user.png"
-import brand1 from "@/src/assets/brand1.png"
+
 import brand2 from "@/src/assets/brand2.png"
 import { links } from "./explore"
 import ResponsiveLayout from "@/src/components/Shared/ResponsiveLayout"
@@ -24,6 +24,7 @@ import {
 } from "@material-tailwind/react"
 import clsx from "clsx"
 import { BiDotsVerticalRounded } from "react-icons/bi"
+import HomeTabs from "@/src/components/home/HomeTabs"
 
 export default function Home() {
     const { currentProfile } = useAppStore()
@@ -35,35 +36,13 @@ export default function Home() {
 
     const Children1: React.FC = () => {
         const [activeTab, setActiveTab] = useState("for-you")
-        return (
-            <div className=" relative h-screen ">
-                <div className="flex justify-between py-2 items-center md900:relative fixed top-0   xs320:bg-lightGray md900:bg-white w-full z-40">
-                    <div className=" md900:hidden px-3 flex items-center justify-start gap-5">
-                        <Image src={brand1} alt="user" />
-                        <span className=" text-3xl font-bold">Kyte</span>
-                    </div>
-
-                    <div className=" md900:hidden px-3">
-                        <Image width={45} src={user} alt="user" />
-                    </div>
-                </div>
-                <div className="xs320:mt-20  md900:mt-0  px-2 md:px-8 py-3 md:py-6 border rounded-2xl md900:mx-0 xs320:mx-3 xl1450:mx-0  my-2.5">
-                    <CreateNewPost width={"w-32 mr-auto "} />
-                </div>
-                {/* md900:h-[66vh] xl1450:h-[80vh] */}
-                <div className="mb-5 overflow-scroll  scrollbar-hide  xs320:z-[45] mx-3 xs320:mx-3 md900:mx-0 md900:z-50 xs320:mt-2 md900:mt-2 border rounded-2xl ">
-                    <div className=" xs320:w-screen md900:w-auto md900:max-w-full   ">
-                        <Feed />
-                    </div>
-                </div>
-            </div>
-        )
+        return <HomeTabs activeTab={activeTab} setActiveTab={setActiveTab} />
     }
 
     const Children2: React.FC = () => {
         return (
             // fixed right-3
-            <div className="fixed right-14">
+            <div className="fixed md1050:pr-5 xl1450:pr-0 xl1450:">
                 {currentProfile ? (
                     <div className="relative mt-5 mb-2">
                         <input

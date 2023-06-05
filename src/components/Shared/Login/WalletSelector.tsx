@@ -3,6 +3,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { useAppStore } from "@store/app"
 import WalletIcon from "@mui/icons-material/Wallet"
 import { WarningRounded } from "@mui/icons-material"
+import LoginModal from "../../Modal/LoginModal"
 
 type Props = {
     withLabel: boolean
@@ -45,7 +46,11 @@ const WalletSelector = ({ withLabel }: Props) => {
                                         type="button"
                                         className="px-[27.5px] h-full flex items-center justify-center gap-2 w-full"
                                     >
-                                        <img src="/wallet_icon.png" alt="" className="w-[1.25rem] h-[1.25rem]"/>
+                                        <img
+                                            src="/wallet_icon.png"
+                                            alt=""
+                                            className="w-[1.25rem] h-[1.25rem]"
+                                        />
                                         {withLabel && (
                                             <span className="text-white font-semibold leading-[20px]">
                                                 Connect Wallet
@@ -90,24 +95,27 @@ const WalletSelector = ({ withLabel }: Props) => {
                             }
 
                             return (
-                                <button
-                                    onClick={() => {
-                                        setShowAuthModal(true)
-                                    }}
-                                    type="button"
-                                    className="px-[27.5px] h-full flex items-center justify-center gap-2 w-full"
-                                >
-                                    <img
-                                        src="/lens-white-1.png"
-                                        alt=""
-                                        className="w-[1.5rem] h-[1.5rem]"
-                                    />
-                                    {withLabel && (
-                                        <span className="text-white font-semibold leading-[20px]">
-                                            Sign-In
-                                        </span>
-                                    )}
-                                </button>
+                                <>
+                                    <LoginModal />
+                                    <button
+                                        onClick={() => {
+                                            setShowAuthModal(true)
+                                        }}
+                                        type="button"
+                                        className="px-[27.5px] h-full flex items-center justify-center gap-2 w-full"
+                                    >
+                                        <img
+                                            src="/lens-white-1.png"
+                                            alt=""
+                                            className="w-[1.5rem] h-[1.5rem]"
+                                        />
+                                        {withLabel && (
+                                            <span className="text-white font-semibold leading-[20px]">
+                                                Sign-In
+                                            </span>
+                                        )}
+                                    </button>
+                                </>
                             )
                         })()}
                     </div>

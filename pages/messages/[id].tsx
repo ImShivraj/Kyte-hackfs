@@ -19,8 +19,8 @@ export default function UserMessages() {
         //         </div>
         //     </div>
         // </div>
-        <div className=" flex justify-start">
-            <div className="w-10/12 m- p-6 pr-0 flex justify-start items-start">
+        <div className=" flex justify-start h-screen">
+            <div className=" md800:w-full md900:w-full md950:w-max md1000:w-full  md1050:w-full  lg1150:w-full  lg1200:w-full  lg1250:w-full  lg1300:w-full  xl1450:w-full md900:ml-20 md950:pl-8  md1050:pl-8  lg1150:pl-8  lg1200:pl-8  lg1250:pl-8  lg1300:pl-8  xl1450:pl-8    md1000:py-6 pr-0 flex justify-start items-start">
                 <div className=" w-4/1 xs1000:w-5/12 l:w-3/12">
                     <UserList />
                 </div>

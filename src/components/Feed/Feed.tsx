@@ -10986,7 +10986,7 @@ const Feed = () => {
             }}
             loader={<InfiniteLoader />}
         >
-            <Card className=" ">
+            <Card className=" xs320:w-11/12 md900:w-auto ">
                 {feedItems?.map((publication, index) => (
                     <SinglePublication
                         key={`${publication?.root.id}_${index}`}

@@ -135,39 +135,41 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                 </div>
                 <TabsBody className=" xs320:z-[45] md900:z-50 xs320:mt-24 md900:mt-2 border xs320:rounded-none md900:rounded-xl ">
                     <TabPanel
-                        className="w-full p-0 md900:h-[66vh] xl1450:h-[70vh] overflow-scroll scrollbar-hide  "
+                        //  md900:h-[66vh] xl1450:h-[70vh] overflow-scroll scrollbar-hide
+                        className="w-full p-0  "
                         key={"for-you"}
                         value={"for-you"}
                     >
-                        <div className="md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
+                        <div className="xs320:pt-8 md900:pt-0  md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
                             <Feed />
                         </div>
                     </TabPanel>
                     <TabPanel
-                        className="w-full p-0 md900:h-[67vh] xl1450:h-[73vh] overflow-scroll scrollbar-hide "
+                        //  md900:h-[67vh] xl1450:h-[73vh] overflow-scroll scrollbar-hide
+                        className="w-full p-0 "
                         key={"popular"}
                         value={"popular"}
                     >
-                        <div className=" rounded-xl ">
-                            <PostPreview />
+                        <div className="xs320:pt-8 md900:pt-0  md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
+                            <Feed />
                         </div>
                     </TabPanel>
                     <TabPanel
-                        className="w-full p-0 md900:h-[67vh] xl1450:h-[73vh] overflow-scroll scrollbar-hide "
+                        className="w-full p-0 "
                         key={"trending"}
                         value={"trending"}
                     >
-                        <div className="rounded-xl ">
-                            <PostPreview />
+                        <div className="xs320:pt-8 md900:pt-0  md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
+                            <Feed />
                         </div>
                     </TabPanel>
                     <TabPanel
-                        className="w-full p-0 md900:h-[67vh] xl1450:h-[73vh] overflow-scroll scrollbar-hide "
+                        className="w-full p-0 "
                         key={"interesting"}
                         value={"interesting"}
                     >
-                        <div className="rounded-xl ">
-                            <PostPreview />
+                        <div className="xs320:pt-8 md900:pt-0  md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
+                            <Feed />
                         </div>
                     </TabPanel>
                 </TabsBody>

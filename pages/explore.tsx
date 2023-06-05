@@ -49,7 +49,7 @@ const Children1: React.FC = () => {
 
 const Children2: React.FC = () => {
     return (
-        <div className="">
+        <div className=" fixed right-10">
             <div className="mt-2 bg-lightGray  rounded-3xl">
                 <h2 className="  text-2xl font-semibold p-5">
                     Suggested for you{" "}
