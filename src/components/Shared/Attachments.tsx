@@ -15,7 +15,7 @@ import { usePublicationStore } from "@store/publicaiton"
 import Audio from "./Audio"
 import Video from "./Video"
 import { MediaSet } from "@lens/generated"
-import { KytePublication, NewKyteAttachment } from "src/types"
+import { KytePublication, NewKyteAttachment } from "src/types" 
 
 const getClass = (attachments: number, isNew = false) => {
     if (attachments === 1) {
