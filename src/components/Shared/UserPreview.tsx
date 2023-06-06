@@ -71,10 +71,10 @@ const UserPreview: FC<Props> = ({
     )
 
     const Preview = () => (
-        <div className=" rounded-xl md900:w-[300px] bg-lightGray shadow-lg px-4 py-3 w-full ">
+        <div className=" rounded-xl md900:w-[300px] shadow-xl border px-4 py-3 w-full ">
             <div className="flex justify-between items-center">
                 <UserAvatar />
-                <div className=" mt-3" onClick={(e) => e.preventDefault()}>
+                <div className="" onClick={(e) => e.preventDefault()}>
                     {!lazyProfile.isFollowedByMe &&
                         (followStatusLoading ? (
                             <div className="w-10 h-8 rounded-lg shimmer" />

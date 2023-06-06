@@ -25,6 +25,7 @@ import {
 import clsx from "clsx"
 import { BiDotsVerticalRounded } from "react-icons/bi"
 import HomeTabs from "@/src/components/home/HomeTabs"
+import OnboardingModal from "@/src/components/onboarding/OnboardingModal"
 
 const Children1: React.FC = () => {
     const [activeTab, setActiveTab] = useState("for-you")
@@ -54,6 +55,8 @@ const Children2: React.FC = () => {
                     <WalletSelector withLabel />
                 </div>
             )}
+
+            <OnboardingModal />
 
             <div className="mt-2 bg-lightGray  rounded-3xl">
                 <h2 className="  text-2xl font-semibold p-5">

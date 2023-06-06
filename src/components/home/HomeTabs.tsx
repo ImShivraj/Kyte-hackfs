@@ -15,6 +15,7 @@ import Image from "next/image"
 import user from "@/src/assets/user.png"
 import { BiDotsVerticalRounded } from "react-icons/bi"
 import brand1 from "@/src/assets/brand1.png"
+import CreateNewPost from "../posts/CreateNewPost"
 
 interface Props {
     activeTab: string // Replace 'StateType' with the actual type of the state
@@ -73,14 +74,17 @@ const HomeTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                         </Tab>
                     </TabsHeader>
                 </div>
-                <TabsBody className=" xs320:z-[45] md900:z-50 xs320:mt-24 md900:mt-2 border xs320:rounded-none md900:rounded-xl ">
+                <TabsBody className=" xs320:z-[45] md900:z-50 xs320:mt-24 md900:mt-2 ">
                     <TabPanel
                         //  md900:h-[66vh] xl1450:h-[70vh] overflow-scroll scrollbar-hide
                         className="w-full p-0  "
                         key={"for-you"}
                         value={"for-you"}
                     >
-                        <div className=" xs320:pt-8 md900:pt-0 md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
+                        <div className=" p-4 border rounded-xl">
+                            <CreateNewPost />
+                        </div>
+                        <div className="border xs320:rounded-none md900:rounded-xl mt-2  xs320:pt-8 md900:pt-0xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
                             <Feed />
                         </div>
                     </TabPanel>
@@ -90,7 +94,10 @@ const HomeTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                         key={"following"}
                         value={"following"}
                     >
-                        <div className="xs320:pt-8 md900:pt-0 md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
+                        <div className=" p-4 border rounded-xl">
+                            <CreateNewPost />
+                        </div>
+                        <div className="border xs320:rounded-none md900:rounded-xl mt-2  xs320:pt-8 md900:pt-0xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
                             <Feed />
                         </div>
                     </TabPanel>
