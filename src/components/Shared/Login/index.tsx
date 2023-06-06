@@ -7,7 +7,11 @@ import { useLogin } from "@lib/auth/useLogin"
 import IconButton from "@mui/material/IconButton"
 import clsx from "clsx"
 
-const Login = () => {
+interface Props {
+    closeModal: () => void
+}
+
+const Login = ({ closeModal }: Props) => {
     const { setShowAuthModal } = useModalStore()
     const { setProfiles, setCurrentProfile } = useAppStore()
     const { setProfileId } = useAppPersistStore()
@@ -23,30 +27,17 @@ const Login = () => {
     )
 
     return (
-        <div className="relative w-[650px] h-fit lg:h-fit lg:min-h-[220px] lg:max-h-fit bg-bgCover lg:bg-white rounded-[15px] flex flex-col items-center justify-start overflow-hidden pt-1">
-            <div className="w-full h-[60px] min-h-[60px] border-b-[1px] border-b-line flex items-center justify-between px-5  box-border">
-                <div className="flex items-center justify-start gap-2">
-                    <img src="/kyte_black_logo.png" alt="" className="w-[30px]" />
-                    <h1 className="text-[1.4rem] font-bold text-sideBarLink">
-                        Please Login
-                    </h1>
-                </div>
-                <IconButton
-                    style={{ backgroundColor: "#E4E4E7" }}
-                    className="bg-opacity-10 rounded-full transition-all w-[35px] h-[35px] flex items-center justify-center cursor-pointer p-2"
-                    onClick={() => setShowAuthModal(false)}
-                >
-                    <CloseIcon className="text-gray-600 text-[14px]" />
-                </IconButton>
-            </div>
+        <div className="relative   bg-bgCover lg:bg-white rounded-[15px] flex flex-col items-center justify-start overflow-hidden pt-1">
             {hasProfile ? (
-                <div className="py-5 pl-7 w-full flex flex-col items-start justify-between gap-5">
+                <div className=" py- pb-6 pl-7 w-full flex flex-col items-start justify-between gap-5">
                     <div>
                         <div className="text-xl font-bold leading-7 text-black">
                             Please sign the message
                         </div>
                         <div className="text-sm text-gray-500 font-semibold">
-                            {"Kyte uses this signature to verify that you're the owner of this address."}
+                            {
+                                "Kyte uses this signature to verify that you're the owner of this address."
+                            }
                         </div>
                     </div>
                     <Button
@@ -73,8 +64,10 @@ const Login = () => {
                             Sign-In with Lens
                         </h1>
                         <div
-                            className={clsx(loading ? "opacity-100" : "opacity-0",
-                                `absolute bg-white h-full bg-opacity-50 transition-all w-[110%] `)}
+                            className={clsx(
+                                loading ? "opacity-100" : "opacity-0",
+                                `absolute bg-white h-full bg-opacity-50 transition-all w-[110%] `
+                            )}
                         />
                     </Button>
                 </div>
@@ -108,7 +101,6 @@ const Login = () => {
                 </div>
             )}
         </div>
-
     )
 }
 

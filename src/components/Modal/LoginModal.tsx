@@ -1,74 +1,66 @@
 import { useModalStore } from "@/src/store/modal"
 import React, { forwardRef } from "react"
-import { TransitionProps } from "@mui/material/transitions"
 import Login from "@components/Shared/Login"
 import { Fragment, useState } from "react"
-import {
-    Button,
-    Dialog,
-    DialogHeader,
-    DialogBody,
-    DialogFooter,
-} from "@material-tailwind/react"
+import { Dialog, DialogHeader, DialogBody } from "@material-tailwind/react"
+import { RxCross1 } from "react-icons/rx"
 
 const LoginModal = () => {
     const { setShowAuthModal, showAuthModal } = useModalStore()
 
-    const [open, setOpen] = useState(false)
-
-    const handleOpen = () => setOpen(!open)
+    const handleOpen = () => setShowAuthModal(!showAuthModal)
 
     return (
         <Fragment>
-            <Button onClick={handleOpen} variant="gradient">
-                Open Dialog
-            </Button>
+            <button
+                onClick={handleOpen}
+                type="button"
+                className="px-[27.5px] h-full flex items-center justify-center gap-2 w-full"
+            >
+                <img
+                    src="/lens-white-1.png"
+                    alt=""
+                    className="w-[1.5rem] h-[1.5rem]"
+                />
+                <span className="text-white font-semibold leading-[20px]">
+                    Sign-In
+                </span>
+            </button>
             <Dialog
                 dismiss={{
                     outsidePress: false,
                 }}
-                open={open}
+                open={showAuthModal}
+                size="sm"
                 handler={handleOpen}
             >
-                <DialogHeader>Its a simple dialog.</DialogHeader>
-                <DialogBody divider>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Accusamus ad reprehenderit omnis perspiciatis aut odit! Unde
-                    architecto perspiciatis, dolorum dolorem iure quia saepe
-                    autem accusamus eum praesentium magni corrupti explicabo!
+                <DialogHeader>
+                    <div className="  w-full h-[60px] min-h-[60px] border-b-[1px] border-b-line flex items-center justify-between px-5  box-border">
+                        <div className="flex items-center justify-start gap-2">
+                            <img
+                                src="/kyte_black_logo.png"
+                                alt=""
+                                className="w-[30px]"
+                            />
+                            <h1 className="text-[1.4rem] font-bold text-sideBarLink">
+                                Please Login
+                            </h1>
+                        </div>
+                        <div
+                            onClick={handleOpen}
+                            className=" active:scale-95 ease-in-out bg-opacity-10 bg-lightGray rounded-full transition-all w-[35px] h-[35px] flex items-center justify-center cursor-pointer p-2"
+                        >
+                            <RxCross1 size={"1em"} />
+                        </div>
+                    </div>
+                </DialogHeader>
+                <DialogBody>
+                    <div className=" ">
+                        <Login closeModal={handleOpen} />
+                    </div>
                 </DialogBody>
-                <DialogFooter>
-                    <Button
-                        variant="text"
-                        color="red"
-                        onClick={handleOpen}
-                        className="mr-1"
-                    >
-                        <span>Cancel</span>
-                    </Button>
-                    <Button
-                        variant="gradient"
-                        color="green"
-                        onClick={handleOpen}
-                    >
-                        <span>Confirm</span>
-                    </Button>
-                </DialogFooter>
             </Dialog>
         </Fragment>
-
-        // <Dialog
-        //     open={showAuthModal}
-        //     TransitionComponent={Transition}
-        //     keepMounted
-        //     onClose={() => { }}
-        //     aria-describedby="alert-dialog-slide-description"
-        //     classes={{
-        //         paper: "rounded-[15px] min-w-[650px]"
-        //     }}
-        // >
-        //     <Login />
-        // </Dialog>
     )
 }
 

@@ -97,24 +97,6 @@ const WalletSelector = ({ withLabel }: Props) => {
                             return (
                                 <>
                                     <LoginModal />
-                                    <button
-                                        onClick={() => {
-                                            setShowAuthModal(true)
-                                        }}
-                                        type="button"
-                                        className="px-[27.5px] h-full flex items-center justify-center gap-2 w-full"
-                                    >
-                                        <img
-                                            src="/lens-white-1.png"
-                                            alt=""
-                                            className="w-[1.5rem] h-[1.5rem]"
-                                        />
-                                        {withLabel && (
-                                            <span className="text-white font-semibold leading-[20px]">
-                                                Sign-In
-                                            </span>
-                                        )}
-                                    </button>
                                 </>
                             )
                         })()}
