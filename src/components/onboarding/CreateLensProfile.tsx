@@ -4,10 +4,14 @@ import { IoWalletOutline } from "react-icons/io5"
 import IconButton from "../Shared/IconButton"
 import { RxCross1 } from "react-icons/rx"
 import { useState } from "react"
+import clsx from "clsx"
 
-function CreateLensProfile() {
-    const [username, setUsername] = useState("")
+interface Props {
+    username: string
+    setUsername: (value: string) => void
+}
 
+function CreateLensProfile({ username, setUsername }: Props) {
     return (
         <div className=" flex items-center justify-center gap-8 py-4">
             <div className=" max-w-sm">
@@ -20,10 +24,16 @@ function CreateLensProfile() {
                 </p>
                 <div className="relative mt-5 mb-2">
                     <input
-                        onChange={(e) => setUsername(e.target.value)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                            setUsername(e.target.value)
+                        }
                         value={username}
                         placeholder="username"
-                        className=" font-[500] bg-lightGray input input-ghost py-3.5 p-4 w-full rounded-md outline-none "
+                        className={clsx(
+                            username === "test" &&
+                                "outline outline-2 outline-red-500 ring-red-500 focus:outline-red-500",
+                            "font-[500] bg-lightGray input input-ghost py-3.5 p-4 w-full rounded-md outline-none"
+                        )}
                     />
                     {username && (
                         <div onClick={() => setUsername("")}>
@@ -32,6 +42,11 @@ function CreateLensProfile() {
                                 size={"1.5em"}
                             />
                         </div>
+                    )}
+                    {username === "test" && (
+                        <span className="  text-red-500 pt-2">
+                            profile already exists, try another
+                        </span>
                     )}
                 </div>
             </div>

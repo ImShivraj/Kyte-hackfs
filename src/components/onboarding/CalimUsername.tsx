@@ -1,10 +1,22 @@
 import Image from "next/image"
 import img from "@assets/modal_img_2.png"
-import { useState } from "react"
+import React, { useState } from "react"
 import { RxCross1 } from "react-icons/rx"
+import { useForm } from "react-hook-form"
+import clsx from "clsx"
 
-function ClaimUsername() {
-    const [username, setUsername] = useState("")
+interface Props {
+    username: string
+    setUsername: (value: string) => void
+}
+
+function ClaimUsername({ username, setUsername }: Props) {
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm()
 
     return (
         <div className=" flex items-center justify-center gap-8 py-4">
@@ -17,10 +29,16 @@ function ClaimUsername() {
                 </p>
                 <div className="relative mt-5 mb-2">
                     <input
-                        onChange={(e) => setUsername(e.target.value)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                            setUsername(e.target.value)
+                        }
                         value={username}
                         placeholder="username"
-                        className=" font-[500] bg-lightGray input input-ghost py-3.5 p-4 w-full rounded-md outline-none "
+                        className={clsx(
+                            username === "test" &&
+                                "outline outline-2 outline-red-500 ring-red-500 focus:outline-red-500",
+                            "font-[500] bg-lightGray input input-ghost py-3.5 p-4 w-full rounded-md outline-none"
+                        )}
                     />
                     {username && (
                         <div onClick={() => setUsername("")}>
@@ -29,6 +47,11 @@ function ClaimUsername() {
                                 size={"1.5em"}
                             />
                         </div>
+                    )}
+                    {username === "test" && (
+                        <span className="  text-red-500 pt-2">
+                            username not available, try another
+                        </span>
                     )}
                 </div>
             </div>

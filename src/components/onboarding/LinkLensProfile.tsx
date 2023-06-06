@@ -17,7 +17,7 @@ function LinkLensProfile() {
                 <button
                     // onClick={handleOpen}
                     type="button"
-                    className="px-[20px] rounded-full bg-lightGreen active:bg-lightGreen hover:bg-lightGreen btn  border-0 h-full flex items-center justify-center gap-2 w-full"
+                    className="px-[20px] my-3 rounded-full bg-lightGreen active:bg-lightGreen hover:bg-lightGreen btn  border-0 h-full flex items-center justify-center gap-2 w-full"
                 >
                     <img
                         src="/lens-white-1.png"
