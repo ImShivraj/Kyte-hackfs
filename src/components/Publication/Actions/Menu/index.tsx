@@ -24,17 +24,6 @@ const PublicationMenu: FC<Props> = ({ publication }) => {
 
     return (
         <Menu as="div" className="relative">
-            {/* <Menu.Button
-                className="p-1.5 rounded-full hover:bg-gray-300 hover:bg-opacity-20"
-                onClick={(event: any) => {
-                    event.stopPropagation()
-                }}
-                aria-label="More"
-            >
-                <MoreVertOutlinedIcon
-                    className={clsx("text-sideBarLink", iconClassName)}
-                />
-            </Menu.Button> */}
             <div className=" absolute top-1.5 right-0 -mt-1.5">
                 <div className=" dropdown dropdown-bottom dropdown-end">
                     <label tabIndex={0} className=" cursor-pointer">
@@ -42,7 +31,7 @@ const PublicationMenu: FC<Props> = ({ publication }) => {
                     </label>
                     <ul
                         tabIndex={0}
-                        className="dropdown-content menu p-2 shadow-md bg-white rounded-box w-52 -mt-6 py-2 font-semibold text-sm  "
+                        className="dropdown-content menu p-2 shadow-md bg-white rounded-box w-52 -mt-6 py-2 font-semibold text-sm "
                     >
                         <div className=" py-2 px-4 flex items-center gap-3 cursor-pointer hover:bg-gray-50 rounded-md transition ease-in-out active:scale-95">
                             <MdOutlineTranslate size={"1.5em"} />

@@ -11,7 +11,7 @@ const Slug: FC<Props> = ({ slug, prefix, className = "" }) => {
     return (
         <span
             className={clsx(
-                "text-blue-600 font-semibold",
+                " text-lightGratText2 font-semibold",
                 className
             )}
         >

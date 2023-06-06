@@ -9,6 +9,7 @@ import Collect from "./Collect"
 import Comment from "./Comment"
 import Like from "./Like"
 import Mirror from "./Mirror"
+import Share from "./Share"
 
 interface Props {
     publication: KytePublication
@@ -29,7 +30,7 @@ const PublicationActions: FC<Props> = ({
         <div
             className={clsx(
                 { "justify-between": isFullPublication },
-                "flex w-full gap-6 items-center pt-3 -ml-2 lt-text-gray-500 sm:gap-8"
+                " bg-green-30 max-w-xl flex w-full md900:gap-16 items-center xs320:justify-between md900:justify-between pt-3 -ml-2 lt-text-gray-500 xs320:gap-0"
             )}
             onClick={(event) => {
                 event.stopPropagation()
@@ -56,6 +57,7 @@ const PublicationActions: FC<Props> = ({
                     isFullPublication={isFullPublication}
                 />
             )}
+            <Share />
             <Analytics
                 publication={publication}
                 isFullPublication={isFullPublication}

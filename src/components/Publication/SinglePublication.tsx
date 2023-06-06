@@ -39,12 +39,12 @@ const SinglePublication: FC<Props> = ({
     return (
         <article
             className=" bg-green-20 hover:bg[#F7F7F7] border-b border-borderLight cursor-pointer last:rounded-b-xl xs320:p-2 md:p-5  w-full transition-all h-auto"
-            onClick={() => {
-                const selection = window.getSelection()
-                if (!selection || selection.toString().length === 0) {
-                    push(`/posts/${rootPublication?.id}`)
-                }
-            }}
+            // onClick={() => {
+            //     const selection = window.getSelection()
+            //     if (!selection || selection.toString().length === 0) {
+            //         push(`/posts/${rootPublication?.id}`)
+            //     }
+            // }}
         >
             {feedItem ? (
                 <EventType
@@ -74,9 +74,7 @@ const SinglePublication: FC<Props> = ({
                         />
                         {showActions && (
                             <PublicationActions
-                                publication={
-                                    rootPublication as KytePublication
-                                }
+                                publication={rootPublication as KytePublication}
                                 electedMirror={
                                     feedItem?.electedMirror as ElectedMirror
                                 }
@@ -84,9 +82,7 @@ const SinglePublication: FC<Props> = ({
                         )}
                         {showModActions && (
                             <ModAction
-                                publication={
-                                    rootPublication as KytePublication
-                                }
+                                publication={rootPublication as KytePublication}
                             />
                         )}
                     </>

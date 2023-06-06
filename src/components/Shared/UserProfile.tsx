@@ -73,7 +73,7 @@ const UserProfile: FC<Props> = ({
                 <div
                     className={clsx(
                         isBig ? "font-bold" : "text-base",
-                        "text-black  text-[15px] leading-5 font-semibold"
+                        " text-[15px] leading-5 font-semibold"
                     )}
                 >
                     {profile?.name ?? formatHandle(profile?.handle)}
