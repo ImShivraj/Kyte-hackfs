@@ -71,10 +71,10 @@ const UserPreview: FC<Props> = ({
     )
 
     const Preview = () => (
-        <>
+        <div className=" rounded-xl md900:w-[300px] bg-lightGray shadow-lg px-4 py-3 w-full ">
             <div className="flex justify-between items-center">
                 <UserAvatar />
-                <div onClick={(e) => e.preventDefault()}>
+                <div className=" mt-3" onClick={(e) => e.preventDefault()}>
                     {!lazyProfile.isFollowedByMe &&
                         (followStatusLoading ? (
                             <div className="w-10 h-8 rounded-lg shimmer" />
@@ -107,7 +107,7 @@ const UserPreview: FC<Props> = ({
                         </div>
                     )}
                 </div>
-                <div className="flex space-x-3 items-center">
+                <div className="flex space-x-3 items-center w-full ">
                     <div className="flex items-center space-x-1">
                         <div className="text-base">
                             {nFormatter(lazyProfile?.stats?.totalFollowing)}
@@ -126,7 +126,7 @@ const UserPreview: FC<Props> = ({
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 
     const onPreviewStart = async () => {
@@ -144,19 +144,21 @@ const UserPreview: FC<Props> = ({
     return showUserPreview ? (
         <span onMouseOver={onPreviewStart}>
             {lazyProfile.id ? (
-                <Tippy
-                    placement="bottom-start"
-                    delay={[800, 0]}
-                    hideOnClick={false}
-                    content={<Preview />}
-                    arrow={false}
-                    interactive
-                    zIndex={1000}
-                    className="!bg-white hidden md:block !px-1.5 !py-3 !text-black w-64 !rounded-xl"
-                    appendTo={() => document.body}
-                >
-                    <span>{children}</span>
-                </Tippy>
+                <div className="">
+                    <Tippy
+                        placement="bottom-start"
+                        delay={[800, 0]}
+                        hideOnClick={false}
+                        content={<Preview />}
+                        arrow={false}
+                        interactive
+                        zIndex={1000}
+                        className="!bg-white hidden md:block !px-1.5 !py-3 !text-black w-64 !rounded-xl"
+                        appendTo={() => document.body}
+                    >
+                        <span>{children}</span>
+                    </Tippy>
+                </div>
             ) : (
                 <span>{children}</span>
             )}

@@ -10,7 +10,7 @@ import clsx from "clsx"
 import MessageUser from "../message/MessageUser"
 import { CgSearch } from "react-icons/cg"
 import PostPreview from "../posts/PostPreview"
-import { feedItems } from "../Feed/Feed"
+import Feed, { feedItems } from "../Feed/Feed"
 import SinglePublication from "../Publication/SinglePublication"
 
 interface Props {
@@ -595,10 +595,14 @@ const ProfileTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                 </TabsHeader>
                 <TabsBody className="  w-full md:border  md:rounded-3xl md:rounded-t-none md:border-t-0">
                     <TabPanel className="w-full " key={"posts"} value={"posts"}>
-                        <div className="  md:p-3 md:rounded-xl ">
-                            <PostPreview />
+                        <div>
+                            <div className="xs320:pt-1 md900:pt-0  md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
+                                <Feed />
+                            </div>
 
-                            {feedItems?.map((publication, index) => (
+                            {/* <PostPreview /> */}
+
+                            {/* {feedItems?.map((publication, index) => (
                                 <div key={index}>
                                     <PostPreview
                                         authorName={
@@ -606,28 +610,27 @@ const ProfileTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                                         }
                                     />
                                 </div>
-                            ))}
+                            ))} */}
                         </div>
                     </TabPanel>
                     <TabPanel key={"replies"} value={"replies"}>
-                        <div className="  md:p-3 md:rounded-xl ">
-                            <PostPreview />
-                            <PostPreview />
-                            <PostPreview />
+                        <div className="xs320:pt-1 md900:pt-0  md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
+                            <Feed />
                         </div>
+                        {/* <div className="  md:p-3 md:rounded-xl ">
+                            <PostPreview />
+                            <PostPreview />
+                            <PostPreview />
+                        </div> */}
                     </TabPanel>
                     <TabPanel key={"media"} value={"media"}>
-                        <div className="  md:p-3 md:rounded-xl ">
-                            <PostPreview />
-                            <PostPreview />
-                            <PostPreview />
+                        <div className="xs320:pt-1 md900:pt-0  md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
+                            <Feed />
                         </div>
                     </TabPanel>
                     <TabPanel key={"likes"} value={"likes"}>
-                        <div className="  md:p-3 md:rounded-xl ">
-                            <PostPreview />
-                            <PostPreview />
-                            <PostPreview />
+                        <div className="xs320:pt-1 md900:pt-0  md900:rounded-xl xs320:rounded-none xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
+                            <Feed />
                         </div>
                     </TabPanel>
                 </TabsBody>
