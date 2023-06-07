@@ -13,8 +13,8 @@ interface Props {
 
 function CreateLensProfile({ username, setUsername }: Props) {
     return (
-        <div className=" flex items-center justify-between px-12 gap-3 py-4">
-            <div className=" max-w-sm">
+        <div className="flex items-center flex-wrap-reverse xs320:text-center md900:text-start justify-between md900:px-12 md900:gap-3 py-4">
+            <div className="md900:max-w-sm xs320:mt-6 md900:mt-0 max-w-sm">
                 <h1 className=" text-2xl font-[600] my-2">
                     Create your lens profile
                 </h1>

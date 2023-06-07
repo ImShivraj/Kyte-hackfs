@@ -5,8 +5,8 @@ import IconButton from "../Shared/IconButton"
 
 function LinkLensProfile() {
     return (
-        <div className=" flex items-center justify-between px-12 gap-3 py-4 ">
-            <div className=" max-w-">
+        <div className=" flex items-center xs320:text-center md900:text-start flex-wrap-reverse justify-between md900:px-12 md900:gap-3 py-4">
+            <div className=" md900:max-w-sm xs320:mt-6 md900:mt-0">
                 <h1 className=" text-2xl font-[600] my-2">
                     Link your Lens profile
                 </h1>

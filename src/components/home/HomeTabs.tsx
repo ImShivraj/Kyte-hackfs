@@ -16,6 +16,8 @@ import user from "@/src/assets/user.png"
 import { BiDotsVerticalRounded } from "react-icons/bi"
 import brand1 from "@/src/assets/brand1.png"
 import CreateNewPost from "../posts/CreateNewPost"
+import OnboardingModalMobile from "../onboarding/OnboardingModalMobile"
+import OnboardingModal from "../onboarding/OnboardingModal"
 
 interface Props {
     activeTab: string // Replace 'StateType' with the actual type of the state
@@ -81,10 +83,16 @@ const HomeTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                         key={"for-you"}
                         value={"for-you"}
                     >
-                        <div className=" p-4 border rounded-xl">
+                        <div className=" xs320:hidden md900:block p-4 border rounded-xl">
                             <CreateNewPost />
                         </div>
                         <div className="border xs320:rounded-none md900:rounded-xl mt-2  xs320:pt-8 md900:pt-0xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
+                            <div className=" xs320:hidden md900:block">
+                                <OnboardingModal />
+                            </div>
+                            <div className=" md900:hidden xs320:block">
+                                <OnboardingModalMobile />
+                            </div>
                             <Feed />
                         </div>
                     </TabPanel>
@@ -94,7 +102,7 @@ const HomeTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                         key={"following"}
                         value={"following"}
                     >
-                        <div className=" p-4 border rounded-xl">
+                        <div className="xs320:hidden md900:block p-4 border rounded-xl">
                             <CreateNewPost />
                         </div>
                         <div className="border xs320:rounded-none md900:rounded-xl mt-2  xs320:pt-8 md900:pt-0xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">

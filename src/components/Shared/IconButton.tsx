@@ -15,7 +15,7 @@ const IconButton: FC<Props> = ({ title, icon: IconType, rounded }) => {
             type="button"
             className={clsx(
                 rounded === true ? "rounded-full" : "rounded-md ",
-                "my-3 bg-lightGreen hover:bg-lightGreen active:bg-lightGreen px-14  border-0 btn  flex items-center justify-center gap-2 "
+                "my-3 bg-lightGreen hover:bg-lightGreen active:bg-lightGreen xs320:px-8 mx-auto md900:mx-0 w-full md900:w-auto md900:px-14  border-0 btn  flex items-center justify-center gap-2 "
             )}
         >
             <IconType size={"1.5em"} />

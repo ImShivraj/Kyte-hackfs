@@ -26,6 +26,7 @@ import clsx from "clsx"
 import { BiDotsVerticalRounded } from "react-icons/bi"
 import HomeTabs from "@/src/components/home/HomeTabs"
 import OnboardingModal from "@/src/components/onboarding/OnboardingModal"
+import OnboardingModalMobile from "@/src/components/onboarding/OnboardingModalMobile"
 
 const Children1: React.FC = () => {
     const [activeTab, setActiveTab] = useState("for-you")
