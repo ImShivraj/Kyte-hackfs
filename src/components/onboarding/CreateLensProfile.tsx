@@ -22,7 +22,7 @@ function CreateLensProfile({ username, setUsername }: Props) {
                     Make a lens profile username to connect with the
                     LensProtocol ecosystem
                 </p>
-                <div className="relative mt-5 mb-2">
+                <div className="relative mt-5 mb-2 xs320:mx-3 md900:mx-0">
                     <input
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                             setUsername(e.target.value)
@@ -50,7 +50,7 @@ function CreateLensProfile({ username, setUsername }: Props) {
                     )}
                 </div>
             </div>
-            <div>
+            <div className="xs320:mx-auto md900:mx-0">
                 <Image src={img} alt=" img" />
             </div>
         </div>

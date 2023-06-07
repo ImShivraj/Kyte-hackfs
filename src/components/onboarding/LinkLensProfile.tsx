@@ -30,7 +30,7 @@ function LinkLensProfile() {
                     </span>
                 </button>
             </div>
-            <div className="max-w-xs">
+            <div className="max-w-xs xs320:mx-auto md900:mx-0">
                 <Image className=" max-w-[232px] " src={lens} alt=" img" />
             </div>
         </div>

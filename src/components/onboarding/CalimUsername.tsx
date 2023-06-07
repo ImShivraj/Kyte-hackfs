@@ -55,7 +55,7 @@ function ClaimUsername({ username, setUsername }: Props) {
                     )}
                 </div>
             </div>
-            <div>
+            <div className="xs320:mx-auto md900:mx-0">
                 <Image src={img} alt=" img" />
             </div>
         </div>

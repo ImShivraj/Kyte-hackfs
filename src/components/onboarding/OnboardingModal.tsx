@@ -17,10 +17,49 @@ import Box from "@mui/material/Box"
 import Stepper from "@mui/material/Stepper"
 import Step from "@mui/material/Step"
 import StepLabel from "@mui/material/StepLabel"
-import { Typography } from "@mui/material"
+import { StepConnector, Theme, Typography } from "@mui/material"
 import { RxCross1 } from "react-icons/rx"
+import { CheckIcon, createStyles } from "@mantine/core"
+import { makeStyles } from "@mui/styles"
+import clsx from "clsx"
 
 const steps = ["Connect your wallet", "Select a username", "Connect with Lens"]
+
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        completed: {
+            color: "black",
+            borderColor: "black",
+        },
+        connectorActive: {
+            "& $connectorLine": {
+                borderColor: "black",
+            },
+        },
+        connectorLine: {
+            borderColor: "rgba(0, 0, 0, 0.23)",
+        },
+    })
+)
+
+const CustomStepIcon = (props: any) => {
+    const classes = useStyles()
+    const { active, completed } = props
+
+    return (
+        <div className={completed ? classes.completed : ""}>
+            {completed ? (
+                <div className=" border-2 border-black rounded-full bg-black text-white font-semibold px-3.5 py-1 ">
+                    {props.icon}
+                </div>
+            ) : (
+                <div className=" border-2 border-lightGratText1 rounded-full bg-transparent font-semibold px-3.5 py-1 ">
+                    {props.icon}
+                </div>
+            )}
+        </div>
+    )
+}
 
 export default function OnboardingModal() {
     const [open, setOpen] = useState(false)
@@ -28,9 +67,7 @@ export default function OnboardingModal() {
     const [activeStep, setActiveStep] = useState(0)
     const [skipped, setSkipped] = useState(new Set<number>())
 
-    const isStepOptional = (step: number) => {
-        return step === 1
-    }
+    const classes = useStyles()
 
     const isStepSkipped = (step: number) => {
         return skipped.has(step)
@@ -93,7 +130,7 @@ export default function OnboardingModal() {
                     </div>
                     <div className=" bg-lightGray py-4 px-4 w-11/12 mb-3  mx-auto rounded-full">
                         <Box sx={{ width: "100%" }}>
-                            <Stepper activeStep={activeStep}>
+                            {/* <Stepper activeStep={activeStep}>
                                 {steps.map((label, index) => {
                                     const stepProps: { completed?: boolean } =
                                         {}
@@ -108,6 +145,45 @@ export default function OnboardingModal() {
                                         <Step key={label} {...stepProps}>
                                             <StepLabel {...labelProps}>
                                                 <span className=" text-base font-[500]">
+                                                    {label}
+                                                </span>
+                                            </StepLabel>
+                                        </Step>
+                                    )
+                                })}
+                            </Stepper> */}
+
+                            <Stepper activeStep={activeStep}>
+                                {steps.map((label, index) => {
+                                    const stepProps: { completed?: boolean } =
+                                        {}
+
+                                    if (isStepSkipped(index)) {
+                                        stepProps.completed = false
+                                    }
+
+                                    return (
+                                        <Step
+                                            key={label}
+                                            {...stepProps}
+                                            completed={stepProps.completed}
+                                        >
+                                            <StepLabel
+                                                StepIconComponent={
+                                                    CustomStepIcon
+                                                }
+                                                StepIconProps={{
+                                                    classes: {
+                                                        completed:
+                                                            classes.completed,
+                                                    },
+                                                }}
+                                            >
+                                                <span
+                                                    className={clsx(
+                                                       activeStep === index && " text-lightGratText1" ,"text-base font-[600]"
+                                                    )}
+                                                >
                                                     {label}
                                                 </span>
                                             </StepLabel>
