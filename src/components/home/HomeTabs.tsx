@@ -87,9 +87,9 @@ const HomeTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                             <CreateNewPost />
                         </div>
                         <div className="border xs320:rounded-none md900:rounded-xl mt-2  xs320:pt-8 md900:pt-0xs320:w-screen md900:w-auto md900:max-w-full h-auto  ">
-                            <div className=" xs320:hidden md900:block">
+                            {/* <div className=" xs320:hidden md900:block">
                                 <OnboardingModal />
-                            </div>
+                            </div> */}
                             <div className=" md900:hidden xs320:block">
                                 <OnboardingModalMobile />
                             </div>

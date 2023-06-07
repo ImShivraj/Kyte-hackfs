@@ -1,5 +1,6 @@
 import Image from "next/image"
 import img from "@assets/modal_img2.svg"
+import lens from "@assets/lens_logo.png"
 import { IoWalletOutline } from "react-icons/io5"
 import IconButton from "../Shared/IconButton"
 
@@ -29,8 +30,8 @@ function LinkLensProfile() {
                     </span>
                 </button>
             </div>
-            <div>
-                <Image src={img} alt=" img" />
+            <div className="max-w-xs">
+                <Image className=" max-w-[232px] " src={lens} alt=" img" />
             </div>
         </div>
     )
