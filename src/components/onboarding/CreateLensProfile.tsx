@@ -13,8 +13,10 @@ interface Props {
 
 function CreateLensProfile({ username, setUsername }: Props) {
     return (
-        <div className="flex items-center flex-wrap-reverse xs320:text-center md900:text-start justify-between md900:px-12 md900:gap-3 py-4">
-            <div className="md900:max-w-sm xs320:mt-6 md900:mt-0 max-w-sm">
+        // <div className="flex items-center flex-wrap-reverse xs320:text-center md900:text-start justify-between md900:px-12 md900:gap-3 py-4">
+        //     <div className="md900:max-w-sm xs320:mt-6 md900:mt-0 max-w-sm">
+        <div className=" flex items-center place-items-stretch xs320:text-center md900:text-start flex-wrap-reverse md900:justify-between xl1450:justify-evenly md900:px-12 xl1450:px-0 md900:gap-3 py-4">
+            <div className=" md900:max-w-sm xl1450:max-w-max xs320:mt-6 md900:mt-0">
                 <h1 className=" text-2xl font-[600] my-2">
                     Create your lens profile
                 </h1>
@@ -44,7 +46,7 @@ function CreateLensProfile({ username, setUsername }: Props) {
                         </div>
                     )}
                     {username === "test" && (
-                        <span className="  text-red-500 pt-2">
+                        <span className="  text-red-500 absolute ">
                             profile already exists, try another
                         </span>
                     )}

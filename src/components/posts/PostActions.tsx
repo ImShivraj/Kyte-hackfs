@@ -7,6 +7,7 @@ import { FiLink } from "react-icons/fi"
 import { IoMailOutline } from "react-icons/io5"
 import clsx from "clsx"
 import CommentModal from "./CommentModal"
+import Share from "../Publication/Actions/Share"
 
 function PostActions() {
     const [open, setOpen] = useState(false)
@@ -29,7 +30,7 @@ function PostActions() {
                 </div>
                 <span className=" font-semibold">&nbsp;999</span>
             </div>
-            
+
             <div className=" cursor-pointer flex  text-[#FF54B1]">
                 <div className="transition ease-in-out active:scale-95">
                     <AiOutlineHeart size={"1.4em"} />
@@ -63,6 +64,10 @@ function PostActions() {
                         <span>Bookmark Post</span>
                     </div>
                 </ul>
+            </div>
+
+            <div className=" -mt-1.5">
+                <Share />
             </div>
         </div>
     )

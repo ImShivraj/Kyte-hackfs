@@ -53,7 +53,7 @@ const CustomStepIcon = (props: any) => {
                     {props.icon}
                 </div>
             ) : (
-                <div className=" border-2 border-lightGratText1 rounded-full bg-transparent font-semibold px-3.5 py-1 ">
+                <div className=" border-2 border-lightGratText1 text-lightGratText1 rounded-full bg-transparent font-semibold px-3.5 py-1 ">
                     {props.icon}
                 </div>
             )}
@@ -116,12 +116,12 @@ export default function OnboardingModal() {
                 dismiss={{
                     outsidePress: false,
                 }}
-                className=" p-3"
+                className=" p-3 rounded-2xl "
                 size="lg"
                 open={open}
                 handler={handleOpen}
             >
-                <DialogBody className=" relative ">
+                <DialogBody className=" relative  ">
                     <div
                         onClick={handleOpen}
                         className=" absolute right-0 top-0 hover:bg-lightGray rounded-full p-3 cursor-pointer transition-all ease-in-out active:scale-95"
