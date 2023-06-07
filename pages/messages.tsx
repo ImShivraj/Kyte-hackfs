@@ -1,8 +1,3 @@
-import ChatWindow from "@components/message/ChatWindow"
-import MessageUser from "@components/message/MessageUser"
-import UserList from "@components/message/UserList"
-import React from "react"
-
 export default function MessagesHome() {
     return (
         <div className=" h-screen w-full ">

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import img from "@assets/modal_img_2.png"
+import img from "@assets/modal_img1.svg"
 import React, { useState } from "react"
 import { RxCross1 } from "react-icons/rx"
 import { useForm } from "react-hook-form"
@@ -19,7 +19,7 @@ function ClaimUsername({ username, setUsername }: Props) {
     } = useForm()
 
     return (
-        <div className=" flex items-center justify-center gap-8 py-4">
+        <div className=" flex items-center justify-between gap-3 py-4 px-12">
             <div className=" max-w-sm">
                 <h1 className=" text-2xl font-[600] my-2">
                     Claim your username

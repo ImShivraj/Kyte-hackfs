@@ -1,12 +1,12 @@
 import Image from "next/image"
-import img from "@assets/modal-img.png"
+import img from "@assets/modal_img2.svg"
 import { IoWalletOutline } from "react-icons/io5"
 import IconButton from "../Shared/IconButton"
 
 function LinkLensProfile() {
     return (
-        <div className=" flex items-center justify-center gap-8 py-4">
-            <div className=" max-w-sm">
+        <div className=" flex items-center justify-between px-12 gap-3 py-4 ">
+            <div className=" max-w-">
                 <h1 className=" text-2xl font-[600] my-2">
                     Link your Lens profile
                 </h1>
@@ -17,7 +17,7 @@ function LinkLensProfile() {
                 <button
                     // onClick={handleOpen}
                     type="button"
-                    className="px-[20px] my-3 rounded-full bg-lightGreen active:bg-lightGreen hover:bg-lightGreen btn  border-0 h-full flex items-center justify-center gap-2 w-full"
+                    className="px-[70px] my-3 rounded-full bg-lightGreen active:bg-lightGreen hover:bg-lightGreen btn  border-0 h-full flex items-center justify-between px-12 gap-2"
                 >
                     <img
                         src="/lens-white-1.png"

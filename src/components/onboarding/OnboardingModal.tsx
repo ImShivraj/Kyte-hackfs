@@ -18,6 +18,7 @@ import Stepper from "@mui/material/Stepper"
 import Step from "@mui/material/Step"
 import StepLabel from "@mui/material/StepLabel"
 import { Typography } from "@mui/material"
+import { RxCross1 } from "react-icons/rx"
 
 const steps = ["Connect your wallet", "Select a username", "Connect with Lens"]
 
@@ -74,17 +75,23 @@ export default function OnboardingModal() {
                 </span>
             </button>
 
-            <Dialog className="" size="md" open={open} handler={handleOpen}>
-                {/* <DialogHeader></DialogHeader> */}
-                <DialogBody className=" ">
-                    {/* <OnboardingSteps /> */}
-                    {/* <ConnectWallet /> */}
-                    {/* <ClaimUsername
-                        username={username}
-                        setUsername={setUsername}
-                    /> */}
-
-                    <div className=" bg-lightGray py-4 px-4 w-11/12 mx-auto rounded-full">
+            <Dialog
+                dismiss={{
+                    outsidePress: false,
+                }}
+                className=" p-3"
+                size="lg"
+                open={open}
+                handler={handleOpen}
+            >
+                <DialogBody className=" relative ">
+                    <div
+                        onClick={handleOpen}
+                        className=" absolute right-0 top-0 hover:bg-lightGray rounded-full p-3 cursor-pointer transition-all ease-in-out active:scale-95"
+                    >
+                        <RxCross1 size={"1.2em"} />
+                    </div>
+                    <div className=" bg-lightGray py-4 px-4 w-11/12 mb-3  mx-auto rounded-full">
                         <Box sx={{ width: "100%" }}>
                             <Stepper activeStep={activeStep}>
                                 {steps.map((label, index) => {
@@ -113,18 +120,7 @@ export default function OnboardingModal() {
 
                     {activeStep === steps.length ? (
                         <React.Fragment>
-                            <div className=" flex justify-center items-center pt-10">
-                                All steps completed - you&apos;re finished
-                            </div>
-                            <Box
-                                sx={{
-                                    display: "flex",
-                                    flexDirection: "row",
-                                    pt: 2,
-                                }}
-                            >
-                                <Box sx={{ flex: "1 1 auto" }} />
-                            </Box>
+                            <LinkLensProfile />
                         </React.Fragment>
                     ) : (
                         <React.Fragment>
