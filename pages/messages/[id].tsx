@@ -29,7 +29,7 @@ export default function UserMessages() {
                     <ChatWindow />
                 </div>
             </div>
-            <div className=" xs320:hidden md1050:block w-3/12  px-12 pt- max-h-[92vh] h-[92vh] scrollbar-hide overflow-visible mt-0 my-3 flex flex-col justify-center items-stretch ">
+            <div className=" xs320:hidden md1050:block w-3/12  px-12 pt- max-h-[92vh] h-[92vh] scrollbar-hide overflow-scroll mt-0 my-3 flex flex-col justify-center items-stretch ">
                 <div className=" pt-10 h-full rounded-3xl flex flex-col items-center justify-start ">
                     <ProfileOverview />
                 </div>

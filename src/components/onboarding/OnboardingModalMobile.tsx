@@ -81,12 +81,12 @@ export default function OnboardingModalMobile() {
                 dismiss={{
                     outsidePress: false,
                 }}
-                className=" p-3"
+                className=" p-3 h-full  max-h-[100vh]"
                 size="xxl"
                 open={open}
                 handler={handleOpen}
             >
-                <DialogBody className="  h-[100vh] relative ">
+                <DialogBody className="  relative h-[100vh]  ">
                     <div
                         onClick={handleOpen}
                         className=" z-[100] absolute right-0 top-0 hover:bg-lightGray rounded-full p-3 cursor-pointer transition-all ease-in-out active:scale-95"
@@ -162,19 +162,19 @@ export default function OnboardingModalMobile() {
                             </div>
                         )}
                     >
-                        <div className=" h-5/6 mt-6 w-full   max-h-[90vh]">
+                        <div className=" h-5/6 mt-6 w-full   max-h-[80vh]">
                             <ConnectWallet />
                         </div>
-                        <div className=" h-5/6 mt-6 w-full   max-h-[90vh]">
+                        <div className=" h-5/6 mt-6 w-full   max-h-[80vh]">
                             <ClaimUsername
                                 username={username}
                                 setUsername={setUsername}
                             />
                         </div>
-                        <div className=" h-5/6 mt-6 w-full   max-h-[90vh]">
+                        <div className=" h-5/6 mt-6 w-full   max-h-[80vh]">
                             <LinkLensProfile />
                         </div>
-                        <div className=" h-5/6 mt-6 w-full   max-h-[90vh]">
+                        <div className=" h-5/6 mt-6 w-full   max-h-[80vh]">
                             <CreateLensProfile
                                 username={username}
                                 setUsername={setUsername}

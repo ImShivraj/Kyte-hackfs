@@ -23,7 +23,7 @@ const Children2: React.FC = () => {
     const { currentProfile } = useAppStore()
     return (
         <div className="fixed md1050:pr-5 xl1450:pr-0 xl1450:">
-            {currentProfile ? (
+            {/* {currentProfile ? (
                 <div className="relative mt-5 mb-2">
                     <input
                         placeholder="Search"
@@ -38,9 +38,11 @@ const Children2: React.FC = () => {
                 <div className=" mt-2 mb-3 active:scale-95 transition ease-in-out">
                     <WalletSelector withLabel />
                 </div>
-            )}
+            )} */}
 
-            <OnboardingModal />
+            <div className=" my-2">
+                <OnboardingModal />
+            </div>
 
             <div className="mt-2 bg-lightGray  rounded-3xl">
                 <h2 className="  text-2xl font-semibold p-5">
