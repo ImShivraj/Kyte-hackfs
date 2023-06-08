@@ -30,38 +30,51 @@ const PublicationActions: FC<Props> = ({
         <div
             className={clsx(
                 { "justify-between": isFullPublication },
-                " bg-green-30 max-w-xl flex w-full md900:gap-16 items-center xs320:justify-between md900:justify-between pt-3 -ml-2 lt-text-gray-500 xs320:gap-0"
+                // flex items-center xs320:justify-between md900:justify-between xs320:gap-0 md900:gap-16
+                "  xs320:w-[120%] md900:max-w-xl  grid grid-cols-5 md900:gap-4  pt-3 -ml-2 lt-text-gray-500 "
             )}
             onClick={(event) => {
                 event.stopPropagation()
             }}
         >
-            <Comment
-                publication={publication}
-                isFullPublication={isFullPublication}
-            />
-            {canMirror && (
-                <Mirror
+            <div className=" bg-blue-0 w-full col-span-1">
+                <Comment
                     publication={publication}
                     isFullPublication={isFullPublication}
                 />
-            )}
-            <Like
-                publication={publication}
-                isFullPublication={isFullPublication}
-            />
-            {collectModuleType !== "RevertCollectModuleSettings" && (
-                <Collect
-                    electedMirror={electedMirror}
+            </div>
+            <div className=" bg-red-0 w-full col-span-1">
+                {canMirror && (
+                    <Mirror
+                        publication={publication}
+                        isFullPublication={isFullPublication}
+                    />
+                )}
+            </div>
+            <div className=" bg-purple-0 w-full col-span-1">
+                <Like
                     publication={publication}
                     isFullPublication={isFullPublication}
                 />
-            )}
-            <Share />
-            <Analytics
-                publication={publication}
-                isFullPublication={isFullPublication}
-            />
+            </div>
+            <div className=" bg-cyan-0 w-full col-span-1">
+                {collectModuleType !== "RevertCollectModuleSettings" && (
+                    <Collect
+                        electedMirror={electedMirror}
+                        publication={publication}
+                        isFullPublication={isFullPublication}
+                    />
+                )}
+            </div>
+            <div className=" bg-sky-0 w-full col-span-1">
+                <Share />
+            </div>
+            <div className=" bg-indigo-0 w-full col-span-1">
+                <Analytics
+                    publication={publication}
+                    isFullPublication={isFullPublication}
+                />
+            </div>
         </div>
     )
 }

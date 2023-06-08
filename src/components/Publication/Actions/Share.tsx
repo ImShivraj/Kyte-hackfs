@@ -41,7 +41,8 @@ const Share = () => {
                             </label>
                             <ul
                                 tabIndex={0}
-                                className="dropdown-content menu  p-2 shadow-md bg-white text-black rounded-box w-72 mt-4 md:ml-2 py-2 font-semibold text-sm "
+                                className="dropdown-content menu  p-2 shadow-lg bg-white text-black rounded-box w-72 xs320:w-64 mt-4 xs320:-mr-14 md900:-mr-0 xs320:mt-8 md900:mt-4
+                                 md:ml-2 py-2 font-semibold text-sm "
                             >
                                 <div className=" py-2 px-4 flex items-center gap-3 cursor-pointer hover:bg-gray-50 rounded-md transition ease-in-out active:scale-95">
                                     <FiLink size={"1.5em"} />

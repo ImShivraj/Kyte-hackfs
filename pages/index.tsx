@@ -1,5 +1,3 @@
-import CreateNewPost from "@components/posts/CreateNewPost"
-import PostPreview from "@components/posts/PostPreview"
 import React, { useState } from "react"
 import SuggestedProfile from "@/src/components/home/SuggestedProfile"
 import { CgSearch } from "react-icons/cg"
@@ -7,26 +5,12 @@ import { HiOutlineGlobeEuropeAfrica } from "react-icons/hi2"
 import { useAppStore } from "@store/app"
 import WalletSelector from "@/src/components/Shared/Login/WalletSelector"
 import useIsMounted from "@/src/utils/hooks/useIsMounted"
-import Image from "next/image"
-import user from "@/src/assets/user.png"
 
-import brand2 from "@/src/assets/brand2.png"
 import { links } from "./explore"
 import ResponsiveLayout from "@/src/components/Shared/ResponsiveLayout"
-import Feed from "@/src/components/Feed/Feed"
-import ExploreTabs from "@/src/components/explore/ExploreTabs"
-import {
-    Tab,
-    TabPanel,
-    Tabs,
-    TabsBody,
-    TabsHeader,
-} from "@material-tailwind/react"
-import clsx from "clsx"
-import { BiDotsVerticalRounded } from "react-icons/bi"
+
 import HomeTabs from "@/src/components/home/HomeTabs"
 import OnboardingModal from "@/src/components/onboarding/OnboardingModal"
-import OnboardingModalMobile from "@/src/components/onboarding/OnboardingModalMobile"
 
 const Children1: React.FC = () => {
     const [activeTab, setActiveTab] = useState("for-you")
@@ -38,7 +22,6 @@ const Children2: React.FC = () => {
     const [expandedImage, setExpandedImage] = useState<string | null>(null)
     const { currentProfile } = useAppStore()
     return (
-        // fixed right-3
         <div className="fixed md1050:pr-5 xl1450:pr-0 xl1450:">
             {currentProfile ? (
                 <div className="relative mt-5 mb-2">

@@ -15,7 +15,7 @@ function CreateLensProfile({ username, setUsername }: Props) {
     return (
         // <div className="flex items-center flex-wrap-reverse xs320:text-center md900:text-start justify-between md900:px-12 md900:gap-3 py-4">
         //     <div className="md900:max-w-sm xs320:mt-6 md900:mt-0 max-w-sm">
-        <div className=" flex items-center place-items-stretch xs320:text-center md900:text-start flex-wrap-reverse md900:justify-between xl1450:justify-evenly md900:px-12 xl1450:px-0 md900:gap-3 py-4">
+        <div className=" flex items-center place-items-stretch xs320:text-center md900:text-start flex-wrap-reverse md900:justify-between xl1450:px-16 xl1450:justify-between md900:px-12 md900:gap-3 py-4">
             <div className=" md900:max-w-sm xl1450:max-w-max xs320:mt-6 md900:mt-0">
                 <h1 className=" text-2xl font-[600] my-2">
                     Create your lens profile
@@ -34,7 +34,7 @@ function CreateLensProfile({ username, setUsername }: Props) {
                         className={clsx(
                             username === "test" &&
                                 "outline outline-2 outline-red-500 ring-red-500 focus:outline-red-500",
-                            "font-[500] bg-lightGray input input-ghost py-3.5 p-4 w-full rounded-md outline-none"
+                            "font-[500] bg-lightGray input input-ghost py-3.5 p-4 w-full xl1450:w-96 rounded-md outline-none"
                         )}
                     />
                     {username && (
