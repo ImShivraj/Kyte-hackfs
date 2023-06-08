@@ -15,6 +15,7 @@ import Feed from "@components/Feed/Feed"
 import Image from "next/image"
 import user from "@/src/assets/user.png"
 import { BiDotsVerticalRounded } from "react-icons/bi"
+import ProfileDrawer from "../Shared/ProfileDrawer"
 
 interface Props {
     activeTab: string // Replace 'StateType' with the actual type of the state
@@ -66,9 +67,7 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                             </div>
                         </div>
 
-                        <div className=" mr-2">
-                            <Image src={user} alt="user" />
-                        </div>
+                        <ProfileDrawer />
                     </div>
                 </div>
 
