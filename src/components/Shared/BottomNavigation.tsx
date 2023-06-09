@@ -31,7 +31,7 @@ function BottomNavigation() {
     ))
 
     return (
-        <div className=" flex bg-bgSidebar py-2 text-white justify-evenly gap-4">
+        <div className=" flex bg-bgSidebar py-0 text-white justify-evenly gap-4">
             {links}
         </div>
     )

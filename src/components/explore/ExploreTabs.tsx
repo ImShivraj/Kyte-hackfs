@@ -37,7 +37,7 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                             size={"1.5em"}
                         />
                     </div>
-                    <div className=" md900:hidden flex items-center gap-3">
+                    <div className=" md900:hidden flex items-center gap-3 mt-1">
                         <div className="dropdown dropdown-bottom dropdown-end">
                             <label tabIndex={0} className=" my-auto">
                                 <BiDotsVerticalRounded size={"1.5em"} />

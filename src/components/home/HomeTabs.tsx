@@ -18,6 +18,7 @@ import brand1 from "@/src/assets/brand1.png"
 import CreateNewPost from "../posts/CreateNewPost"
 import OnboardingModalMobile from "../onboarding/OnboardingModalMobile"
 import OnboardingModal from "../onboarding/OnboardingModal"
+import ProfileDrawer from "../Shared/ProfileDrawer"
 
 interface Props {
     activeTab: string // Replace 'StateType' with the actual type of the state
@@ -35,8 +36,9 @@ const HomeTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                             <span className=" text-3xl font-bold">Kyte</span>
                         </div>
 
-                        <div className=" md900:hidden px-3">
-                            <Image width={45} src={user} alt="user" />
+                        <div className=" md900:hidden px-3 w-[4.9rem] bg-transparent">
+                            {/* <Image width={45} src={user} alt="user" /> */}
+                            <ProfileDrawer />
                         </div>
                     </div>
                     <div className=" md900:hidden flex items-center gap-3"></div>

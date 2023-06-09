@@ -6,6 +6,7 @@ import { green, grey } from "@mui/material/colors"
 import Box from "@mui/material/Box"
 import SwipeableDrawer from "@mui/material/SwipeableDrawer"
 import Image from "next/image"
+import pfp from "@/src/assets/user.png"
 import user from "@/src/assets/user_profile.png"
 import { BiDotsHorizontal, BiLink } from "react-icons/bi"
 import { BsExclamationTriangle, BsMicMute, BsThreeDots } from "react-icons/bs"
@@ -56,7 +57,7 @@ export default function ProfileDrawer(props: Props) {
             <Global
                 styles={{
                     ".MuiDrawer-root > .MuiPaper-root": {
-                        height: `calc(50% - ${20}px)`,
+                        height: `400px`,
                         overflow: "visible",
                         borderTopLeftRadius: 25,
                         borderTopRightRadius: 25,
@@ -65,8 +66,8 @@ export default function ProfileDrawer(props: Props) {
                 }}
             />
             {/* <Box sx={{ textAlign: "center", pt: 1 }}> */}
-            <div onClick={toggleDrawer(true)} className=" mr-2 bg-white">
-                <Image src={user} alt="user" />
+            <div onClick={toggleDrawer(true)} className=" mr-2 bg-transparent">
+                <Image src={pfp} alt="user" />
             </div>
             {/* </Box> */}
             <SwipeableDrawer
@@ -131,7 +132,7 @@ export default function ProfileDrawer(props: Props) {
                             </div>
                         </div>
 
-                        <div className=" mt-5">
+                        <div className=" mt-6">
                             <div className=" my-3 flex items-center gap-3 justify-start">
                                 <BiLink size={"1.2em"} />
                                 <span className=" font-[600] text-sm  ">
@@ -158,7 +159,7 @@ export default function ProfileDrawer(props: Props) {
                             </div>
                         </div>
 
-                        <div className=" flex flex-wrap gap-x-6 gap-y-1 justify-start ">
+                        <div className=" mt-5 flex flex-wrap gap-x-6 gap-y-1 justify-start ">
                             {links.map((link, idx) => (
                                 <a
                                     key={idx}
@@ -173,7 +174,7 @@ export default function ProfileDrawer(props: Props) {
                                 </a>
                             ))}
                         </div>
-                        <div className=" mt-2 flex justify-start gap-x-6 items-center text-start text-lightGratText2 my-auto text-sm font-[600] hover:bg-transparent">
+                        <div className=" mt-5 flex justify-start gap-x-6 items-center text-start text-lightGratText2 my-auto text-sm font-[600] hover:bg-transparent">
                             <div className=" text-lightGratText2 flex items-center gap-3">
                                 <HiOutlineGlobeEuropeAfrica
                                     size={"1.5em"}
