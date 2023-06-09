@@ -1,6 +1,8 @@
 import { KytePublication } from "src/types"
 import { create } from "zustand"
 interface ModalState {
+    showOnboardingModal: boolean
+    setShowOnboardingModal: (showOnboardingModal: boolean) => void
     showAuthModal: boolean
     setShowAuthModal: (showAuthModal: boolean) => void
     showReportModal: boolean
@@ -22,6 +24,9 @@ interface ModalState {
 }
 
 export const useModalStore = create<ModalState>()((set) => ({
+    showOnboardingModal: false,
+    setShowOnboardingModal: (showOnboardingModal) =>
+        set(() => ({ showOnboardingModal })),
     showAuthModal: false,
     setShowAuthModal: (showAuthModal) => set(() => ({ showAuthModal })),
     showReportModal: false,
@@ -46,6 +51,7 @@ export const useModalStore = create<ModalState>()((set) => ({
         set((state) => {
             return {
                 ...state,
+                showOnboardingModal: false,
                 showAuthModal: false,
                 showReportModal: false,
                 reportPublication: null,

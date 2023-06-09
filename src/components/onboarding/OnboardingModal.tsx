@@ -22,6 +22,7 @@ import { RxCross1 } from "react-icons/rx"
 import { CheckIcon, createStyles } from "@mantine/core"
 import { makeStyles } from "@mui/styles"
 import clsx from "clsx"
+import { useModalStore } from "@/src/store/modal"
 
 const steps = ["Connect your wallet", "Select a username", "Connect with Lens"]
 
@@ -64,7 +65,6 @@ const CustomStepIcon = (props: any) => {
 }
 
 export default function OnboardingModal() {
-    const [open, setOpen] = useState(false)
     const [username, setUsername] = useState("")
     const [activeStep, setActiveStep] = useState(0)
     const [skipped, setSkipped] = useState(new Set<number>())
@@ -94,7 +94,9 @@ export default function OnboardingModal() {
         setActiveStep(0)
     }
 
-    const handleOpen = () => setOpen(!open)
+    const { showOnboardingModal, setShowOnboardingModal } = useModalStore()
+
+    const handleOpen = () => setShowOnboardingModal(!showOnboardingModal)
 
     return (
         <Fragment>
@@ -102,7 +104,7 @@ export default function OnboardingModal() {
                 // variant="gradient"
                 onClick={handleOpen}
                 type="button"
-                className=" btn bg-lightGreen border-0  active:bg-lightGreen focus:bg-lightGreen px-[27.5px] h-full flex items-center justify-center gap-2 w-full"
+                className=" btn bg-lightGreen border-0 hover:bg-lightGreen active:bg-lightGreen focus:bg-lightGreen px-[27.5px] h-full flex items-center justify-center gap-2 w-full"
             >
                 <img
                     src="/lens-white-1.png"
@@ -120,7 +122,7 @@ export default function OnboardingModal() {
                 }}
                 className=" p-3 rounded-2xl  md1000:min-w-[900px] "
                 size="lg"
-                open={open}
+                open={showOnboardingModal}
                 handler={handleOpen}
             >
                 <DialogBody className=" relative ">
