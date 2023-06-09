@@ -13,6 +13,8 @@ import { RiSettings5Fill } from "react-icons/ri"
 import { AiOutlinePlusCircle } from "react-icons/ai"
 import { TbBellFilled } from "react-icons/tb"
 import useSidebarStore from "@/src/store/sidebarStore"
+import AccountDropdown from "./AccountDropdown"
+import { useAppStore } from "@/src/store/app"
 
 interface Paths {
     path: string
@@ -59,7 +61,7 @@ const Sidebar = () => {
     // const [toggleSidebar, setToggleSidebar] = useState<boolean>(false)
     const router = useRouter()
     const { toggleSidebar, setToggleSidebar } = useSidebarStore()
-
+    const { currentProfile } = useAppStore()
     const isMessagesPage =
         router.asPath.startsWith("/messages/") ||
         router.pathname === "/messages"
@@ -203,10 +205,8 @@ const Sidebar = () => {
                                         size={"1.5em"}
                                         color="#B0B0B0"
                                     />
-                                    <RiSettings5Fill
-                                        size={"1.5em"}
-                                        color="#B0B0B0"
-                                    />
+
+                                    <AccountDropdown />
                                 </div>
                             </div>
                         )}

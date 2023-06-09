@@ -47,7 +47,9 @@ const CustomStepIcon = (props: any) => {
     const { active, completed } = props
 
     return (
-        <div className={completed ? classes.completed : ""}>
+        <div
+        // className={completed ? classes.completed : ""}
+        >
             {completed ? (
                 <div className=" border-2 border-black rounded-full bg-black text-white font-semibold px-3.5 py-1 ">
                     {props.icon}
@@ -100,7 +102,7 @@ export default function OnboardingModal() {
                 // variant="gradient"
                 onClick={handleOpen}
                 type="button"
-                className=" btn px-[27.5px] h-full flex items-center justify-center gap-2 w-full"
+                className=" btn bg-lightGreen border-0  active:bg-lightGreen focus:bg-lightGreen px-[27.5px] h-full flex items-center justify-center gap-2 w-full"
             >
                 <img
                     src="/lens-white-1.png"
@@ -116,12 +118,12 @@ export default function OnboardingModal() {
                 dismiss={{
                     outsidePress: false,
                 }}
-                className=" p-3 rounded-2xl "
+                className=" p-3 rounded-2xl  md1000:min-w-[900px] "
                 size="lg"
                 open={open}
                 handler={handleOpen}
             >
-                <DialogBody className=" relative  ">
+                <DialogBody className=" relative ">
                     <div
                         onClick={handleOpen}
                         className=" absolute right-0 top-0 hover:bg-lightGray rounded-full p-3 cursor-pointer transition-all ease-in-out active:scale-95"
@@ -172,16 +174,18 @@ export default function OnboardingModal() {
                                                 StepIconComponent={
                                                     CustomStepIcon
                                                 }
-                                                StepIconProps={{
-                                                    classes: {
-                                                        completed:
-                                                            classes.completed,
-                                                    },
-                                                }}
+                                                // StepIconProps={{
+                                                //     classes: {
+                                                //         completed:
+                                                //             classes.completed,
+                                                //     },
+                                                // }}
                                             >
                                                 <span
                                                     className={clsx(
-                                                       activeStep === index && " text-lightGratText1" ,"text-base font-[600]"
+                                                        activeStep === index &&
+                                                            " text-lightGratText1",
+                                                        "text-base font-[600]"
                                                     )}
                                                 >
                                                     {label}
