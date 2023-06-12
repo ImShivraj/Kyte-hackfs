@@ -81,26 +81,6 @@ function UserList() {
                 <ChatTabs activeTab={activeTab} setActiveTab={setActiveTab} />
             </div>
 
-            {/* <Modal
-                title={`New message`}
-                icon={
-                    <GradientIcon
-                        Icon={MailOutlineRounded}
-                        width="24px"
-                        height="24px"
-                        margin="none"
-                    />
-                }
-                size="sm"
-                show={showSearchModal}
-                onClose={() => setShowSearchModal(false)}
-            >
-                <div className="w-full py-4 px-4">
-                    {activeTab === "lens" && <span>Lens Modal Search</span>}
-                    {activeTab === "wallet" && <span>Wallet Modal Search</span>}
-                </div>
-            </Modal> */}
-
             <Modal
                 title={`New message`}
                 icon={
@@ -148,33 +128,6 @@ function UserList() {
                     </div>
                 )}
             </Modal>
-            {/* <Modal
-                title={`New message`}
-                icon={
-                    <GradientIcon
-                        Icon={MailOutlineRounded}
-                        width="24px"
-                        height="24px"
-                        margin="none"
-                    />
-                }
-                size="sm"
-                show={showNewWalletMsgModal}
-                onClose={() => setShowNewWalletMsgModal(false)}
-            >
-                <div className="w-full pt-4 px-4 mb-5">
-                    <Search
-                        modalWidthClassName="max-w-lg"
-                        placeholder={`Enter a wallet address to message...`}
-                        onProfileSelected={onProfileSelected}
-                        bodyWidth="94%"
-                        variant="brand"
-                        inputHeight="45px"
-                        isWalletSearch={true}
-                        setShowModal={setShowNewWalletMsgModal}
-                    />
-                </div>
-            </Modal> */}
         </div>
     )
 }

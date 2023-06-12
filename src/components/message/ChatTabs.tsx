@@ -60,7 +60,7 @@ const ChatTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                     Requests&#40;2&#41;
                 </Tab>
             </TabsHeader>
-            <TabsBody className="w-full max-h-[80vh] h-[80vh]  overflow-auto scrollbar-hide">
+            <TabsBody className="w-full max-h-[82vh] h-[81.5vh]  overflow-auto scrollbar-hide">
                 <TabPanel className="w-full " key={"lens"} value={"lens"}>
                     <div className=" -mx-2.5 -mt-4 ">
                         <MessageUser

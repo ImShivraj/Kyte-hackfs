@@ -7,9 +7,13 @@ import { RxDoubleArrowRight } from "react-icons/rx"
 import { MdWifiCalling3 } from "react-icons/md"
 import user from "@assets/user.png"
 import { useState } from "react"
+import { useCallStore } from "@/src/store/call"
+import { is0xAddress } from "../utils/matchers/is0xAddress"
+import { useModalStore } from "@/src/store/modal"
 
 function ChatWindow() {
     const [message, setMessage] = useState<string>("")
+    const { setCallerName, setCallerProfilePic } = useCallStore()
 
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setMessage(event.target.value)
@@ -20,6 +24,9 @@ function ChatWindow() {
         textarea.style.height = "auto"
         textarea.style.height = `${textarea.scrollHeight}px`
     }
+
+    // const isAddrConvoKey = is0xAddress(selectedConversationKey)
+    const { setShowCallModal } = useModalStore()
 
     return (
         <div className="  relative">
@@ -32,7 +39,25 @@ function ChatWindow() {
                     </div>
                 </div>
                 <div className=" flex items-center gap-2">
-                    <button className=" bg-black p-2.5 active:scale-95 ease-in-out rounded-full">
+                    <button
+                        onClick={() => {
+                            // setCallerName(
+                            //     isAddrConvoKey
+                            //         ? selectedConversationKey
+                            //         : selectedProfile?.name ||
+                            //               selectedProfile?.handle
+                            // )
+
+                            // setCallerProfilePic(
+                            //     isAddrConvoKey
+                            //         ? "ADDRESS"
+                            //         : getAvatar(selectedProfile)
+                            // )
+                            // login()
+                            setShowCallModal(true)
+                        }}
+                        className=" bg-black p-2.5 active:scale-95 ease-in-out rounded-full"
+                    >
                         <MdWifiCalling3 size={"1.3em"} color="white" />
                     </button>
                     <button className=" bg-black p-2.5 active:scale-95 ease-in-out rounded-full">

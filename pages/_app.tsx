@@ -7,6 +7,7 @@ const Providers = lazy(() => import("@/src/components/Shared/Providers"))
 import NextNProgress from "nextjs-progressbar"
 import DashboardLayout from "@/src/components/Shared/DashboardLayout"
 import useSidebarStore from "@/src/store/sidebarStore"
+import CallModal from "@/src/components/call/CallModal"
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
@@ -28,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
                         <CreatePostModal />
                         <LoginModal />
                     </div>
+                    {/* <CallModal /> */}
                     <Component {...pageProps} />
                 </div>
             </DashboardLayout>
