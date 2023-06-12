@@ -131,7 +131,7 @@ const Sidebar = () => {
                             className={clsx(
                                 isMessagesPage && " mx-auto md1000:-ml-8",
                                 //  "md1050:pl-0 xl1450:pl-5",
-                                "md850:pl-3 md900:pl-0 md1000:pl-6  md1050:pl-6 xl1450:pl-10 flex items-center justify-center font-semibold cursor-pointer"
+                                "md850:pl-3 md900:pl-0 md1000:pl-6  md1050:pl-6 xl1450:pl-5 flex items-center justify-center font-semibold cursor-pointer"
                             )}
                         >
                             <Image
@@ -153,7 +153,7 @@ const Sidebar = () => {
                             className={clsx(
                                 isMessagesPage && " -ml-2 md1000:-ml-8",
                                 // "md1000:pl-0 xl1450:pl-5"
-                                "md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-6 xl1450:pl-10"
+                                "md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-6 xl1450:pl-5"
                             )}
                         >
                             {links}
@@ -165,7 +165,7 @@ const Sidebar = () => {
                                 // "md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-7 xl1450:pl-8",
                                 " text-textSidebar  cursor-pointer",
                                 " gap-3 items-center justify-start",
-                                " flex items-center justify-start text-lg font-semibold my-7 md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-6 xl1450:pl-10"
+                                " flex items-center justify-start text-lg font-semibold my-7 md850:pl-3 md900:pl-1.5 md1000:pl-6  md1050:pl-6 xl1450:pl-5"
                             )}
                         >
                             <AiOutlinePlusCircle size={"1.5em"} />{" "}
