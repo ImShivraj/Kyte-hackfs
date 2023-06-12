@@ -14,7 +14,7 @@ export default function UserMessages() {
                 </div>
             </div>
             {/* px-12  */}
-            <div className=" xs320:hidden md1050:block w-3/12  pt- max-h-[92vh] h-[92vh] scrollbar-hide xl1450:overflow-visible md900:overflow-scroll mt-0 my-3 flex flex-col justify-center items-stretch ">
+            <div className=" xs320:hidden md1050:block w-3/12 md900:px-8 xl1450:px-0  pt- max-h-[92vh] h-[92vh] scrollbar-hide overflow-visible md900:overflow-scroll  mt-0 my-3 flex flex-col justify-center items-stretch ">
                 <div className=" pt-10 h-full rounded-3xl flex flex-col items-center justify-start ">
                     <ProfileOverview />
                 </div>

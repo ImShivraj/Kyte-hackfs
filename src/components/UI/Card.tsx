@@ -18,12 +18,14 @@ export const Card: FC<CardProps> = ({
     onClick,
 }) => {
     return (
-        <Tag
-            className={clsx("bg-white", className)}
-            data-test={dataTest}
-            onClick={onClick}
-        >
-            {children}
-        </Tag>
+        <>
+            <Tag
+                className={clsx("bg-white", className)}
+                data-test={dataTest}
+                onClick={onClick}
+            >
+                {children}
+            </Tag>
+        </>
     )
 }
