@@ -98,10 +98,10 @@ function UserList() {
                 {activeTab === "lens" && (
                     <div className="w-full pt-1 px-4 pb-10 ">
                         <Search
-                            modalWidthClassName=""
+                            modalWidthClassName=" mx-auto"
                             placeholder={`Search for someone to message...`}
                             onProfileSelected={onProfileSelected}
-                            bodyWidth="93%"
+                            bodyWidth="90%"
                             variant="brand"
                             inputHeight="45px"
                         />

@@ -155,7 +155,7 @@ const Search = ({
                 searchText.length > 0 && (
                     <div
                         className={clsx(
-                            `flex absolute justify-stretch items-stretch  bg-green-300 flex-col mt-2 z-50 shadow-lg  rounded-xl`,
+                            `flex absolute justify-center items-stretch flex-col mt-2 z-50 shadow-lg  rounded-xl`,
                             modalWidthClassName
                         )}
                         ref={dropdownRef}
