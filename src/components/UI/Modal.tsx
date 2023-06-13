@@ -44,7 +44,29 @@ export const Modal: FC<Props> = ({
                     handler={() => onClose?.()}
                 >
                     <div>
-                        <div className="flex justify-between items-center py-3.5 px-5 divider">
+                        <div className="flex justify-between items-center py-3.5 px-5 ">
+                            <div className="flex items-start  w-full font-bold px-1 pt-2">
+                                {icon}
+                                <p className="text-[16px] font-semibold text-black max-w-xs text-center ml-2">
+                                    {title}
+                                </p>
+                            </div>
+                            {onClose ? (
+                                <IconButton
+                                    aria-label="delete"
+                                    className="p-1 text-sideBarLink rounded-full hover:bg-badgeRed1 transition-all"
+                                    onClick={onClose}
+                                    style={{
+                                        backgroundColor:
+                                            "rgb(67, 100, 117, .1)",
+                                    }}
+                                >
+                                    <CloseRounded fontSize="small" />
+                                </IconButton>
+                            ) : null}
+                        </div>
+                        {children}
+                        {/* <div className="flex justify-between items-center py-3.5 px-5 divider">
                             <div className="flex items-center  font-bold">
                                 {icon}
                                 <p className="text-[16px] font-semibold text-black max-w-xs text-center ml-2">
@@ -66,7 +88,7 @@ export const Modal: FC<Props> = ({
                                 </IconButton>
                             ) : null}
                         </div>
-                        {children}
+                        {children} */}
                     </div>
                 </Dialog>
             </Fragment>

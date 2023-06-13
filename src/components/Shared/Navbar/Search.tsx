@@ -110,7 +110,10 @@ const Search = ({
     const profiles = isProfileSearchResult ? searchResult.items : []
 
     return (
-        <div aria-hidden="true" className="w-[98%] mx-auto mt-3 -mb-2 rounded-xl">
+        <div
+            aria-hidden="true"
+            className="w-[98%] mx-auto mt-3 -mb-2 rounded-xl"
+        >
             <form onSubmit={handleSubmit}>
                 <Input
                     type="text"
@@ -152,13 +155,14 @@ const Search = ({
                 searchText.length > 0 && (
                     <div
                         className={clsx(
-                            `flex absolute flex-col mt-2 z-50 shadow-lg rounded-xl`,
+                            `flex absolute justify-stretch items-stretch  bg-green-300 flex-col mt-2 z-50 shadow-lg  rounded-xl`,
                             modalWidthClassName
                         )}
                         ref={dropdownRef}
                         style={{ width: bodyWidth }}
+                        // style={{ width: '250%' }}
                     >
-                        <Card className="overflow-y-auto bg-white overflow-x-hidden p-2 max-h-[80vh]">
+                        <Card className="overflow-y-auto bg-white overflow-x-hidden p-2 max-h-[80vh] rounded-xl shadow-md">
                             {searchUsersLoading ? (
                                 <div className="py-2 px-4 space-y-2 text-sm font-bold text-center">
                                     <Spinner
@@ -175,7 +179,7 @@ const Search = ({
                                     {profiles.map((profile: Profile) => (
                                         <div
                                             key={profile?.handle}
-                                            className="py-2 px-4 hover:bg-gray-100  cursor-pointer"
+                                            className="py-2 px-4 w-full hover:bg-gray-100  cursor-pointer"
                                             onClick={() => {
                                                 if (onProfileSelected) {
                                                     onProfileSelected(profile)

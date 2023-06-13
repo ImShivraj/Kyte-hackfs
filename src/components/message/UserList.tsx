@@ -96,23 +96,18 @@ function UserList() {
                 onClose={() => setShowSearchModal(false)}
             >
                 {activeTab === "lens" && (
-                    <div className="w-full pt-1 px-4 pb-10">
+                    <div className="w-full pt-1 px-4 pb-10 ">
                         <Search
-                            modalWidthClassName="max-w-lg"
+                            modalWidthClassName=""
                             placeholder={`Search for someone to message...`}
                             onProfileSelected={onProfileSelected}
-                            bodyWidth="94%"
+                            bodyWidth="93%"
                             variant="brand"
                             inputHeight="45px"
                         />
                     </div>
                 )}
-                {currentProfile && (
-                    <Following
-                        profile={currentProfile}
-                        onProfileSelected={onProfileSelected}
-                    />
-                )}
+              
                 {activeTab === "wallet" && (
                     <div className="w-full pt-4 px-4 mb-5">
                         <Search
