@@ -102,12 +102,17 @@ const CallModal = () => {
         }
     }
 
-    const audioCallEnd = new Audio("/assets/audio/call_end.mp3")
+    // const audioCallEnd = new Audio("/assets/audio/call_end.mp3")
 
     const incomingAudioRef = useRef<HTMLAudioElement>(null)
     const outgoingAudioRef = useRef<HTMLAudioElement>(null)
 
     useEffect(() => {
+        let audioCallEnd: any
+        if (typeof window !== "undefined") {
+            audioCallEnd = new Audio("/assets/audio/call_end.mp3")
+        }
+
         if (store.callerStream) {
             setCallState("ONGOING")
 
@@ -214,9 +219,15 @@ const CallModal = () => {
 
     useEffect(() => {
         if (isMicEnabled) {
-            client?.unmuteMic()
+            // client?.unmuteMic()
+            if (client && typeof client.unmuteMic === "function") {
+                client.unmuteMic()
+            }
         } else {
-            client?.muteMic()
+            // client?.muteMic()
+            if (client && typeof client.muteMic === "function") {
+                client.muteMic()
+            }
         }
     }, [isMicEnabled])
 
@@ -227,12 +238,14 @@ const CallModal = () => {
             enableUserSelectHack={false}
             cancel={'[class*="MuiDialogContent-root"]'}
             disabled={isExpanded}
+            defaultClassName={" w-max bg-fixed h-auto"}
+            defaultClassNameDragging=" w-max"
         >
             <Modal open={showCallModal} disableEnforceFocus>
                 <div
                     className={clsx(
                         "min-w-[400px] min-h-[275px]",
-                        "flex flex-col items-center justify-center transition-all duration-300 absolute p-2 bg-white rounded-[30px] shadow-2xl"
+                        "flex flex-col items-center justify-center transition-all duration-300 absolute p-2 bg-white  rounded-[30px] shadow-2xl"
                     )}
                     style={
                         isExpanded

@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
                         <CreatePostModal />
                         <LoginModal />
                     </div>
-                    {/* <CallModal /> */}
+                    <CallModal />
                     <Component {...pageProps} />
                 </div>
             </DashboardLayout>
