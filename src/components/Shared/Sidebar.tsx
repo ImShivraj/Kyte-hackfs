@@ -109,7 +109,7 @@ const Sidebar = () => {
             <div
                 className={clsx(
                     isMessagesPage &&
-                        `md900:pl-[30px] md1000:pl-[30px] md1050:pl-[30px] lg1100:pl-[30px] lg1200:pl-[30px] lg1300:pl-[30px] lg1350:pl-[30px] xl1400:pl-[30px] xl1450:pl-[30px] xl1500:pl-[30px] xl1600:pl-[30px] xl1700:pl-[30px] xl1800:pl-[30px] xl1900:pl-[30px]  md900:w-[100px] md1000:w-[100px] md1050:w-[100px] lg1100:w-[100px] lg1200:w-[100px] lg1300:w-[100px] lg1350:w-[100px] xl1400:w-[100px] xl1450:w-[100px] xl1500:w-[100px] xl1600:w-[100px] xl1700:w-[100px] xl1800:w-[100px] xl1900:w-[100px] md850:w-20 bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content md850:items-center md1000:items-center h-screen z-[500]
+                        `md900:pl-[30px] md1000:pl-[30px] md1050:pl-[30px] lg1100:pl-[30px] lg1200:pl-[30px] lg1300:pl-[30px] lg1350:pl-[30px] xl1400:pl-[30px] xl1450:pl-[30px] xl1500:pl-[30px] xl1600:pl-[30px] xl1700:pl-[30px] xl1800:pl-[30px] xl1900:pl-[30px]  md900:w-[100px] md1000:w-[99.9px] md1050:w-[99.9px] lg1100:w-[100px] lg1200:w-[100px] lg1300:w-[100px] lg1350:w-[100px] xl1400:w-[100px] xl1450:w-[99.9px] xl1500:w-[100px] xl1600:w-[100px] xl1700:w-[100px] xl1800:w-[100px] xl1900:w-[100px] md850:w-20 bg-bgSidebar menu p-4 bg-bgDefault border-r border-base-100 text-base-content md850:items-center md1000:items-center h-screen z-[500]
 
                         fixed
                         `,

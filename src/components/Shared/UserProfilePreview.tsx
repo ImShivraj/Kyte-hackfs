@@ -55,7 +55,7 @@ export default function UserProfilePreview({
                     </div>
                 </div>
             </PopoverHandler>
-            <PopoverContent {...triggers} className="max-w-[24rem] z-50">
+            <PopoverContent {...triggers} className="max-w-[26rem] shadow-lg z-50 border">
                 <div className="mb-2 flex flex-col items-start justify-between gap-4">
                     <Image src={user} alt="user" />
                     <div className="flex gap-1 items-center max-w-sm truncate">
