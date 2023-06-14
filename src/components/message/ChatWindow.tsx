@@ -6,7 +6,7 @@ import { BsFillMicFill } from "react-icons/bs"
 import { RxDoubleArrowRight } from "react-icons/rx"
 import { MdWifiCalling3 } from "react-icons/md"
 import user from "@assets/user.png"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useCallStore } from "@/src/store/call"
 import { is0xAddress } from "../utils/matchers/is0xAddress"
 import { useModalStore } from "@/src/store/modal"
@@ -24,7 +24,7 @@ import Tippy from "@tippyjs/react"
 import UserProfilePreview from "../Shared/UserProfilePreview"
 
 interface MessageProps {
-    selectedConversationKey: string
+    selectedConversationKey?: string
 }
 
 interface Props {
@@ -70,17 +70,36 @@ function ChatWindow(
 
     const { setShowCallModal } = useModalStore()
 
-    return (
-        <div className="  relative">
-            <div className=" flex w-full justify-between items-center ">
-                {/* <div className="flex items-center gap-3">
-                    <Image src={user} alt="user" />
-                    <div>
-                        <h3 className=" font-semibold">Lorem Ipsum</h3>
-                        <p className=" text-sm text-gray-400">@lorem.ipsum</p>
-                    </div>
-                </div> */}
+    const containerRef = useRef<HTMLDivElement>(null)
+    const [isUserScrolling, setIsUserScrolling] = useState(false)
 
+    useEffect(() => {
+        const container = containerRef.current
+        if (container) {
+            // Scroll to the bottom on initial render
+            container.scrollTop = container.scrollHeight
+        }
+    }, [])
+
+    const handleScroll = () => {
+        const container = containerRef.current
+        if (container) {
+            const { scrollTop, clientHeight, scrollHeight } = container
+            const isScrolledToBottom = scrollTop + clientHeight >= scrollHeight
+
+            if (isScrolledToBottom) {
+                // User is at the bottom, not actively scrolling
+                setIsUserScrolling(false)
+            } else {
+                // User is scrolling up
+                setIsUserScrolling(true)
+            }
+        }
+    }
+
+    return (
+        <div className="  relative ">
+            <div className=" flex w-full justify-between items-center border- py-3 -mt-3 ">
                 <UserProfilePreview
                     name={"Kushagra Sarathe"}
                     username={"kushagra"}
@@ -116,8 +135,12 @@ function ChatWindow(
                     </button>
                 </div>
             </div>
-            <div className=" relative mt-4 chat-wallpaper  max-h-[90vh] h-[90vh] overflow-auto rounded-3xl ">
-                <div className=" flex flex-col justify-end mt-auto h-[100%] overflow-auto crollbar-hide  p-4  pb-24 ">
+            <div
+                ref={containerRef}
+                onScroll={handleScroll}
+                className="  relative mt- chat-wallpaper  max-h-[90vh] h-[90vh] overflow-auto scrollbar-hide rounded3xl rounded-t-none border "
+            >
+                <div className=" flex flex-col justify-end mt-auto overflow-scrollscrollbar-hide  p-4  pb-24 bg-transparent backdrop-blur-md backdrop-opacity-50">
                     <div className=" flex justify-start items-start gap-4 max-w-md ">
                         <Image src={user} alt="user" />
                         <p className=" relative mt-4 bg-white px-5 py-3 text-sm tracking-wide rounded-xl rounded-tl-none shadow-md pb-8 pt-4">
@@ -140,7 +163,38 @@ function ChatWindow(
                         </p>
                     </div>
                     <div className=" flex justify-start items-start gap-4 max-w-sm ml-auto bg ">
-                        {" "}
+                        <p className=" relative mt-4 bg-[#E0EDE4] px-5 py-3 text-sm tracking-wide rounded-xl rounded-tl-none shadow-md pb-8 pt-4">
+                            Sed ut perspiciatis unde omnis iste na, error sit
+                            voluptatem accusanti dolorog laudantium, totam rem,
+                            eaque ipsa qn ab illo na, error sit voluptatem
+                            accusanti dolorog laudantium, ipsum
+                            <span className=" absolute right-3 bottom-2 text-xs text-gray-400  ">
+                                00:00
+                            </span>
+                        </p>
+                    </div>
+                    <div className=" flex justify-start items-start gap-4 max-w-md ">
+                        <Image src={user} alt="user" />
+                        <p className=" relative mt-4 bg-white px-5 py-3 text-sm tracking-wide rounded-xl rounded-tl-none shadow-md pb-8 pt-4">
+                            Lorem ipsum dolor sit, amet.
+                            <span className=" absolute right-3 bottom-2 text-xs text-gray-400  ">
+                                00:00
+                            </span>
+                        </p>
+                    </div>
+                    <div className=" flex justify-start items-start gap-4 max-w-md  ">
+                        <Image src={user} alt="user" />
+                        <p className=" relative mt-4 bg-white px-5 py-3 text-sm tracking-wide rounded-xl rounded-tl-none shadow-md pb-8 pt-4">
+                            Sed ut perspiciatis unde omnis iste na, error sit
+                            voluptatem accusanti dolorog laudantium, totam rem,
+                            eaque ipsa qn ab illo na, error sit voluptatem
+                            accusanti dolorog laudantium, ipsum
+                            <span className=" absolute right-3 bottom-2 text-xs text-gray-400  ">
+                                00:00
+                            </span>
+                        </p>
+                    </div>
+                    <div className=" flex justify-start items-start gap-4 max-w-sm ml-auto bg ">
                         <p className=" relative mt-4 bg-[#E0EDE4] px-5 py-3 text-sm tracking-wide rounded-xl rounded-tl-none shadow-md pb-8 pt-4">
                             Sed ut perspiciatis unde omnis iste na, error sit
                             voluptatem accusanti dolorog laudantium, totam rem,
@@ -164,13 +218,10 @@ function ChatWindow(
                     size={"1.5em"}
                     color="black"
                 />
-                {/* <input
-          placeholder="Messages"
-          className=" bg-white pl-24 py-3.5 p-4 w-11/12 rounded-full outline-none shadow-lg"
-        /> */}
+
                 <textarea
                     placeholder=" What's Happening?"
-                    className="pl-24 py-3.5 p-4 w-11/12 text-justify resize-none  scrollbar-hide  text-black focus:text-black textarea textarea-ghost bg-white focus:bg-white outline-none border-0 focus:outline-none text-base md:text-lg shadow-lg in-h-16"
+                    className=" max-h-48 pl-24 pr-8 py-3.5 p-4 w-11/12 text-justify resize-none  scrollbar-hide  text-black focus:text-black textarea textarea-ghost bg-white focus:bg-white outline-none border-0 focus:outline-none text-base md:text-lg shadow-lg focus-within:shadow-lg in-h-16"
                     // type="text"
                     name=""
                     id=""
