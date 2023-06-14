@@ -19,12 +19,42 @@ import WalletAvatar from "./WalletAvatar"
 import { Skeleton } from "@mui/material"
 import isVerified from "@/src/lib/isVerified"
 import GradientIcon from "../utils/GradientIcon"
+import { Profile } from "@/src/graphql/generated"
+import Tippy from "@tippyjs/react"
+import UserProfilePreview from "../Shared/UserProfilePreview"
 
 interface MessageProps {
     selectedConversationKey: string
 }
 
-function ChatWindow({ selectedConversationKey }: MessageProps) {
+interface Props {
+    profile: Profile
+    showBio?: boolean
+    showFollow?: boolean
+    followStatusLoading?: boolean
+    isFollowing?: boolean
+    isBig?: boolean
+    linkToProfile?: boolean
+    showStatus?: boolean
+    showUserPreview?: boolean
+    timestamp?: Date | string
+}
+
+function ChatWindow(
+    { selectedConversationKey }: MessageProps,
+    {
+        profile,
+        showBio = false,
+        showFollow = false,
+        followStatusLoading = false,
+        isFollowing = false,
+        isBig = false,
+        linkToProfile = true,
+        showStatus = false,
+        showUserPreview = true,
+        timestamp = "",
+    }: Props
+) {
     const [message, setMessage] = useState<string>("")
     const { setCallerName, setCallerProfilePic } = useCallStore()
 
@@ -38,23 +68,7 @@ function ChatWindow({ selectedConversationKey }: MessageProps) {
         textarea.style.height = `${textarea.scrollHeight}px`
     }
 
-    // const isAddrConvoKey = is0xAddress(selectedConversationKey)
     const { setShowCallModal } = useModalStore()
-
-    // const isAddrConvoKey = is0xAddress(selectedConversationKey)
-
-    // const selectedProfile = useMessageStore((state: MessageState) =>
-    //     state.messageProfiles.get(selectedConversationKey)
-    // )
-
-    // const { selectedConversation, missingXmtpAuth } = useGetConversation(
-    //     selectedConversationKey,
-    //     selectedProfile
-    // )
-
-    // const isSelectedProfileLoaded = Boolean(selectedProfile) || isAddrConvoKey
-
-    // const router = useRouter()
 
     return (
         <div className="  relative">
@@ -66,7 +80,15 @@ function ChatWindow({ selectedConversationKey }: MessageProps) {
                         <p className=" text-sm text-gray-400">@lorem.ipsum</p>
                     </div>
                 </div> */}
-               
+
+                <UserProfilePreview
+                    name={"Kushagra Sarathe"}
+                    username={"kushagra"}
+                    followers={999}
+                    following={999}
+                    isVerified={true}
+                />
+
                 <div className=" flex items-center gap-2">
                     <button
                         onClick={() => {
