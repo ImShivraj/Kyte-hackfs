@@ -1,5 +1,4 @@
 import LoginModal from "@/src/components/Modal/LoginModal"
-import CreatePostModal from "@/src/components/posts/CreatePostModal"
 import "@/styles/globals.css"
 import type { AppProps } from "next/app"
 import { lazy, useEffect, useState } from "react"
@@ -20,15 +19,6 @@ export default function App({ Component, pageProps }: AppProps) {
             />
             <DashboardLayout>
                 <div className=" relative">
-                    <input
-                        type="checkbox"
-                        id="my-modal"
-                        className="modal-toggle "
-                    />
-                    <div className="modal">
-                        <CreatePostModal />
-                        <LoginModal />
-                    </div>
                     <CallModal />
                     <Component {...pageProps} />
                 </div>

@@ -15,6 +15,7 @@ import { TbBellFilled } from "react-icons/tb"
 import useSidebarStore from "@/src/store/sidebarStore"
 import AccountDropdown from "./AccountDropdown"
 import { useAppStore } from "@/src/store/app"
+import CreatePostModal from "../posts/CreatePostModal"
 
 interface Paths {
     path: string
@@ -158,7 +159,11 @@ const Sidebar = () => {
                         >
                             {links}
                         </div>
-                        <label
+                        <CreatePostModal
+                            isMessagesPage={isMessagesPage}
+                            toggleSidebar={toggleSidebar}
+                        />
+                        {/* <label
                             htmlFor="my-modal"
                             className={clsx(
                                 isMessagesPage && " ml-0 md1000:-ml-6",
@@ -174,7 +179,7 @@ const Sidebar = () => {
                                     Create Post
                                 </span>
                             )}
-                        </label>
+                        </label> */}
                     </div>
                 </div>
                 <div className=" mt-auto w-full md1050:w-11/12 md1050:mx-auto xl1400:w-full bg-green-30  ">
