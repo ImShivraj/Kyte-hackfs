@@ -16,6 +16,8 @@ import Image from "next/image"
 import user from "@/src/assets/user.png"
 import { BiDotsVerticalRounded } from "react-icons/bi"
 import ProfileDrawer from "../Shared/ProfileDrawer"
+import ExploreSearch from "../Shared/ExploreSearch"
+import Search from "../Shared/Navbar/Search"
 
 interface Props {
     activeTab: string // Replace 'StateType' with the actual type of the state
@@ -26,8 +28,18 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
     return (
         <>
             <Tabs value={activeTab} className="  w-full  rounded-xl mt-2 5  ">
-                <div className="flex items-center justify-between gap-3  w-full  mb-0 xs320:fixed xs320:top-0 md900:relative z-[50] bg-white  ">
-                    <div className="relative  xs320:w-11/12 md900:w-full ml-2 pt-2">
+                <div className="flex items-center justify-between gap-3  w-full  mb-0 xs320:fixed xs320:top-0 md900:relative z-[1000] bg-white  ">
+                    <div className="relative  xs320:w-11/12 md900:w-full  pt-2">
+                        <Search
+                            modalWidthClassName=" w-full max-w-[1094px] mx-0 z-[10000]"
+                            placeholder={`Search for someone to message...`}
+                            // onProfileSelected={onProfileSelected}
+                            bodyWidth="100%"
+                            variant="brand"
+                            inputHeight="45px"
+                        />
+                    </div>
+                    {/* <div className="relative  xs320:w-11/12 md900:w-full ml-2 pt-2">
                         <input
                             placeholder="Search"
                             className=" bg-lightGray py-3.5 p-4 w-full rounded-2xl outline-none"
@@ -36,7 +48,7 @@ const ExploreTabs: React.FC<Props> = ({ activeTab, setActiveTab }) => {
                             className=" cursor-pointer absolute top-6 right-4 text-gray-400"
                             size={"1.5em"}
                         />
-                    </div>
+                    </div> */}
                     <div className=" md900:hidden flex items-center gap-3 mt-1">
                         <div className="dropdown dropdown-bottom dropdown-end">
                             <label tabIndex={0} className=" my-auto">

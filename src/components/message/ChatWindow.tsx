@@ -10,8 +10,21 @@ import { useState } from "react"
 import { useCallStore } from "@/src/store/call"
 import { is0xAddress } from "../utils/matchers/is0xAddress"
 import { useModalStore } from "@/src/store/modal"
+import UserPreview from "../Shared/UserPreview"
+import useGetConversation from "@components/utils/hooks/useGetConversation"
+import { MessageState, useMessageStore } from "@/src/store/message"
+import { KeyboardArrowLeftRounded, Verified } from "@mui/icons-material"
+import { useRouter } from "next/router"
+import WalletAvatar from "./WalletAvatar"
+import { Skeleton } from "@mui/material"
+import isVerified from "@/src/lib/isVerified"
+import GradientIcon from "../utils/GradientIcon"
 
-function ChatWindow() {
+interface MessageProps {
+    selectedConversationKey: string
+}
+
+function ChatWindow({ selectedConversationKey }: MessageProps) {
     const [message, setMessage] = useState<string>("")
     const { setCallerName, setCallerProfilePic } = useCallStore()
 
@@ -28,16 +41,32 @@ function ChatWindow() {
     // const isAddrConvoKey = is0xAddress(selectedConversationKey)
     const { setShowCallModal } = useModalStore()
 
+    // const isAddrConvoKey = is0xAddress(selectedConversationKey)
+
+    // const selectedProfile = useMessageStore((state: MessageState) =>
+    //     state.messageProfiles.get(selectedConversationKey)
+    // )
+
+    // const { selectedConversation, missingXmtpAuth } = useGetConversation(
+    //     selectedConversationKey,
+    //     selectedProfile
+    // )
+
+    // const isSelectedProfileLoaded = Boolean(selectedProfile) || isAddrConvoKey
+
+    // const router = useRouter()
+
     return (
         <div className="  relative">
             <div className=" flex w-full justify-between items-center ">
-                <div className="flex items-center gap-3">
+                {/* <div className="flex items-center gap-3">
                     <Image src={user} alt="user" />
                     <div>
                         <h3 className=" font-semibold">Lorem Ipsum</h3>
                         <p className=" text-sm text-gray-400">@lorem.ipsum</p>
                     </div>
-                </div>
+                </div> */}
+               
                 <div className=" flex items-center gap-2">
                     <button
                         onClick={() => {

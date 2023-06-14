@@ -71,7 +71,7 @@ const UserPreview: FC<Props> = ({
     )
 
     const Preview = () => (
-        <div className=" rounded-xl md900:w-[300px] shadow-xl border px-4 py-3 w-full ">
+        <div className=" rounded-xl  shadow-xl border px-4 py-3 w-full ">
             <div className="flex justify-between items-center">
                 <UserAvatar />
                 <div className="" onClick={(e) => e.preventDefault()}>
@@ -144,7 +144,7 @@ const UserPreview: FC<Props> = ({
     return showUserPreview ? (
         <span onMouseOver={onPreviewStart}>
             {lazyProfile.id ? (
-                <div className="">
+                <div className=" w-full ">
                     <Tippy
                         placement="bottom-start"
                         delay={[800, 0]}
@@ -153,7 +153,7 @@ const UserPreview: FC<Props> = ({
                         arrow={false}
                         interactive
                         zIndex={1000}
-                        className="!bg-white hidden md:block !px-1.5 !py-3 !text-black w-64 !rounded-xl"
+                        className="!bg-white hidden md:block  !text-black w-96 !rounded-xl z-50"
                         appendTo={() => document.body}
                     >
                         <span>{children}</span>

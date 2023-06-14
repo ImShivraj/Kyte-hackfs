@@ -71,7 +71,7 @@ function UserList() {
                     modalWidthClassName=" max-w-lg"
                     placeholder={`Search for someone to message...`}
                     // onProfileSelected={onProfileSelected}
-                    bodyWidth="94%"
+                    bodyWidth="17%"
                     variant="brand"
                     inputHeight="45px"
                 />
