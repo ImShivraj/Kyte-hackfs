@@ -107,7 +107,20 @@ function UserList() {
                         />
                     </div>
                 )}
-              
+
+                {activeTab === "requests" && (
+                    <div className="w-full pt-1 px-4 pb-10 ">
+                        <Search
+                            modalWidthClassName=" mx-auto"
+                            placeholder={`Search for someone to message...`}
+                            onProfileSelected={onProfileSelected}
+                            bodyWidth="90%"
+                            variant="brand"
+                            inputHeight="45px"
+                        />
+                    </div>
+                )}
+
                 {activeTab === "wallet" && (
                     <div className="w-full pt-4 px-4 mb-5">
                         <Search

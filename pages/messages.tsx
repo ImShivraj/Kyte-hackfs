@@ -170,12 +170,24 @@ export default function Messages() {
                             onClose={() => setShowSearchModal(false)}
                         >
                             {activeTab === "lens" && (
-                                <div className="w-full pt-1 px-4 pb-10">
+                                <div className="w-full pt-1 px-4 pb-10 ">
                                     <Search
-                                        modalWidthClassName="max-w-lg"
+                                        modalWidthClassName=" mx-auto"
                                         placeholder={`Search for someone to message...`}
                                         onProfileSelected={onProfileSelected}
-                                        bodyWidth="94%"
+                                        bodyWidth="90%"
+                                        variant="brand"
+                                        inputHeight="45px"
+                                    />
+                                </div>
+                            )}
+                            {activeTab === "requests" && (
+                                <div className="w-full pt-1 px-4 pb-10 ">
+                                    <Search
+                                        modalWidthClassName=" mx-auto"
+                                        placeholder={`Search for someone to message...`}
+                                        onProfileSelected={onProfileSelected}
+                                        bodyWidth="90%"
                                         variant="brand"
                                         inputHeight="45px"
                                     />
@@ -265,8 +277,7 @@ export default function Messages() {
                             <span>English</span>
                         </div>
                         <div className=" text-lightGratText2">
-                                                {/* <span>Storage Powered by Polybase</span> */}
-
+                            {/* <span>Storage Powered by Polybase</span> */}
                         </div>
                     </div>
                 </div>
