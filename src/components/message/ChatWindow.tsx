@@ -138,7 +138,7 @@ function ChatWindow(
             <div
                 ref={containerRef}
                 onScroll={handleScroll}
-                className="  relative mt- chat-wallpaper  max-h-[90vh] h-[90vh] overflow-auto scrollbar-hide rounded3xl rounded-t-none border "
+                className="  relative mt- chat-wallpaper  max-h-[90vh] h-[90vh] overflow-auto scrollbar-hide rounded-2xl  border "
             >
                 <div className=" flex flex-col justify-end mt-auto overflow-scrollscrollbar-hide  p-4  pb-24 bg-transparent backdrop-blur-md backdrop-opacity-50">
                     <div className=" flex justify-start items-start gap-4 max-w-md ">
@@ -221,7 +221,7 @@ function ChatWindow(
 
                 <textarea
                     placeholder=" What's Happening?"
-                    className=" max-h-48 pl-24 pr-8 py-3.5 p-4 w-11/12 text-justify resize-none  scrollbar-hide  text-black focus:text-black textarea textarea-ghost bg-white focus:bg-white outline-none border-0 focus:outline-none text-base md:text-lg shadow-lg focus-within:shadow-lg in-h-16"
+                    className=" border-0 max-h-48 pl-24 pr-8 py-3.5 p-4 w-11/12 text-justify resize-none  scrollbar-hide  text-black focus:text-black textarea rounded-xl textarea-ghost bg-white focus:bg-white outline-none focus:outline-none text-base md:text-lg shadow-xl focus-within:shadow-lg in-h-16"
                     // type="text"
                     name=""
                     id=""

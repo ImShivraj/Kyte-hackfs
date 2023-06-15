@@ -158,7 +158,7 @@ const Like: FC<Props> = ({ publication, isFullPublication }) => {
                             <FavoriteBorderOutlined className={iconClassName} />
                         )}
                     </Tooltip> */}
-                    <div className=" cursor-pointer flex  text-[#FF54B1]">
+                    <div className=" cursor-pointer flex  text-[#B0B0B0] FF54B1]">
                         <div className="transition ease-in-out active:scale-95">
                             <AiOutlineHeart size={"1.4em"} />
                         </div>

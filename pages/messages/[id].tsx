@@ -6,7 +6,7 @@ import React, { useState } from "react"
 export default function UserMessages() {
     return (
         <div className=" flex justify-start h-screen ">
-            <div className=" md800:w-full md900:w-full md950:w-max md1000:w-full  md1050:w-full  lg1150:w-full  lg1200:w-full  lg1250:w-full  lg1300:w-full  xl1450:w-full   md1000:py-6 pr-0 flex justify-start items-start md1000:pl-8  md1050:pl-0 xl1450:-ml-16  ">
+            <div className=" md800:w-full md900:w-full md950:w-max md1000:w-full  md1050:w-full  lg1150:w-full  lg1200:w-full  lg1250:w-full  lg1300:w-full  xl1450:w-full   md1000:py-6 pr-0 flex justify-start items-start md1000:pl-8  md1050:pl-0 xl1450:ml-16 xl1500:-ml-16    ">
                 <div className=" xs1000:w-5/12 l:w-3/12 min-w-[300px]">
                     <UserList />
                 </div>

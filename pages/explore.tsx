@@ -92,7 +92,8 @@ const Children2: React.FC = () => {
                     <span>English</span>
                 </div>
                 <div className=" text-lightGratText2">
-                    <span>Storage Powered by Polybase</span>
+                                        {/* <span>Storage Powered by Polybase</span> */}
+
                 </div>
             </div>
         </div>

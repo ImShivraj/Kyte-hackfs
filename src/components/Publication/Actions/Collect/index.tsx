@@ -64,7 +64,8 @@ const Collect: FC<Props> = ({
                     <div className="pt-1.5  ">
                         <div className="dropdown dropdown-left md:dropdown-right">
                             <label tabIndex={0} className="">
-                                <div className=" cursor-pointer flex  text-[#F97878]">
+                                {/* F97878 */}
+                                <div className=" cursor-pointer flex  text-[#B0B0B0]">
                                     <div className="transition ease-in-out active:scale-95 flex items-center gap-">
                                         <MdOutlineBookmarkBorder
                                             size={"1.5em"}

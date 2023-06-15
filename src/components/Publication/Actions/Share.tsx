@@ -30,10 +30,11 @@ const Share = () => {
                     <div className="pt-1.5  ">
                         <div className="dropdown dropdown-left md:dropdown-right">
                             <label tabIndex={0} className="">
-                                <div className=" cursor-pointer flex  text-[#F97878]">
+                                {/* text-[#F97878] */}
+                                <div className=" cursor-pointer flex  text-[#B0B0B0]">
                                     <div className="transition ease-in-out active:scale-95 flex items-center gap-">
                                         <TbShare2
-                                            color="#83B08C"
+                                            color="#B0B0B0"
                                             size={"1.4em"}
                                         />
                                     </div>

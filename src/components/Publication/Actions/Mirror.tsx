@@ -185,7 +185,7 @@ const Mirror: FC<Props> = ({ publication, isFullPublication }) => {
                             size="xs"
                         />
                     ) : (
-                        <div className="transition-all ease-in-out active:scale-95 cursor-pointer flex  text-[#B581C8]">
+                        <div className="transition-all ease-in-out active:scale-95 cursor-pointer flex  text-[#B0B0B0] B581C8]">
                             <div className="">
                                 <HiArrowsUpDown size={"1.4em"} />
                             </div>

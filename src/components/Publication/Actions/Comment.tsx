@@ -32,7 +32,7 @@ const Comment: FC<Props> = ({ publication, isFullPublication }) => {
             <button className=" transition-all" aria-label="Comment">
                 {/* <Link href={`/posts/${publication.id}`}> */}
                 <div className="p-1.5   hover:bg-opacity-20">
-                    <div className="  flex  text-[#6996EF]">
+                    <div className="  flex  text-[#B0B0B0] 6996EF]">
                         <CommentModal
                             open={open}
                             handleOpen={handleOpen}
