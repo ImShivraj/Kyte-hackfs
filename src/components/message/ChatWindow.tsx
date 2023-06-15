@@ -58,7 +58,6 @@ function ChatWindow(
         timestamp = "",
     }: Props
 ) {
-    const [message, setMessage] = useState<string>("")
     const { setCallerName, setCallerProfilePic } = useCallStore()
     const [sendingXmtpMessage, setSendingXmtpMessage] = useState<
         ContentTypeId | undefined
@@ -66,6 +65,8 @@ function ChatWindow(
 
     const [replyingMessage, setReplyingMessage] =
         useState<DecodedMessage | null>(null)
+        
+    const [message, setMessage] = useState<string>("")
 
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setMessage(event.target.value)

@@ -26,9 +26,7 @@ const VoiceRecordEmbedPreview = ({
     return (
         <div
             className={clsx(
-                isUploadingVoice
-                    ? "h-[112px] top-[-7.5rem] opacity-100"
-                    : "h-0 top-0 opacity-0",
+                isUploadingVoice ? "h-[112px] top-[-7.5rem] opacity-100" : "h-0 top-0 opacity-0",
                 "absolute bg-bgCover z-10 w-full rounded-[10px] transition-all duration-500 border border-black shadow border-opacity-5 overflow-hidden flex items-center justify-center px-[10px] sm500:px-[30px]"
             )}
         >
