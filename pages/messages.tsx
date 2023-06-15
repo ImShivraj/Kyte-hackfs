@@ -233,7 +233,7 @@ export default function Messages() {
                     </div>
                 </div>
             </div>
-            <div className=" xs320:hidden md1050:block w-3/12 md900:px-8 xl1450:px-0  pt- max-h-[92vh] h-[92vh] scrollbar-hide overflow-visible md900:overflow-scroll  mt-3 my-3 flex flex-col justify-center items-stretch ">
+            <div className=" xs320:hidden md1050:block w-3/12 md900:px-8 xl1450:px-0  pt- max-h-[92vh] h-[92vh] scrollbar-hide overflow-visible md900:overflow-scroll  mt-3 my-3 flex flex-col justify-center items-stretch">
                 <div className=" fixed right-10">
                     <div className="mt-2 bg-lightGray  rounded-3xl">
                         <h2 className="  text-2xl font-semibold p-5">

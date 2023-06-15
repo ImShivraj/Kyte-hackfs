@@ -22,6 +22,9 @@ import GradientIcon from "../utils/GradientIcon"
 import { Profile } from "@/src/graphql/generated"
 import Tippy from "@tippyjs/react"
 import UserProfilePreview from "../Shared/UserProfilePreview"
+import useSendMessage from "../utils/hooks/useSendMessage"
+import { ContentTypeId, DecodedMessage } from "@xmtp/xmtp-js"
+import Composer from "./Composer"
 
 interface MessageProps {
     selectedConversationKey?: string
@@ -41,7 +44,7 @@ interface Props {
 }
 
 function ChatWindow(
-    { selectedConversationKey }: MessageProps,
+    { selectedConversationKey = "" }: MessageProps,
     {
         profile,
         showBio = false,
@@ -57,6 +60,12 @@ function ChatWindow(
 ) {
     const [message, setMessage] = useState<string>("")
     const { setCallerName, setCallerProfilePic } = useCallStore()
+    const [sendingXmtpMessage, setSendingXmtpMessage] = useState<
+        ContentTypeId | undefined
+    >()
+
+    const [replyingMessage, setReplyingMessage] =
+        useState<DecodedMessage | null>(null)
 
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setMessage(event.target.value)
@@ -97,6 +106,20 @@ function ChatWindow(
         }
     }
 
+    const isAddrConvoKey = is0xAddress(selectedConversationKey)
+
+    const selectedProfile = useMessageStore((state: MessageState) =>
+        state.messageProfiles.get(selectedConversationKey)
+    )
+
+    const { selectedConversation, missingXmtpAuth } = useGetConversation(
+        selectedConversationKey,
+        selectedProfile
+    )
+
+    const { sendMessage: sendXmtpMessage } =
+        useSendMessage(selectedConversation)
+
     return (
         <div className="  relative ">
             <div className=" flex w-full justify-between items-center border- py-3 -mt-3 ">
@@ -130,7 +153,7 @@ function ChatWindow(
                     >
                         <MdWifiCalling3 size={"1.3em"} color="white" />
                     </button>
-                    <button className=" bg-black p-2.5 active:scale-95 ease-in-out rounded-full">
+                    <button className=" bg-black p-2.5 active:scale-95 ease-in-out rounded-full opacity-50">
                         <HiVideoCamera size={"1.3em"} color="white" />
                     </button>
                 </div>
@@ -207,21 +230,35 @@ function ChatWindow(
                     </div>
                 </div>
             </div>
-            <div className="px-3 absolute flex items-center justify-between bottom-2 mt-5 mb-2  w-full">
+
+            <div className=" absolute bottom-3 w-full">
+                <Composer
+                    conversationKey={selectedConversationKey}
+                    sendXmtpMessage={sendXmtpMessage}
+                    disabledInput={missingXmtpAuth ?? false}
+                    sendingXmtpMessage={sendingXmtpMessage}
+                    setSendingXmtpMessage={setSendingXmtpMessage}
+                    replyingMessage={replyingMessage}
+                    setReplyingMessage={setReplyingMessage}
+                    selectedProfile={selectedProfile}
+                />
+            </div>
+
+            {/* <div className="px-3 absolute flex items-center justify-between bottom-2 mt-5 mb-2  w-full">
                 <RxDoubleArrowRight
-                    className=" cursor-pointer absolute top-3.5 left-10 text-gray-400"
+                    className=" cursor-pointer absolute bottom-3.5 left-10 text-gray-400"
                     size={"1.5em"}
                     color="black"
                 />
                 <HiOutlineEmojiHappy
-                    className=" cursor-pointer absolute top-3.5 left-[4.5rem] text-gray-400"
+                    className=" cursor-pointer absolute bottom-3.5 left-[4.5rem] text-gray-400"
                     size={"1.5em"}
                     color="black"
                 />
 
                 <textarea
                     placeholder=" What's Happening?"
-                    className=" border-0 max-h-48 pl-24 pr-8 py-3.5 p-4 w-11/12 text-justify resize-none  scrollbar-hide  text-black focus:text-black textarea rounded-xl textarea-ghost bg-white focus:bg-white outline-none focus:outline-none text-base md:text-lg shadow-xl focus-within:shadow-lg in-h-16"
+                    className=" border-0 max-h-48 pl-24 pr-12 py-3.5 p-4 w-11/12 text-justify resize-none  scrollbar-hide  text-black focus:text-black textarea rounded-xl textarea-ghost bg-white focus:bg-white outline-none focus:outline-none text-base md:text-lg shadow-xl focus-within:shadow-lg in-h-16"
                     // type="text"
                     name=""
                     id=""
@@ -230,29 +267,31 @@ function ChatWindow(
                     rows={1}
                 />
                 <GrAttachment
-                    className=" cursor-pointer absolute top-3.5 right-28 text-gray-400"
+                    className=" cursor-pointer absolute bottom-3.5 right-28 text-gray-400"
                     size={"1.5em"}
                     color="black"
                 />
-                {message && (
-                    <button className=" cursor-pointer  btn rounded-2xl">
-                        <FaRegPaperPlane
-                            className=" cursor-pointer  text-gray-400"
-                            size={"1.5em"}
-                            color="white"
-                        />
-                    </button>
-                )}
-                {!message && (
-                    <button className=" cursor-pointer  btn rounded-2xl">
-                        <BsFillMicFill
-                            className=" cursor-pointer  text-gray-400"
-                            size={"1.5em"}
-                            color="white"
-                        />
-                    </button>
-                )}
-            </div>
+                <div className=" absolute bottom-0 right-5">
+                    {message && (
+                        <button className=" cursor-pointer  btn rounded-2xl">
+                            <FaRegPaperPlane
+                                className=" cursor-pointer  text-gray-400"
+                                size={"1.5em"}
+                                color="white"
+                            />
+                        </button>
+                    )}
+                    {!message && (
+                        <button className=" cursor-pointer  btn rounded-2xl">
+                            <BsFillMicFill
+                                className=" cursor-pointer  text-gray-400"
+                                size={"1.5em"}
+                                color="white"
+                            />
+                        </button>
+                    )}
+                </div>
+            </div> */}
         </div>
     )
 }

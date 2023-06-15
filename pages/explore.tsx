@@ -49,7 +49,8 @@ const Children1: React.FC = () => {
 
 const Children2: React.FC = () => {
     return (
-        <div className=" fixed right-10">
+        // <div className=" fixed right-10 xl1450:w-[350px]">
+        <div className=" fixed md1050:pr-5 xl1450:pr-0 xl1450:w-[350px]">
             <div className="mt-2 bg-lightGray  rounded-3xl">
                 <h2 className="  text-2xl font-semibold p-5">
                     Suggested for you{" "}
@@ -92,8 +93,7 @@ const Children2: React.FC = () => {
                     <span>English</span>
                 </div>
                 <div className=" text-lightGratText2">
-                                        {/* <span>Storage Powered by Polybase</span> */}
-
+                    {/* <span>Storage Powered by Polybase</span> */}
                 </div>
             </div>
         </div>

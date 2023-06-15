@@ -22,7 +22,8 @@ const Children2: React.FC = () => {
     const [expandedImage, setExpandedImage] = useState<string | null>(null)
     const { currentProfile } = useAppStore()
     return (
-        <div className="fixed md1050:pr-5 xl1450:pr-0 xl1450:">
+        // <div className="fixed md1050:pr-5 xl1450:pr-0 xl1450:">
+        <div className="fixed md1050:pr-5 xl1450:pr-0 xl1450:w-[350px]">
             {/* {currentProfile ? (
                 <div className="relative mt-5 mb-2">
                     <input
@@ -86,8 +87,7 @@ const Children2: React.FC = () => {
                     <span>English</span>
                 </div>
                 <div className=" text-lightGratText2">
-                                        {/* <span>Storage Powered by Polybase</span> */}
-
+                    {/* <span>Storage Powered by Polybase</span> */}
                 </div>
             </div>
         </div>
