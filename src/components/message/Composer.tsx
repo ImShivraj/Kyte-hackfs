@@ -477,7 +477,7 @@ const Composer: FC<Props> = ({
                         className={clsx(
                             !!!message && "max-h-32",
                             "z-10 bg-white max-h-32  placeholder:text-gray-400 placeholder:font-light rounded-none ",
-                            " border-0  pl24 pr-12 py-3.5 p-4 w-11/12 text-justify resize-none  scrollbar-hide  text-black focus:text-black textarea textarea-ghost bg-white bgindigo-400 mr-3 focus:bg-white outline-none focus:outline-none text-base md:text-lg shadow-xl focus-within:shadow-lg in-h-16 "
+                            " border-0  pl24 pr-0 py-3.5 p-4 w-11/12 text-justify resize-none  scrollbar-hide  text-black focus:text-black textarea textarea-ghost bg-white bgindigo-400 mr-3 focus:bg-white outline-none focus:outline-none text-base md:text-lg shadow-xl focus-within:shadow-lg in-h-16 "
                         )}
                         // type="text"
                         // value={message}
