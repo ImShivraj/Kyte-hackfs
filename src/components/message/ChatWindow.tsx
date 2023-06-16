@@ -25,6 +25,8 @@ import UserProfilePreview from "../Shared/UserProfilePreview"
 import useSendMessage from "../utils/hooks/useSendMessage"
 import { ContentTypeId, DecodedMessage } from "@xmtp/xmtp-js"
 import Composer from "./Composer"
+import FileSendViewModal from "../Composer/FileSendViewModal"
+import ImageFiewModal from "../Composer/ImageFiewModal"
 
 interface MessageProps {
     selectedConversationKey?: string
@@ -62,6 +64,8 @@ function ChatWindow(
     const [sendingXmtpMessage, setSendingXmtpMessage] = useState<
         ContentTypeId | undefined
     >()
+    const [imageInView, setImageInView] = useState<string>("")
+    const [imageViewOpened, setImageViewOpened] = useState<boolean>(false)
 
     const [replyingMessage, setReplyingMessage] =
         useState<DecodedMessage | null>(null)
@@ -164,7 +168,7 @@ function ChatWindow(
                 onScroll={handleScroll}
                 className="  relative mt- chat-wallpaper  max-h-[90vh] h-[90vh] overflow-auto scrollbar-hide rounded-2xl  border xs320:pb-6"
             >
-                <div className=" flex flex-col gap-5 justify-end mt-auto overflow-scrollscrollbar-hide  p-4  pb-28 bg-transparent backdrop-blur-md backdrop-opacity-50">
+                <div className=" flex flex-col gap-5 justify-end mt-auto overflow-scrollscrollbar-hide  p-4  xs230:pb-28 md800:pb-16 bg-transparent backdrop-blur-md backdrop-opacity-50">
                     <div className=" flex justify-start items-start gap-4 max-w-md ">
                         <Image
                             className=" min-w-[50px]"
@@ -248,7 +252,7 @@ function ChatWindow(
                 </div>
             </div>
 
-            <div className=" absolute md800:bottom-3 xs320:bottom-14 w-full">
+            <div className=" absolute md800:bottom-3 xs320:bottom-16 xs320:mb-2 md800:mb-0  w-full z-[500]">
                 <Composer
                     conversationKey={selectedConversationKey}
                     sendXmtpMessage={sendXmtpMessage}
@@ -258,6 +262,16 @@ function ChatWindow(
                     replyingMessage={replyingMessage}
                     setReplyingMessage={setReplyingMessage}
                     selectedProfile={selectedProfile}
+                />
+                <FileSendViewModal
+                    sendXmtpMessage={sendXmtpMessage}
+                    setSendingXmtpMessage={setSendingXmtpMessage}
+                    replyingMessage={replyingMessage}
+                />
+                <ImageFiewModal
+                    imageInView={imageInView}
+                    imageViewOpened={imageViewOpened}
+                    setImageViewOpened={setImageViewOpened}
                 />
             </div>
         </div>

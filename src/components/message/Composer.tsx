@@ -2,7 +2,14 @@ import { showNotification } from "@mantine/notifications"
 import { ClipboardEvent, Dispatch, FC, SetStateAction, useRef } from "react"
 import { useEffect, useState } from "react"
 import EmojiPicker from "emoji-picker-react"
-import { Popover } from "@mantine/core"
+// import { Popover } from "@mantine/core"
+import {
+    Popover,
+    PopoverHandler,
+    PopoverContent,
+    Button,
+} from "@material-tailwind/react"
+
 import { FiberManualRecordRounded } from "@mui/icons-material"
 import GifSelector from "@components/Composer/Actions/Giphy/GifSelector"
 import { IconButton, TextField } from "@mui/material"
@@ -322,7 +329,7 @@ const Composer: FC<Props> = ({
                         sendingXmtpMessage={sendingXmtpMessage}
                         isUploadingVoice={isUploadingVoice}
                     />
-                    <div className="flex items-center z-10 pl-2 h-fit mt-auto mb-[8px] rounded[10px] rounded-r-none">
+                    <div className="flex items-center  pl-2 h-fit mt-auto mb-[8px] rounded[10px] rounded-r-none z-[10000]">
                         <IconButton
                             aria-label="expand"
                             className="text-[40px]"
@@ -338,29 +345,32 @@ const Composer: FC<Props> = ({
                                 <MdOutlineKeyboardDoubleArrowRight color="#181A1E" />
                             )}
                         </IconButton>
-                        <div className="sm500:block hidden">
+                        <div className="sm500:block hidden ">
                             <Popover
-                                width="full"
-                                position="top"
-                                shadow="md"
-                                classNames={{
-                                    dropdown:
-                                        "border-none padding-0 shadow-none rounded-none bg-transparent",
-                                }}
-                                disabled={disabledInput}
+                            // width="full"
+                            // position="top"
+                            // shadow="md"
+                            // classNames={{
+                            //     dropdown:
+                            //         "border-none padding-0 shadow-none rounded-none bg-transparent",
+                            // }}
+                            // disabled={disabledInput}
                             >
-                                <Popover.Target>
+                                <PopoverHandler>
                                     <IconButton aria-label="emoji">
                                         <MdOutlineEmojiEmotions color="#181A1E" />
                                     </IconButton>
-                                </Popover.Target>
-                                <Popover.Dropdown className="px-0 sm400:px-[16px]">
+                                </PopoverHandler>
+                                <PopoverContent
+                                    className="z-[10000]  w-fit"
+                                    // className="px-0 sm400:px-[16px] z-[10000] p-0 border-0 w-fit"
+                                >
                                     <EmojiPicker
                                         onEmojiClick={(event) => {
                                             setMessage(message + event.emoji)
                                         }}
                                     />
-                                </Popover.Dropdown>
+                                </PopoverContent>
                             </Popover>
                         </div>
                         <div
@@ -374,21 +384,24 @@ const Composer: FC<Props> = ({
                         >
                             <div className="block sm500:hidden">
                                 <Popover
-                                    width="full"
-                                    position="top"
-                                    shadow="md"
-                                    classNames={{
-                                        dropdown:
-                                            "border-none padding-0 shadow-none rounded-none bg-transparent",
-                                    }}
-                                    disabled={disabledInput}
+                                // width="full"
+                                // position="top"
+                                // shadow="md"
+                                // classNames={{
+                                //     dropdown:
+                                //         "border-none padding-0 shadow-none rounded-none bg-transparent",
+                                // }}
+                                // disabled={disabledInput}
                                 >
-                                    <Popover.Target>
+                                    <PopoverHandler>
                                         <IconButton aria-label="emoji">
                                             <MdOutlineEmojiEmotions color="#181A1E" />
                                         </IconButton>
-                                    </Popover.Target>
-                                    <Popover.Dropdown className="px-0 sm400:px-[16px]">
+                                    </PopoverHandler>
+                                    <PopoverContent
+                                        className="z-[10000]  w-fit"
+                                        // className="px-0 sm400:px-[16px]"
+                                    >
                                         <EmojiPicker
                                             onEmojiClick={(event) => {
                                                 setMessage(
@@ -396,20 +409,20 @@ const Composer: FC<Props> = ({
                                                 )
                                             }}
                                         />
-                                    </Popover.Dropdown>
+                                    </PopoverContent>
                                 </Popover>
                             </div>
                             <Popover
-                                position="top"
-                                width="full"
-                                shadow="md"
-                                classNames={{
-                                    dropdown:
-                                        "border-none pr-0 shadow-none rounded-none bg-transparent",
-                                }}
-                                disabled={disabledInput}
+                            // position="top"
+                            // width="full"
+                            // shadow="md"
+                            // classNames={{
+                            //     dropdown:
+                            //         "border-none pr-0 shadow-none rounded-none bg-transparent",
+                            // }}
+                            // disabled={disabledInput}
                             >
-                                <Popover.Target>
+                                <PopoverHandler>
                                     <IconButton
                                         aria-label="emoji"
                                         ref={gifBtnRef}
@@ -419,8 +432,11 @@ const Composer: FC<Props> = ({
                                             color="#181A1E"
                                         />
                                     </IconButton>
-                                </Popover.Target>
-                                <Popover.Dropdown className="px-0 sm400:px-[16px] z-20">
+                                </PopoverHandler>
+                                <PopoverContent
+                                    className="z-[10000]  w-fit"
+                                    // className="px-0 sm400:px-[16px] z-20"
+                                >
                                     <GifSelector
                                         onClose={() => {
                                             if (gifBtnRef !== null) {
@@ -434,27 +450,30 @@ const Composer: FC<Props> = ({
                                         }
                                         replyingMessage={replyingMessage}
                                     />
-                                </Popover.Dropdown>
+                                </PopoverContent>
                             </Popover>
                             <Popover
-                                position="top"
-                                width="full"
-                                shadow="md"
-                                classNames={{
-                                    dropdown:
-                                        "border-none pr-0 shadow-none rounded-none bg-transparent",
-                                }}
-                                disabled={disabledInput}
+                            // position="top"
+                            // width="full"
+                            // shadow="md"
+                            // classNames={{
+                            //     dropdown:
+                            //         "border-none pr-0 shadow-none rounded-none bg-transparent",
+                            // }}
+                            // disabled={disabledInput}
                             >
-                                <Popover.Target>
+                                <PopoverHandler>
                                     <IconButton
                                         aria-label="emoji"
                                         ref={stickerBtnRef}
                                     >
                                         <LuSticker color="#181A1E" />
                                     </IconButton>
-                                </Popover.Target>
-                                <Popover.Dropdown className="px-0 sm400:px-[16px] z-20">
+                                </PopoverHandler>
+                                <PopoverContent
+                                    className="z-[10000]  w-fit"
+                                    // className="px-0 sm400:px-[16px] z-20"
+                                >
                                     <StickerSelector
                                         onClose={() => {
                                             if (stickerBtnRef !== null) {
@@ -468,7 +487,7 @@ const Composer: FC<Props> = ({
                                         }
                                         replyingMessage={replyingMessage}
                                     />
-                                </Popover.Dropdown>
+                                </PopoverContent>
                             </Popover>
                         </div>
                     </div>
@@ -518,7 +537,7 @@ const Composer: FC<Props> = ({
                             />
                         </div>
                     ) : (
-                        <div className=" h-auto px-2 mr-1 w-auto">
+                        <div className=" h-auto px-2 mr-1 w-auto ">
                             <MessageAttachments
                                 messageAttachmensDisabled={
                                     disabledInput ?? false

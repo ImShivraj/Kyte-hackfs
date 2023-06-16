@@ -408,7 +408,7 @@ const FileSendViewModal = ({
                 stylesState,
                 isMinimized
                     ? "left-[0.85rem] right-auto top-auto bottom-[6rem] pb-0"
-                    : "left-0 right-0 top-0 bottom-0 pb-2.5",
+                    : "left-[0.85rem] top-0 bottom-[60vh] pb-2.5",
                 "bg-white transition-all duration-500 absolute m-auto h-fit z-50 max-w-[600px] rounded-[10px] overflow-hidden shadow-xl border border-black border-opacity-5 text-black"
             )}
         >
@@ -461,7 +461,7 @@ const FileSendViewModal = ({
                     </div>
                 )}
 
-                <div className="flex items-center justify-between px-2.5">
+                <div className=" flex items-center justify-between px-2.5">
                     <div className="flex items-center gap-1">
                         <MessageFileSendPreviewShort
                             selectedFileIndex={selectedFileIndex}

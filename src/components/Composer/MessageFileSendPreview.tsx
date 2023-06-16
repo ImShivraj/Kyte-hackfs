@@ -32,7 +32,7 @@ const MessageFileSendPreview = ({
     return (
         <div
             className={clsx(
-                isMinimized ? "h-0" : "h-[377px]",
+                isMinimized ? "h-0" : "h-[377px] absolute top-0",
                 "relative w-full transition-all duration-500 overflow-hidden shadow"
             )}
         >

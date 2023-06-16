@@ -69,3 +69,7 @@ body {
 .linkify a:hover {
     color: blue;
 }
+
+.attachment-speed-dial {
+    background-color: white;
+  }
