@@ -132,9 +132,9 @@ const Sidebar = () => {
             href={path}
         >
             {router.asPath === path ? (
-                <Image src={img.active} alt="nav_icon" />
-            ) : (
                 <Image src={img.inActive} alt="nav_icon" />
+            ) : (
+                <Image src={img.active} alt="nav_icon" />
             )}
             {/* <Icon
                 size={"1.5em"}

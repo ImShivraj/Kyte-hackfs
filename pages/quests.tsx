@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Saved() {
+export default function Quests() {
     return (
         <div className="  w-full h-screen">
             <div className="  flex items-start justify-start  mx-auto  ">
