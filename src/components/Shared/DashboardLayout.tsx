@@ -14,7 +14,11 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
     return (
         // xl1450:w-[350px]
         <div className=" grid grid-cols-12  relative bg-red-30 bg-blue-30">
-            <div className=" cursor-pointer transition ease-in-out active:scale-95 z-50 fixed bottom-24 right-5 w-auto md850:hidden block ">
+            <div
+                className={clsx( isMessagesPage && 'hidden', 
+                    "cursor-pointer transition ease-in-out active:scale-95 z-50 fixed bottom-24 right-5 w-auto md850:hidden block "
+                )}
+            >
                 <div className=" bg-lightGreen rounded-full p-4">
                     <BiPlus size={"2.2em"} color="white" />
                 </div>

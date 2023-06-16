@@ -44,7 +44,7 @@ function UserList() {
 
     return (
         // max-h-[94vh] h-[95vh] overflow-auto scrollbar-hide
-        <div className=" max-w-xs max-h-[96vh] h-[96vh] overflow-auto scrollbar-hide  ">
+        <div className=" xs320:w-full md800:max-w-xs max-h-[96vh] h-[96vh] overflow-auto scrollbar-hide  ">
             <div className=" ">
                 <div className="flex justify-between items-center">
                     <h1 className=" text-3xl font-semibold">Messages</h1>

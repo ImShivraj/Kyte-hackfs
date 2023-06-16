@@ -65,7 +65,7 @@ function ChatWindow(
 
     const [replyingMessage, setReplyingMessage] =
         useState<DecodedMessage | null>(null)
-        
+
     const [message, setMessage] = useState<string>("")
 
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -123,7 +123,7 @@ function ChatWindow(
 
     return (
         <div className="  relative ">
-            <div className=" flex w-full justify-between items-center border- py-3 -mt-3 ">
+            <div className=" flex w-full justify-between items-center border- py-3 -mt-3 xs320:py-5 xs320:px-3 md800:px-0 ">
                 <UserProfilePreview
                     name={"Kushagra Sarathe"}
                     username={"kushagra"}
@@ -162,11 +162,15 @@ function ChatWindow(
             <div
                 ref={containerRef}
                 onScroll={handleScroll}
-                className="  relative mt- chat-wallpaper  max-h-[90vh] h-[90vh] overflow-auto scrollbar-hide rounded-2xl  border "
+                className="  relative mt- chat-wallpaper  max-h-[90vh] h-[90vh] overflow-auto scrollbar-hide rounded-2xl  border xs320:pb-6"
             >
-                <div className=" flex flex-col justify-end mt-auto overflow-scrollscrollbar-hide  p-4  pb-24 bg-transparent backdrop-blur-md backdrop-opacity-50">
+                <div className=" flex flex-col gap-5 justify-end mt-auto overflow-scrollscrollbar-hide  p-4  pb-28 bg-transparent backdrop-blur-md backdrop-opacity-50">
                     <div className=" flex justify-start items-start gap-4 max-w-md ">
-                        <Image src={user} alt="user" />
+                        <Image
+                            className=" min-w-[50px]"
+                            src={user}
+                            alt="user"
+                        />
                         <p className=" relative mt-4 bg-white px-5 py-3 text-sm tracking-wide rounded-xl rounded-tl-none shadow-md pb-8 pt-4">
                             Lorem ipsum dolor sit, amet.
                             <span className=" absolute right-3 bottom-2 text-xs text-gray-400  ">
@@ -175,7 +179,11 @@ function ChatWindow(
                         </p>
                     </div>
                     <div className=" flex justify-start items-start gap-4 max-w-md  ">
-                        <Image src={user} alt="user" />
+                        <Image
+                            className=" min-w-[50px]"
+                            src={user}
+                            alt="user"
+                        />
                         <p className=" relative mt-4 bg-white px-5 py-3 text-sm tracking-wide rounded-xl rounded-tl-none shadow-md pb-8 pt-4">
                             Sed ut perspiciatis unde omnis iste na, error sit
                             voluptatem accusanti dolorog laudantium, totam rem,
@@ -198,7 +206,11 @@ function ChatWindow(
                         </p>
                     </div>
                     <div className=" flex justify-start items-start gap-4 max-w-md ">
-                        <Image src={user} alt="user" />
+                        <Image
+                            className=" min-w-[50px]"
+                            src={user}
+                            alt="user"
+                        />
                         <p className=" relative mt-4 bg-white px-5 py-3 text-sm tracking-wide rounded-xl rounded-tl-none shadow-md pb-8 pt-4">
                             Lorem ipsum dolor sit, amet.
                             <span className=" absolute right-3 bottom-2 text-xs text-gray-400  ">
@@ -207,7 +219,11 @@ function ChatWindow(
                         </p>
                     </div>
                     <div className=" flex justify-start items-start gap-4 max-w-md  ">
-                        <Image src={user} alt="user" />
+                        <Image
+                            className=" min-w-[50px]"
+                            src={user}
+                            alt="user"
+                        />
                         <p className=" relative mt-4 bg-white px-5 py-3 text-sm tracking-wide rounded-xl rounded-tl-none shadow-md pb-8 pt-4">
                             Sed ut perspiciatis unde omnis iste na, error sit
                             voluptatem accusanti dolorog laudantium, totam rem,
@@ -232,7 +248,7 @@ function ChatWindow(
                 </div>
             </div>
 
-            <div className=" absolute bottom-3 w-full">
+            <div className=" absolute md800:bottom-3 xs320:bottom-14 w-full">
                 <Composer
                     conversationKey={selectedConversationKey}
                     sendXmtpMessage={sendXmtpMessage}
@@ -244,55 +260,6 @@ function ChatWindow(
                     selectedProfile={selectedProfile}
                 />
             </div>
-
-            {/* <div className="px-3 absolute flex items-center justify-between bottom-2 mt-5 mb-2  w-full">
-                <RxDoubleArrowRight
-                    className=" cursor-pointer absolute bottom-3.5 left-10 text-gray-400"
-                    size={"1.5em"}
-                    color="black"
-                />
-                <HiOutlineEmojiHappy
-                    className=" cursor-pointer absolute bottom-3.5 left-[4.5rem] text-gray-400"
-                    size={"1.5em"}
-                    color="black"
-                />
-
-                <textarea
-                    placeholder=" What's Happening?"
-                    className=" border-0 max-h-48 pl-24 pr-12 py-3.5 p-4 w-11/12 text-justify resize-none  scrollbar-hide  text-black focus:text-black textarea rounded-xl textarea-ghost bg-white focus:bg-white outline-none focus:outline-none text-base md:text-lg shadow-xl focus-within:shadow-lg in-h-16"
-                    // type="text"
-                    name=""
-                    id=""
-                    value={message}
-                    onChange={handleChange}
-                    rows={1}
-                />
-                <GrAttachment
-                    className=" cursor-pointer absolute bottom-3.5 right-28 text-gray-400"
-                    size={"1.5em"}
-                    color="black"
-                />
-                <div className=" absolute bottom-0 right-5">
-                    {message && (
-                        <button className=" cursor-pointer  btn rounded-2xl">
-                            <FaRegPaperPlane
-                                className=" cursor-pointer  text-gray-400"
-                                size={"1.5em"}
-                                color="white"
-                            />
-                        </button>
-                    )}
-                    {!message && (
-                        <button className=" cursor-pointer  btn rounded-2xl">
-                            <BsFillMicFill
-                                className=" cursor-pointer  text-gray-400"
-                                size={"1.5em"}
-                                color="white"
-                            />
-                        </button>
-                    )}
-                </div>
-            </div> */}
         </div>
     )
 }
