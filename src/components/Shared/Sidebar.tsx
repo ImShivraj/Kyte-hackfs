@@ -17,44 +17,87 @@ import AccountDropdown from "./AccountDropdown"
 import { useAppStore } from "@/src/store/app"
 import CreatePostModal from "../posts/CreatePostModal"
 
+import home_active from "@/src/assets/nav_icons/home.png"
+import home_inactive from "@/src/assets/nav_icons/home_active.png"
+import explore_active from "@/src/assets/nav_icons/explore.png"
+import explore_inactive from "@/src/assets/nav_icons/explore_active.png"
+import communities_active from "@/src/assets/nav_icons/communities.png"
+import communities_inactive from "@/src/assets/nav_icons/communities.png"
+import quests_active from "@/src/assets/nav_icons/quests.png"
+import quests_inactive from "@/src/assets/nav_icons/quests.png"
+import myprofile_active from "@/src/assets/nav_icons/myprofile.png"
+import myprofile_inactive from "@/src/assets/nav_icons/myprofile_active.png"
+import messages_active from "@/src/assets/nav_icons/messages.png"
+import messages_inactive from "@/src/assets/nav_icons/messages_active.png"
+
 interface Paths {
     path: string
     title: string
     icon: IconType
     isActive: boolean
+    img?: any
 }
 
 export const paths: Paths[] = [
-    { path: "/", title: "Home", icon: HiHome, isActive: false },
+    {
+        path: "/",
+        title: "Home",
+        icon: HiHome,
+        isActive: false,
+        img: {
+            active: home_active,
+            inActive: home_inactive,
+        },
+    },
     {
         path: "/explore",
         title: "Explore",
         icon: BsFire,
         isActive: false,
+        img: {
+            active: explore_active,
+            inActive: explore_inactive,
+        },
     },
     {
-        path: "/notifications",
-        title: "Notifications",
+        path: "/communities",
+        title: "Communities",
         icon: HiBell,
         isActive: false,
+        img: {
+            active: communities_active,
+            inActive: communities_inactive,
+        },
     },
     {
-        path: "/saved",
-        title: "Saved",
+        path: "/quests",
+        title: "Quests",
         icon: HiBookmark,
         isActive: false,
+        img: {
+            active: quests_active,
+            inActive: quests_inactive,
+        },
     },
     {
         path: "/myprofile",
         title: "My Profile",
         icon: BsFillPersonFill,
         isActive: false,
+        img: {
+            active: myprofile_active,
+            inActive: myprofile_inactive,
+        },
     },
     {
         path: "/messages",
         title: "Messages",
         icon: TbMessage,
         isActive: true,
+        img: {
+            active: messages_active,
+            inActive: messages_inactive,
+        },
     },
 ]
 
@@ -76,7 +119,7 @@ const Sidebar = () => {
         )
     }, [router.asPath])
 
-    const links = paths.map(({ path, title, icon: Icon }) => (
+    const links = paths.map(({ path, title, icon: Icon, img }) => (
         <Link
             key={path}
             className={clsx(
@@ -88,10 +131,15 @@ const Sidebar = () => {
             )}
             href={path}
         >
-            <Icon
+            {router.asPath === path ? (
+                <Image src={img.active} alt="nav_icon" />
+            ) : (
+                <Image src={img.inActive} alt="nav_icon" />
+            )}
+            {/* <Icon
                 size={"1.5em"}
                 color={`${router.asPath === path ? "white" : "#696b6d"}`}
-            />
+            /> */}
             {!toggleSidebar && (
                 <span
                     className={clsx(
