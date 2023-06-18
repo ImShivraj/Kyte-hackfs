@@ -1,22 +1,43 @@
 import Image from "next/image"
 import img from "@assets/modal_img1.svg"
-import React, { useState } from "react"
+import React, { Dispatch, SetStateAction, useState } from "react"
 import { RxCross1 } from "react-icons/rx"
 import { useForm } from "react-hook-form"
 import clsx from "clsx"
+import { usePolybase } from "@polybase/react"
+import { useAccount } from "wagmi"
+import { CheckCircle, TaskAltRounded } from "@mui/icons-material"
 
 interface Props {
     username: string
     setUsername: (value: string) => void
+    setActiveStep: Dispatch<SetStateAction<number>>
 }
 
-function ClaimUsername({ username, setUsername }: Props) {
+function ClaimUsername({ username, setUsername, setActiveStep }: Props) {
     const {
         register,
         handleSubmit,
         watch,
         formState: { errors },
     } = useForm()
+
+    const polybase = usePolybase()
+
+    const { address } = useAccount()
+
+    const insertUser = async () => {
+        const data = await polybase.collection('KyteUsers').create([
+            address,
+            username,
+        ])
+
+        if (data?.data?.id) {
+            setActiveStep(3)
+        }
+
+        console.log({ data })
+    }
 
     return (
         // <div className=" flex items-center xs320:text-center md900:text-start flex-wrap-reverse md900:justify-between xl1450:px-6 bggre xl1450:justify-between md900:px-12 md900:gap-3 py-4">
@@ -43,10 +64,17 @@ function ClaimUsername({ username, setUsername }: Props) {
                         placeholder="username"
                         className={clsx(
                             username === "test" &&
-                                "outline outline-2 outline-red-500 ring-red-500 focus:outline-red-500",
+                            "outline outline-2 outline-red-500 ring-red-500 focus:outline-red-500",
                             "font-[500] bg-lightGray input input-ghost py-3.5 p-4 w-full xl1450:w-96 rounded-md outline-none "
                         )}
                     />
+                    <button onClick={() => {
+                        if (username) {
+                            insertUser()
+                        }
+                    }}>
+                        <TaskAltRounded className="text-lightGreen ml-5" style={{ fontSize: "30px" }} />
+                    </button>
                     {username && (
                         <div onClick={() => setUsername("")}>
                             <RxCross1

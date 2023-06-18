@@ -10,6 +10,7 @@ import {
     useAuthenticateMutation,
     useAllProfilesLazyQuery,
 } from "@lens/generated"
+import usePolLogin from "../usePolybaseLogin"
 
 export function useLogin(
     setHasProfile: Dispatch<boolean>,

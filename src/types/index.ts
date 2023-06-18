@@ -8,8 +8,7 @@ export interface KyteAttachment {
     type: string
     altTag: string
 }
-export interface NewKyteAttachment
-    extends Omit<KyteAttachment, "item"> {
+export interface NewKyteAttachment extends Omit<KyteAttachment, "item"> {
     id: string
     item?: string
     previewItem?: string
@@ -30,4 +29,10 @@ export interface EmbedLink {
     thumbnail: null | string
     isSquare: null | string
     html: null | string
+}
+
+export interface PolUser {
+    id: string
+    username: string
+    pvkey: string
 }

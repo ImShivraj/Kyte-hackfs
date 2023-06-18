@@ -2,6 +2,7 @@ import Image from "next/image"
 import img from "@assets/modal_img2.svg"
 import { IoWalletOutline } from "react-icons/io5"
 import IconButton from "../Shared/IconButton"
+import { ConnectButton } from "@rainbow-me/rainbowkit"
 
 function ConnectWallet() {
     return (
@@ -20,17 +21,86 @@ function ConnectWallet() {
                     Sed ut perspiciatis unde omnis iste na, error voluptatem
                     accusanti dolorog.
                 </p>
-                <button
-                    type="button"
-                    className={
-                        " md1000:mx-auto md1050:mx-0 rounded-full my-3 bg-lightGreen hover:bg-lightGreen active:bg-lightGreen xs320:px-8 mx-auto md900:mx-0 w-full md900:w-auto md900:px-14  border-0 btn  flex items-center justify-center gap-2 "
-                    }
-                >
-                    <IoWalletOutline size={"1.5em"} />
-                    <span className="text-white  font-[600]  leading-[20px]">
-                        Connect Wallet
-                    </span>
-                </button>
+                <ConnectButton.Custom>
+                    {({
+                        account,
+                        chain,
+                        openChainModal,
+                        openAccountModal,
+                        openConnectModal,
+                        mounted,
+                    }) => {
+                        const ready = mounted
+                        const connected = ready && account && chain
+
+                        return (
+                            <div
+                                {...(!ready && {
+                                    "aria-hidden": true,
+                                    style: {
+                                        opacity: 0,
+                                        pointerEvents: "none",
+                                        userSelect: "none",
+                                    },
+                                })}
+                            >
+                                {(() => {
+                                    if (!connected) {
+                                        return (
+                                            <button
+                                                type="button"
+                                                className={
+                                                    " md1000:mx-auto md1050:mx-0 rounded-full my-3 bg-lightGreen hover:bg-lightGreen active:bg-lightGreen xs320:px-8 mx-auto md900:mx-0 w-full md900:w-auto md900:px-14  border-0 btn  flex items-center justify-center gap-2 "
+                                                }
+                                                onClick={openConnectModal}
+                                            >
+                                                <IoWalletOutline size={"1.5em"} />
+                                                <span className="text-white  font-[600]  leading-[20px]">
+                                                    Connect Wallet
+                                                </span>
+                                            </button>
+                                        )
+                                    }
+
+                                    if (chain?.unsupported) {
+                                        return (
+                                            <button
+                                                type="button"
+                                                className={
+                                                    " md1000:mx-auto md1050:mx-0 rounded-full my-3 bg-lightGreen hover:bg-lightGreen active:bg-lightGreen xs320:px-8 mx-auto md900:mx-0 w-full md900:w-auto md900:px-14  border-0 btn  flex items-center justify-center gap-2 "
+                                                }
+                                                onClick={() => {
+                                                    openChainModal()
+                                                }}
+                                            >
+                                                <IoWalletOutline size={"1.5em"} />
+                                                <span className="text-white  font-[600]  leading-[20px]">
+                                                    Connect Wallet
+                                                </span>
+                                            </button>
+                                        )
+                                    }
+                                    if (connected) {
+                                        return (
+                                            <button
+                                                type="button"
+                                                className={
+                                                    " md1000:mx-auto md1050:mx-0 rounded-full my-3 bg-lightGreen hover:bg-lightGreen active:bg-lightGreen xs320:px-8 mx-auto md900:mx-0 w-full md900:w-auto md900:px-14  border-0 btn  flex items-center justify-center gap-2 "
+                                                }
+                                            >
+                                                <IoWalletOutline size={"1.5em"} />
+                                                <span className="text-white  font-[600]  leading-[20px]">
+                                                    Connected
+                                                </span>
+                                            </button>
+                                        )
+                                    }
+                                })()}
+                            </div>
+                        )
+                    }}
+                </ConnectButton.Custom>
+
             </div>
             <div className=" xs320:mx-auto md900:mx-0">
                 <Image src={img} alt=" img" />
